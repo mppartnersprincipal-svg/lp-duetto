@@ -1,0 +1,13 @@
+# Arquivos de mídia brutos (muito grandes para o GitHub)
+Fotos/
+
+# Sistema
+Thumbs.db
+ehthumbs.db
+desktop.ini
+.DS_Store
+
+# Temporários
+*.tmp
+*.log
+~$*

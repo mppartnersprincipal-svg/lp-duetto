@@ -1,0 +1,1255 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Duetto Ateliê de Chocolate · Doces de luxo para o seu evento · Goiânia</title>
+<meta name="description" content="Ateliê de chocolate de luxo em Goiânia. Bolos e doces personalizados para batizado e chá revelação, com entrega no local. Há 13 anos transformando sonhos em beleza e sabor.">
+
+<!-- Open Graph -->
+<meta property="og:title" content="Duetto Ateliê de Chocolate · Doces de luxo para o seu evento">
+<meta property="og:description" content="Bolos e doces personalizados para batizado e chá revelação, com entrega no local. Goiânia · 13 anos.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="assets/hero.webp">
+
+<!-- Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+<style>
+/* ============================================================
+   DESIGN TOKENS — Sistema de Identidade Visual Duetto
+   ============================================================ */
+:root{
+  /* Cores — paleta da marca */
+  --color-jade:#53CA96;          /* assinatura / CTA */
+  --color-jade-dark:#1E8E62;     /* hover, ícones ativos */
+  --color-jade-deeper:#114E38;   /* texto sobre jade claro */
+  --color-jade-50:#EEFAF4;       /* tiffany claro (fundo) */
+  --color-jade-100:#D6F2E5;      /* tiffany claro (fundo) */
+  --color-jade-300:#7FD5AD;
+  --color-cacau:#211A16;         /* fundo escuro */
+  --color-cocoa:#4A382D;         /* cards escuros */
+  --color-cocoa-light:#6B4A35;   /* bordas no escuro */
+  --color-gold-soft:#E3CFA0;     /* separadores, flourishes */
+  --color-gold:#C6A15B;          /* acentos de linha, ícones */
+  --color-gold-deep:#A9803F;     /* dourado sobre escuro */
+  --color-ivory:#FAF6EF;         /* fundo padrão */
+  --color-cream:#F3EBDD;         /* fundo alternado claro */
+  --color-sand:#E8DCC8;          /* bordas/superfícies sutis */
+
+  /* Tipografia */
+  --font-display:'Cormorant Garamond',Georgia,serif;
+  --font-body:'Jost',system-ui,sans-serif;
+  --font-script:'Pinyon Script',cursive;
+
+  /* Escala */
+  --text-display:clamp(48px,7vw,96px);
+  --text-h1:clamp(38px,5vw,64px);
+  --text-h2:clamp(28px,3.5vw,42px);
+  --text-h3:clamp(20px,2.5vw,26px);
+  --text-eyebrow:11px;
+  --text-body:18px;
+  --text-body-sm:15px;
+  --text-caption:13px;
+  --tracking-wide:0.16em;
+  --tracking-wider:0.22em;
+
+  /* Espaço */
+  --space-xs:8px; --space-sm:16px; --space-md:32px;
+  --space-lg:64px; --space-xl:96px; --space-2xl:160px;
+
+  /* Bordas */
+  --radius-sm:6px; --radius-md:12px; --radius-lg:20px; --radius-pill:100px;
+
+  /* Layout */
+  --max-w:1200px; --max-w-text:680px;
+  --nav-h:72px;
+}
+
+/* ============================================================
+   RESET & BASE
+   ============================================================ */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:calc(var(--nav-h) + 16px);-webkit-text-size-adjust:100%}
+body{
+  font-family:var(--font-body);
+  font-weight:300;
+  font-size:var(--text-body);
+  line-height:1.65;
+  color:var(--color-cacau);
+  background:var(--color-ivory);
+  overflow-x:hidden;
+}
+img{max-width:100%;height:auto;display:block}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:none;background:none}
+ul{list-style:none}
+
+h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:1.12;letter-spacing:-0.01em}
+
+.wrap{max-width:var(--max-w);margin-inline:auto;padding-inline:24px;width:100%}
+.section{padding-block:clamp(72px,11vw,var(--space-2xl))}
+
+.eyebrow{
+  font-family:var(--font-body);font-weight:500;
+  font-size:var(--text-eyebrow);letter-spacing:var(--tracking-wider);
+  text-transform:uppercase;color:var(--color-jade-dark);
+  margin-bottom:var(--space-md);display:inline-block;
+}
+.eyebrow.on-dark{color:var(--color-jade)}
+
+/* ============================================================
+   NAVBAR
+   ============================================================ */
+.nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  height:var(--nav-h);display:flex;align-items:center;
+  transition:background .4s ease,backdrop-filter .4s ease,box-shadow .4s ease;
+}
+.nav__inner{display:flex;align-items:center;justify-content:space-between;width:100%}
+.nav.scrolled{
+  background:rgba(33,26,22,.9);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 1px 0 rgba(198,161,91,.18);
+}
+/* Wordmark logo (substituir por SVG oficial quando chegar) */
+.logo{display:flex;flex-direction:column;line-height:1;color:var(--color-ivory)}
+.logo__name{font-family:var(--font-display);font-weight:600;font-size:26px;letter-spacing:.02em;color:var(--color-jade)}
+.logo__sub{font-family:var(--font-body);font-weight:400;font-size:9px;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-gold-soft);margin-top:3px}
+.nav.scrolled .logo__name{color:var(--color-jade)}
+
+.nav__links{display:flex;align-items:center;gap:var(--space-lg)}
+.nav__link{
+  font-size:var(--text-eyebrow);letter-spacing:var(--tracking-wide);
+  text-transform:uppercase;color:var(--color-ivory);position:relative;font-weight:400;
+  padding-block:6px;
+}
+.nav__link::after{
+  content:"";position:absolute;left:0;bottom:0;height:1.5px;width:0;
+  background:var(--color-jade);transition:width .3s ease;
+}
+.nav__link:hover::after,.nav__link:focus-visible::after{width:100%}
+
+.nav__cta{
+  border:1.5px solid var(--color-jade);color:var(--color-jade);
+  padding:9px 20px;border-radius:var(--radius-pill);
+  font-size:var(--text-eyebrow);letter-spacing:var(--tracking-wide);text-transform:uppercase;
+  transition:background .25s ease,color .25s ease;
+}
+.nav__cta:hover{background:var(--color-jade);color:var(--color-cacau)}
+
+.nav__burger{display:none;flex-direction:column;gap:5px;padding:8px;z-index:110}
+.nav__burger span{width:24px;height:2px;background:var(--color-ivory);transition:.3s}
+.nav.scrolled .nav__burger span{background:var(--color-ivory)}
+.nav__burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.nav__burger.open span:nth-child(2){opacity:0}
+.nav__burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+
+/* Mobile drawer */
+.drawer{
+  position:fixed;inset:0;z-index:105;background:var(--color-cacau);
+  display:flex;flex-direction:column;justify-content:center;align-items:center;gap:var(--space-md);
+  transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);
+}
+.drawer.open{transform:translateX(0)}
+.drawer a{font-family:var(--font-display);font-size:32px;color:var(--color-ivory)}
+.drawer a.drawer__cta{
+  margin-top:var(--space-md);font-family:var(--font-body);font-size:16px;text-transform:uppercase;
+  letter-spacing:var(--tracking-wide);background:var(--color-jade);color:var(--color-cacau);
+  padding:14px 32px;border-radius:var(--radius-pill);
+}
+
+/* ============================================================
+   BOTÕES
+   ============================================================ */
+.btn{
+  display:inline-flex;align-items:center;gap:10px;justify-content:center;
+  font-family:var(--font-body);font-weight:500;font-size:15px;
+  letter-spacing:var(--tracking-wide);text-transform:uppercase;
+  padding:0 32px;height:56px;border-radius:var(--radius-pill);
+  transition:transform .25s ease,box-shadow .25s ease,background .25s ease;
+  will-change:transform;
+}
+.btn--jade{background:var(--color-jade);color:var(--color-cacau);box-shadow:0 8px 30px -10px rgba(83,202,150,.6)}
+.btn--jade:hover{transform:scale(1.03);box-shadow:0 14px 44px -8px rgba(83,202,150,.7);background:var(--color-jade-dark);color:#fff}
+.btn--jade:active{transform:scale(.97)}
+.btn--ghost{border:1.5px solid var(--color-jade);color:var(--color-jade-dark)}
+.btn--ghost:hover{background:var(--color-jade);color:var(--color-cacau)}
+.btn__wa{width:20px;height:20px;flex:none}
+
+/* ============================================================
+   S1 — HERO
+   ============================================================ */
+.hero{
+  position:relative;min-height:100vh;min-height:100svh;
+  display:flex;align-items:center;justify-content:center;text-align:center;
+  background:var(--color-cacau);overflow:hidden;
+  padding-top:var(--nav-h);
+}
+.hero__bg{
+  position:absolute;inset:-8% 0;width:100%;height:116%;
+  object-fit:cover;object-position:center;z-index:0;
+  opacity:.42;will-change:transform;
+}
+.hero__overlay{
+  position:absolute;inset:0;z-index:1;
+  background:
+    radial-gradient(120% 90% at 50% 12%,rgba(83,202,150,.20) 0%,transparent 55%),
+    linear-gradient(180deg,rgba(33,26,22,.55) 0%,rgba(33,26,22,.72) 60%,rgba(33,26,22,.94) 100%);
+}
+.hero__content{position:relative;z-index:2;max-width:880px;padding-inline:24px}
+.hero__headline{
+  font-style:italic;font-size:var(--text-display);color:var(--color-ivory);
+  margin-bottom:var(--space-sm);
+}
+.hero__slogan{
+  font-family:var(--font-script);font-size:clamp(30px,5vw,48px);
+  color:var(--color-jade);font-weight:400;line-height:1;margin-bottom:var(--space-md);
+}
+.hero__sub{
+  font-weight:300;font-size:clamp(15px,2vw,19px);color:rgba(250,246,239,.82);
+  max-width:600px;margin:0 auto var(--space-lg);line-height:1.7;
+}
+.hero .btn--jade{font-size:16px}
+
+.scroll-ind{
+  position:absolute;left:50%;bottom:28px;transform:translateX(-50%);z-index:2;
+  display:flex;flex-direction:column;align-items:center;gap:8px;
+  color:var(--color-gold-soft);font-size:10px;letter-spacing:var(--tracking-wide);text-transform:uppercase;
+}
+.scroll-ind__arrow{width:1px;height:42px;background:linear-gradient(var(--color-jade),transparent);animation:pulseArrow 1.8s ease-in-out infinite}
+@keyframes pulseArrow{0%,100%{opacity:.3}50%{opacity:1}}
+
+/* Partículas douradas */
+.particles{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.particle{position:absolute;width:5px;height:5px;border-radius:50%;background:var(--color-gold);opacity:.15;animation:floatY 9s ease-in-out infinite}
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-26px)}}
+
+/* ============================================================
+   S2 — POSICIONAMENTO (fundo tiffany claro)
+   ============================================================ */
+.s2{background:var(--color-jade-50);position:relative;overflow:hidden}
+.s2__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.7fr);gap:var(--space-xl);align-items:center}
+.s2__head{max-width:560px}
+.s2__title{font-size:var(--text-h1);color:var(--color-cacau);margin-bottom:var(--space-md)}
+.s2__title::after{content:"";display:block;width:64px;height:3px;background:var(--color-jade);margin-top:var(--space-md)}
+.blockquote{
+  font-family:var(--font-display);font-style:italic;font-size:clamp(22px,3vw,30px);
+  line-height:1.32;color:var(--color-jade-deeper);
+  border-left:3px solid var(--color-jade);padding-left:var(--space-md);
+  margin-block:var(--space-md);
+}
+.s2__body{font-size:var(--text-body);color:var(--color-cocoa);max-width:var(--max-w-text)}
+.s2__visual{position:relative;display:flex;justify-content:center;align-items:center}
+.s2__num{
+  font-family:var(--font-display);font-weight:600;font-size:clamp(180px,26vw,340px);
+  color:var(--color-jade);opacity:.10;line-height:.8;letter-spacing:-.03em;
+  position:absolute;z-index:0;user-select:none;
+}
+.s2__img{
+  position:relative;z-index:1;width:78%;max-width:300px;border-radius:var(--radius-lg);
+  box-shadow:0 30px 60px -24px rgba(33,26,22,.4);border:1px solid rgba(255,255,255,.6);
+}
+
+/* ============================================================
+   S3 — PROVA SOCIAL  (estilos prontos; seção oculta até depoimentos reais)
+   ============================================================ */
+.s3{background:var(--color-cacau)}
+.s3__head{text-align:center;max-width:720px;margin:0 auto var(--space-xl)}
+.s3__title{font-size:var(--text-h2);color:var(--color-ivory)}
+.cards3{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+.tcard{
+  background:var(--color-cocoa);border:1px solid #3A2F28;border-radius:14px;
+  padding:var(--space-md);transition:transform .3s ease,background .3s ease;
+}
+.tcard:hover{transform:translateY(-4px);background:#3a2e26}
+.tcard__top{display:flex;align-items:center;gap:12px;margin-bottom:var(--space-sm)}
+.tcard__avatar{width:48px;height:48px;border-radius:50%;background:var(--color-cocoa-light);flex:none}
+.tcard__name{color:var(--color-ivory);font-weight:500;font-size:15px}
+.tcard__role{color:var(--color-gold-soft);font-size:12px}
+.tcard__text{font-style:italic;font-weight:300;color:#C8C0B0;font-size:15px;line-height:1.6}
+.tcard__sep{height:1px;background:var(--color-gold);opacity:.3;margin-block:var(--space-sm)}
+.tcard__tag{font-size:11px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-jade)}
+.seals{display:flex;flex-wrap:wrap;justify-content:center;gap:var(--space-md);margin-top:var(--space-xl)}
+.seal{display:flex;align-items:center;gap:8px;color:var(--color-gold-soft);font-size:13px;letter-spacing:.04em}
+.seal::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--color-jade)}
+
+/* ============================================================
+   S4 — DIFERENCIAIS (fundo creme, tiffany nos ícones/bordas)
+   ============================================================ */
+.s4{background:var(--color-cream)}
+.s4__head{text-align:center;max-width:680px;margin:0 auto var(--space-xl)}
+.s4__title{font-size:var(--text-h2);color:var(--color-cacau)}
+.cards4{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+.dcard{
+  background:#fff;border:1px solid var(--color-sand);border-radius:var(--radius-lg);
+  padding:var(--space-lg) var(--space-md);position:relative;overflow:hidden;
+  transition:transform .35s ease,box-shadow .35s ease;
+}
+.dcard::after{content:"";position:absolute;left:0;right:0;bottom:0;height:0;background:var(--color-jade);transition:height .35s ease}
+.dcard:hover{transform:translateY(-6px);box-shadow:0 24px 50px -24px rgba(33,26,22,.25)}
+.dcard:hover::after{height:4px}
+.dcard__icon{width:48px;height:48px;color:var(--color-jade);margin-bottom:var(--space-md)}
+.dcard__icon svg{width:100%;height:100%;stroke:var(--color-jade);fill:none;stroke-width:1.5}
+.dcard__title{font-size:var(--text-h3);color:var(--color-cacau);margin-bottom:12px}
+.dcard__text{font-size:var(--text-body-sm);color:var(--color-cocoa);line-height:1.65}
+.dcard__chip{
+  display:inline-block;margin-top:var(--space-md);font-size:10px;letter-spacing:var(--tracking-wide);
+  text-transform:uppercase;color:var(--color-jade-dark);
+  border:1px solid var(--color-jade);border-radius:var(--radius-pill);padding:5px 14px;
+}
+
+/* ============================================================
+   S5 — KITS
+   ============================================================ */
+.s5{background:var(--color-ivory);position:relative}
+.s5__head{text-align:center;max-width:720px;margin:0 auto var(--space-xl)}
+.s5__title{font-size:var(--text-h1);color:var(--color-cacau)}
+.s5__sub{font-size:var(--text-body-sm);color:var(--color-cocoa);margin-top:var(--space-md)}
+.kits{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--space-md)}
+.kit{
+  background:#fff;border:1px solid var(--color-sand);border-radius:var(--radius-lg);
+  overflow:hidden;display:flex;flex-direction:column;
+  transition:transform .35s ease,box-shadow .35s ease;
+}
+.kit:hover{transform:translateY(-6px);box-shadow:0 28px 56px -26px rgba(33,26,22,.3)}
+.kit__media{position:relative;aspect-ratio:1/1;overflow:hidden}
+.kit__media img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.kit:hover .kit__media img{transform:scale(1.04)}
+.kit__tag{
+  position:absolute;top:16px;left:16px;font-size:10px;letter-spacing:var(--tracking-wide);
+  text-transform:uppercase;padding:7px 14px;border-radius:var(--radius-pill);font-weight:500;
+}
+.kit__tag--jade{background:var(--color-jade);color:var(--color-cacau)}
+.kit__tag--gold{background:var(--color-gold);color:var(--color-cacau)}
+.kit__body{padding:var(--space-md);display:flex;flex-direction:column;flex:1}
+.kit__name{font-family:var(--font-display);font-size:var(--text-h3);color:var(--color-cacau);margin-bottom:var(--space-sm)}
+.kit__list{display:flex;flex-direction:column;gap:10px;margin-bottom:var(--space-md);flex:1}
+.kit__list li{display:flex;gap:10px;font-size:var(--text-body-sm);color:var(--color-cocoa);line-height:1.5}
+.kit__list li::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--color-jade);margin-top:8px;flex:none}
+.kit__cta{
+  align-self:flex-start;color:var(--color-jade-dark);font-weight:500;font-size:14px;
+  letter-spacing:.04em;text-transform:uppercase;display:inline-flex;gap:8px;align-items:center;
+  transition:gap .25s ease;
+}
+.kit__cta:hover{gap:14px}
+/* Faixa jade (jade sólido — único bloco cheio permitido, <5% da página) */
+.banner-jade{
+  margin-top:var(--space-xl);background:var(--color-jade);border-radius:var(--radius-lg);
+  padding:var(--space-lg);text-align:center;
+}
+.banner-jade p{
+  font-family:var(--font-display);font-style:italic;font-size:clamp(20px,2.6vw,28px);
+  color:var(--color-cacau);max-width:880px;margin:0 auto;line-height:1.4;
+}
+
+/* ============================================================
+   S5B — GALERIA / PORTFÓLIO (Eventos que já fizemos)
+   ============================================================ */
+.gal{background:var(--color-cream);position:relative;overflow:hidden}
+.gal__head{text-align:center;max-width:720px;margin:0 auto var(--space-lg)}
+.gal__title{font-size:var(--text-h1);color:var(--color-cacau)}
+.gal__sub{font-size:var(--text-body-sm);color:var(--color-cocoa);margin-top:var(--space-md)}
+
+/* Abas */
+.gal__tabs{
+  display:flex;justify-content:center;flex-wrap:wrap;gap:12px;
+  margin-bottom:var(--space-lg);
+}
+.gal__tab{
+  font-family:var(--font-body);font-weight:500;font-size:12px;
+  letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-jade-dark);
+  border:1.5px solid var(--color-jade);border-radius:var(--radius-pill);
+  padding:11px 22px;background:transparent;line-height:1;
+  transition:background .25s ease,color .25s ease,box-shadow .25s ease;
+}
+.gal__tab:hover{background:var(--color-jade-100)}
+.gal__tab[aria-selected="true"]{
+  background:var(--color-jade);color:var(--color-cacau);
+  box-shadow:0 8px 24px -10px rgba(83,202,150,.7);
+}
+
+/* Painéis (um carrossel por categoria) */
+.gal__panel[hidden]{display:none}
+
+/* Carrossel */
+.carousel{position:relative}
+.carousel__track{
+  position:relative;
+  display:flex;gap:var(--space-md);
+  overflow-x:auto;scroll-snap-type:x mandatory;
+  scroll-behavior:smooth;-webkit-overflow-scrolling:touch;
+  padding:6px 2px 14px;scrollbar-width:none;
+}
+.carousel__track::-webkit-scrollbar{display:none}
+.slide{
+  flex:0 0 auto;width:calc((100% - 2*var(--space-md))/3);
+  scroll-snap-align:center;border-radius:var(--radius-lg);overflow:hidden;
+  position:relative;aspect-ratio:3/4;background:var(--color-sand);
+  box-shadow:0 22px 46px -28px rgba(33,26,22,.4);border:1px solid rgba(255,255,255,.6);
+}
+.slide img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.slide:hover img{transform:scale(1.05)}
+.slide__cap{
+  position:absolute;left:0;right:0;bottom:0;padding:24px 16px 14px;
+  font-family:var(--font-body);font-weight:400;font-size:12px;letter-spacing:.04em;
+  color:var(--color-ivory);
+  background:linear-gradient(180deg,transparent,rgba(33,26,22,.78));
+}
+
+/* Setas */
+.carousel__arrow{
+  position:absolute;top:50%;transform:translateY(-50%);z-index:3;
+  width:48px;height:48px;border-radius:50%;
+  background:rgba(250,246,239,.92);color:var(--color-cacau);
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 10px 28px -10px rgba(33,26,22,.5);
+  transition:background .25s ease,transform .25s ease,opacity .25s ease;
+}
+.carousel__arrow:hover{background:var(--color-jade);transform:translateY(-50%) scale(1.06)}
+.carousel__arrow svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2}
+.carousel__arrow--prev{left:-8px}
+.carousel__arrow--next{right:-8px}
+
+/* Dots */
+.carousel__dots{display:flex;justify-content:center;gap:9px;margin-top:var(--space-md)}
+.carousel__dot{
+  width:9px;height:9px;border-radius:50%;background:var(--color-sand);
+  border:1px solid var(--color-gold-soft);transition:background .25s ease,transform .25s ease,width .25s ease;
+}
+.carousel__dot[aria-current="true"]{background:var(--color-jade);border-color:var(--color-jade);width:24px;border-radius:var(--radius-pill)}
+
+/* ============================================================
+   S6 — COMO FUNCIONA (fundo tiffany claro, timeline)
+   ============================================================ */
+.s6{background:var(--color-jade-100)}
+.s6__head{text-align:center;margin-bottom:var(--space-xl)}
+.s6__title{font-size:var(--text-h2);color:var(--color-jade-deeper)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--space-md);position:relative}
+.steps::before{
+  content:"";position:absolute;top:28px;left:8%;right:8%;height:2px;
+  background:repeating-linear-gradient(90deg,var(--color-jade) 0 10px,transparent 10px 18px);
+  opacity:.5;z-index:0;
+}
+.step{position:relative;z-index:1;text-align:center}
+.step__num{
+  width:56px;height:56px;border-radius:50%;background:var(--color-jade);color:var(--color-cacau);
+  font-family:var(--font-display);font-weight:600;font-size:24px;
+  display:flex;align-items:center;justify-content:center;margin:0 auto var(--space-md);
+  box-shadow:0 8px 24px -8px rgba(83,202,150,.7);
+}
+.step__title{font-size:14px;font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--color-jade-deeper);margin-bottom:10px}
+.step__text{font-size:var(--text-body-sm);color:var(--color-cocoa);line-height:1.6}
+
+/* ============================================================
+   S7 — FAQ
+   ============================================================ */
+.s7{background:var(--color-cacau)}
+.s7__head{text-align:center;margin-bottom:var(--space-xl)}
+.s7__title{font-size:var(--text-h2);color:var(--color-ivory)}
+.faq{max-width:760px;margin:0 auto;display:flex;flex-direction:column;gap:14px}
+.faq__item{border:1px solid #3A2F28;border-radius:var(--radius-md);overflow:hidden;background:rgba(74,56,45,.25);position:relative}
+.faq__item::before{content:"";position:absolute;left:0;top:0;bottom:0;width:0;background:var(--color-jade);transition:width .3s ease}
+.faq__item.open::before{width:3px}
+.faq__q{
+  width:100%;display:flex;justify-content:space-between;align-items:center;gap:16px;text-align:left;
+  padding:22px var(--space-md);font-family:var(--font-display);font-size:20px;color:var(--color-ivory);
+}
+.faq__icon{flex:none;width:24px;height:24px;position:relative;transition:transform .3s ease}
+.faq__icon::before,.faq__icon::after{content:"";position:absolute;background:var(--color-jade);border-radius:2px}
+.faq__icon::before{top:11px;left:3px;width:18px;height:2px}
+.faq__icon::after{top:3px;left:11px;width:2px;height:18px}
+.faq__item.open .faq__icon{transform:rotate(45deg)}
+.faq__a{max-height:0;overflow:hidden;transition:max-height .4s cubic-bezier(.4,0,.2,1)}
+.faq__a-inner{padding:0 var(--space-md) 22px;color:#C8C0B0;font-size:var(--text-body-sm);font-weight:300;line-height:1.7}
+
+/* ============================================================
+   S8 — CTA FINAL
+   ============================================================ */
+.s8{position:relative;background:var(--color-cacau);overflow:hidden;text-align:center}
+.s8__bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.16;z-index:0}
+.s8__overlay{position:absolute;inset:0;z-index:1;background:radial-gradient(100% 100% at 50% 0%,rgba(83,202,150,.22) 0%,transparent 55%),linear-gradient(180deg,rgba(33,26,22,.7),rgba(33,26,22,.92))}
+.s8__content{position:relative;z-index:2;max-width:720px;margin:0 auto}
+.s8__title{font-size:var(--text-h1);color:var(--color-ivory);margin-bottom:var(--space-md)}
+.s8__title .word{display:inline-block}
+.s8__body{color:rgba(250,246,239,.82);font-weight:300;margin-bottom:var(--space-lg);font-size:17px}
+.s8 .btn--jade{animation:pulseBtn 2.4s ease-in-out infinite}
+@keyframes pulseBtn{0%{box-shadow:0 0 0 0 rgba(83,202,150,.45)}70%{box-shadow:0 0 0 16px rgba(83,202,150,0)}100%{box-shadow:0 0 0 0 rgba(83,202,150,0)}}
+.s8__micro{margin-top:var(--space-md);font-size:12px;color:var(--color-gold-soft);letter-spacing:.04em}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{background:var(--color-cacau);border-top:1px solid rgba(198,161,91,.3);padding-block:var(--space-xl) var(--space-lg)}
+.footer__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:var(--space-lg)}
+.footer__slogan{font-family:var(--font-script);font-size:26px;color:var(--color-jade);margin-top:var(--space-sm)}
+.footer__col h4{font-family:var(--font-body);font-weight:500;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-gold-soft);margin-bottom:var(--space-md)}
+.footer__col a,.footer__col p{color:rgba(250,246,239,.7);font-size:14px;font-weight:300;display:block;margin-bottom:10px;transition:color .25s ease}
+.footer__col a:hover{color:var(--color-jade)}
+.footer__base{margin-top:var(--space-xl);padding-top:var(--space-md);border-top:1px solid rgba(74,56,45,.6);text-align:center;font-size:12px;color:rgba(250,246,239,.45);letter-spacing:.03em}
+
+/* ============================================================
+   CTA STICKY MOBILE
+   ============================================================ */
+.sticky-cta{display:none}
+
+/* ============================================================
+   CURSOR CUSTOMIZADO (apenas desktop com hover)
+   ============================================================ */
+.cursor,.cursor-dot{display:none}
+
+/* ============================================================
+   ANIMAÇÕES (estado inicial, controlado por GSAP / fallback)
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(40px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1);will-change:opacity,transform}
+.reveal.in{opacity:1;transform:none}
+/* Stagger leve em grades */
+.cards4 .dcard:nth-child(2),.cards3 .tcard:nth-child(2){transition-delay:.12s}
+.cards4 .dcard:nth-child(3),.cards3 .tcard:nth-child(3){transition-delay:.24s}
+.steps .step:nth-child(2){transition-delay:.12s}
+.steps .step:nth-child(3){transition-delay:.24s}
+.steps .step:nth-child(4){transition-delay:.36s}
+/* Kits entram de lados opostos */
+[data-kit]{opacity:0;transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1);will-change:opacity,transform}
+[data-kit="left"]{transform:translateX(-60px)}
+[data-kit="right"]{transform:translateX(60px)}
+[data-kit].in{opacity:1;transform:none}
+
+/* ============================================================
+   RESPONSIVO
+   ============================================================ */
+@media (max-width:1199px){
+  .cards3,.cards4,.kits{grid-template-columns:repeat(2,1fr)}
+  .s2__grid{gap:var(--space-lg)}
+  .slide{width:calc((100% - var(--space-md))/2)}
+}
+@media (max-width:768px){
+  :root{--space-2xl:96px}
+  .nav__links{display:none}
+  .nav__burger{display:flex}
+  .s2__grid{grid-template-columns:1fr;gap:var(--space-md)}
+  .s2__visual{order:-1}
+  .s2__num{font-size:clamp(140px,42vw,220px)}
+  .cards3,.cards4,.kits{grid-template-columns:1fr;max-width:440px;margin-inline:auto}
+  /* Carrossel mobile: slide largo deixando "espiar" o próximo */
+  .slide{width:82%}
+  .carousel__track{gap:var(--space-sm);scroll-padding-inline:24px}
+  .carousel__arrow{display:none}
+  .gal{padding-bottom:calc(clamp(72px,11vw,var(--space-2xl)) + 72px)}
+  .steps{grid-template-columns:1fr;gap:var(--space-lg)}
+  .steps::before{display:none}
+  .step{display:grid;grid-template-columns:56px 1fr;gap:var(--space-md);text-align:left;align-items:start;position:relative}
+  .step__num{margin:0}
+  .step::before{content:"";position:absolute;left:27px;top:60px;bottom:-44px;width:2px;background:repeating-linear-gradient(var(--color-jade) 0 8px,transparent 8px 16px);opacity:.5}
+  .step:last-child::before{display:none}
+  .footer__grid{grid-template-columns:1fr;gap:var(--space-lg);text-align:center}
+  .footer__slogan{margin-inline:auto}
+  /* CTA sticky no bottom */
+  .sticky-cta{
+    display:block;position:fixed;bottom:0;left:0;right:0;z-index:90;
+    padding:12px 16px;background:rgba(33,26,22,.96);
+    backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+    border-top:1px solid var(--color-cocoa);
+    transform:translateY(110%);transition:transform .4s ease;
+  }
+  .sticky-cta.visible{transform:translateY(0)}
+  .sticky-cta .btn{width:100%;height:52px}
+}
+
+/* ============================================================
+   CURSOR — só ativa em ponteiro fino com hover
+   ============================================================ */
+@media (hover:hover) and (pointer:fine){
+  .cursor{
+    display:block;position:fixed;top:0;left:0;width:34px;height:34px;
+    border:1.5px solid var(--color-jade);border-radius:50%;z-index:9999;
+    pointer-events:none;transform:translate(-50%,-50%);
+    transition:width .3s,height .3s,background .3s,border-color .3s;mix-blend-mode:difference;
+  }
+  .cursor.on-cta{width:54px;height:54px;background:rgba(83,202,150,.18)}
+  .cursor.click{transform:translate(-50%,-50%) scale(.7)}
+}
+
+/* ============================================================
+   ACESSIBILIDADE — reduzir movimento
+   ============================================================ */
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
+  .reveal{opacity:1!important;transform:none!important}
+  .hero__bg{transform:none!important}
+}
+
+/* Foco visível */
+a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible{
+  outline:2px solid var(--color-jade);outline-offset:3px;border-radius:var(--radius-sm);
+}
+</style>
+</head>
+<body>
+
+<!-- =================== NAVBAR =================== -->
+<nav class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a href="#hero" class="logo" aria-label="Duetto Ateliê de Chocolate">
+      <!-- LOGO: wordmark provisório. Substituir por SVG oficial (assets/logo.svg) quando disponível. -->
+      <span class="logo__name">Duetto</span>
+      <span class="logo__sub">Ateliê de Chocolate</span>
+    </a>
+    <ul class="nav__links">
+      <li><a class="nav__link" href="#kits">Kits</a></li>
+      <li><a class="nav__link" href="#galeria">Portfólio</a></li>
+      <li><a class="nav__link" href="#processo">Como funciona</a></li>
+      <li><a class="nav__link" href="#faq">Dúvidas</a></li>
+      <li><a class="nav__cta" href="#cta" data-wa>Orçamento</a></li>
+    </ul>
+    <button class="nav__burger" id="burger" aria-label="Abrir menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Drawer mobile -->
+<div class="drawer" id="drawer">
+  <a href="#kits">Kits</a>
+  <a href="#galeria">Portfólio</a>
+  <a href="#processo">Como funciona</a>
+  <a href="#faq">Dúvidas</a>
+  <a href="#cta" class="drawer__cta" data-wa>Solicitar orçamento</a>
+</div>
+
+<main>
+
+<!-- =================== S1 · HERO =================== -->
+<section class="hero" id="hero">
+  <img class="hero__bg" src="assets/hero.webp" width="1400" height="2489" alt="Mesa de doces de batizado personalizada da Duetto, com tema ursinho e parede verde-jade" fetchpriority="high">
+  <div class="hero__overlay"></div>
+  <div class="particles" id="particles" aria-hidden="true"></div>
+  <div class="hero__content">
+    <span class="eyebrow on-dark" data-hero="eyebrow">Ateliê de Chocolate · Goiânia</span>
+    <h1 class="hero__headline" data-hero="headline">O seu momento mais especial merece doces tão únicos quanto ele.</h1>
+    <p class="hero__slogan" data-hero="slogan">As melhores coisas da vida são doces</p>
+    <p class="hero__sub" data-hero="sub">Criamos doces artesanais e personalizados para festas que ficam na memória — de quem organiza e de todos que aparecem. Há 13 anos transformando sonhos em beleza e sabor.</p>
+    <a href="#cta" class="btn btn--jade" data-hero="cta" data-wa>Quero realizar meu sonho</a>
+  </div>
+  <div class="scroll-ind" aria-hidden="true">
+    <div class="scroll-ind__arrow"></div>
+    <span>Role para descobrir</span>
+  </div>
+</section>
+
+<!-- =================== S2 · POSICIONAMENTO =================== -->
+<section class="section s2" id="nao-vendemos">
+  <div class="wrap s2__grid">
+    <div class="s2__head">
+      <span class="eyebrow reveal">01 — Posicionamento</span>
+      <h2 class="s2__title reveal">Não vendemos bolos.</h2>
+      <!-- "docinhos tradicionais": copy do PRD §03. NB: o checklist §08 do PRD bane diminutivos. Decisão pendente da Lucianne. -->
+      <blockquote class="blockquote reveal">Vendemos o momento em que sua filha vê a mesinha e abre um sorriso que você nunca vai esquecer.</blockquote>
+      <p class="s2__body reveal">Cada doce que sai do Duetto foi pensado para a sua festa — com a identidade visual do seu tema, com o capricho de quem entende que detalhes fazem toda a diferença. Não fazemos produção em série. Fazemos o seu evento, do jeito que você sonhou.</p>
+    </div>
+    <div class="s2__visual reveal">
+      <span class="s2__num" aria-hidden="true">13</span>
+      <img class="s2__img" src="assets/detalhe-bolo.webp" width="900" height="1600" loading="lazy" alt="Bolo branco com laço de chocolate, detalhe artesanal da Duetto">
+    </div>
+  </div>
+</section>
+
+<!-- =================== S3 · PROVA SOCIAL ===================
+     OCULTA até depoimentos reais aprovados pela Lucianne (PRD §08).
+     Para reativar: remova este comentário de abertura e o de fechamento,
+     troque os avatares por fotos reais e os textos pelos depoimentos aprovados.
+<section class="section s3" id="prova-social">
+  <div class="wrap">
+    <div class="s3__head">
+      <span class="eyebrow on-dark reveal">03 — Quem confia</span>
+      <h2 class="s3__title reveal">Quem já viveu um momento Duetto sabe o que é exclusividade de verdade.</h2>
+    </div>
+    <div class="cards3">
+      <article class="tcard reveal">
+        <div class="tcard__top"><div class="tcard__avatar"></div><div><div class="tcard__name">[Nome real]</div><div class="tcard__role">[Ocupação]</div></div></div>
+        <p class="tcard__text">[Depoimento real aprovado pela Lucianne]</p>
+        <div class="tcard__sep"></div><span class="tcard__tag">Batizado · 2024</span>
+      </article>
+      <article class="tcard reveal">
+        <div class="tcard__top"><div class="tcard__avatar"></div><div><div class="tcard__name">[Nome real]</div><div class="tcard__role">[Ocupação]</div></div></div>
+        <p class="tcard__text">[Depoimento real aprovado pela Lucianne]</p>
+        <div class="tcard__sep"></div><span class="tcard__tag">Chá Revelação · 2024</span>
+      </article>
+      <article class="tcard reveal">
+        <div class="tcard__top"><div class="tcard__avatar"></div><div><div class="tcard__name">[Nome real]</div><div class="tcard__role">[Ocupação]</div></div></div>
+        <p class="tcard__text">[Depoimento real aprovado pela Lucianne]</p>
+        <div class="tcard__sep"></div><span class="tcard__tag">Casamento · 2024</span>
+      </article>
+    </div>
+    <div class="seals">
+      <span class="seal">13 anos de mercado</span>
+      <span class="seal">Entrega pontual garantida</span>
+      <span class="seal">Personalização exclusiva</span>
+      <span class="seal">Goiânia e região</span>
+    </div>
+  </div>
+</section>
+=================== /S3 =================== -->
+
+<!-- =================== S4 · DIFERENCIAIS =================== -->
+<section class="section s4" id="diferenciais">
+  <div class="wrap">
+    <div class="s4__head">
+      <span class="eyebrow reveal">O que nos torna únicos</span>
+      <h2 class="s4__title reveal">Por que a Duetto é diferente.</h2>
+    </div>
+    <div class="cards4">
+      <article class="dcard reveal">
+        <div class="dcard__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.7 5.8 6.3.7-4.7 4.3 1.3 6.2L12 16.9 6.1 19.8l1.3-6.2L2.7 9l6.3-.7z"/></svg></div>
+        <h3 class="dcard__title">Cada evento, único.</h3>
+        <p class="dcard__text">Lemos o seu sonho e o transformamos em doce. Nenhum doce é genérico — cada peça carrega a identidade visual da sua festa.</p>
+        <span class="dcard__chip">Exclusividade</span>
+      </article>
+      <article class="dcard reveal">
+        <div class="dcard__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 8l9-4 9 4-9 4-9-4z"/><path d="M3 8v8l9 4 9-4V8"/><path d="M12 12v8"/></svg></div>
+        <h3 class="dcard__title">Do bolo à entrega.</h3>
+        <p class="dcard__text">Bolo + doces personalizados + docinhos tradicionais + serviço de entrega no local. Poucos ateliês em Goiânia entregam tudo junto.</p>
+        <span class="dcard__chip">Comodidade</span>
+      </article>
+      <article class="dcard reveal">
+        <div class="dcard__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 8l4 4 5-7 5 7 4-4-1.5 11h-15z"/></svg></div>
+        <h3 class="dcard__title">O ateliê que as mães de referência escolhem.</h3>
+        <p class="dcard__text">Nossos clientes não buscam apenas sabor — buscam a experiência de ter um ateliê de luxo cuidando do momento mais especial das suas vidas.</p>
+        <span class="dcard__chip">Status</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- =================== S5 · KITS =================== -->
+<section class="section s5" id="kits">
+  <div class="wrap">
+    <div class="s5__head">
+      <span class="eyebrow reveal">05 — Nossas especialidades</span>
+      <h2 class="s5__title reveal">Para os momentos que você só vai viver uma vez.</h2>
+      <p class="s5__sub reveal">Kits completos para Batizado, Chá Revelação e Casamento — do bolo aos doces finos, personalizados com a identidade visual do seu evento, entregues no local, no horário.</p>
+    </div>
+    <div class="kits">
+      <article class="kit" data-kit="left">
+        <div class="kit__media">
+          <span class="kit__tag kit__tag--jade">Mais pedido</span>
+          <img src="assets/kit-batizado.webp" width="1000" height="1000" loading="lazy" alt="Kit de batizado da Duetto: bolo, doces finos e lembranças com tema ursinho">
+        </div>
+        <div class="kit__body">
+          <h3 class="kit__name">Kit Batizado</h3>
+          <ul class="kit__list">
+            <li>Bolos personalizados + doces finos + bem-casados + doces tradicionais</li>
+            <li>Identidade visual única para cada tema</li>
+            <li>Resultado encantador — produção otimizada</li>
+          </ul>
+          <a href="#cta" class="kit__cta" data-wa>Pedir orçamento →</a>
+        </div>
+      </article>
+      <article class="kit reveal">
+        <div class="kit__media">
+          <span class="kit__tag kit__tag--gold">Guarda o segredo com beleza</span>
+          <img src="assets/kit-cha-revelacao.webp" width="1000" height="1000" loading="lazy" alt="Kit de chá revelação da Duetto: doces personalizados em tons de azul e verde">
+        </div>
+        <div class="kit__body">
+          <h3 class="kit__name">Chá Revelação</h3>
+          <ul class="kit__list">
+            <li>Doces personalizados que revelam o sexo do bebê</li>
+            <li>Do anúncio à mesa: tudo em harmonia</li>
+            <li>Emoção que a data pede — precisão na entrega</li>
+          </ul>
+          <a href="#cta" class="kit__cta" data-wa>Pedir orçamento →</a>
+        </div>
+      </article>
+      <article class="kit" data-kit="right">
+        <div class="kit__media">
+          <span class="kit__tag kit__tag--gold">Para o grande dia</span>
+          <img src="assets/galeria/casamento-01.webp" width="720" height="1280" loading="lazy" alt="Mesa de casamento da Duetto: bolo de andares com copo-de-leite e doces finos">
+        </div>
+        <div class="kit__body">
+          <h3 class="kit__name">Casamento</h3>
+          <ul class="kit__list">
+            <li>Bolo de andares + mesa de doces finos sob medida</li>
+            <li>Paleta e identidade visual do seu casamento</li>
+            <li>Elegância de ateliê — montagem e entrega no local</li>
+          </ul>
+          <a href="#cta" class="kit__cta" data-wa>Pedir orçamento →</a>
+        </div>
+      </article>
+    </div>
+    <div class="banner-jade reveal">
+      <p>Somos uma das únicas em Goiânia que entregam o pacote completo da festa: bolo + doces personalizados + doces tradicionais + entrega no local.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =================== S5B · GALERIA / PORTFÓLIO =================== -->
+<section class="section gal" id="galeria">
+  <div class="wrap">
+    <div class="gal__head">
+      <span class="eyebrow reveal">Portfólio · 13 anos de festas</span>
+      <h2 class="gal__title reveal">Eventos que já fizemos.</h2>
+      <p class="gal__sub reveal">Um recorte do nosso acervo. Cada mesa, um sonho diferente — personalizada do bolo ao último doce. Escolha um momento e deslize para ver.</p>
+    </div>
+
+    <!-- Abas -->
+    <div class="gal__tabs reveal" role="tablist" aria-label="Categorias de eventos">
+      <button class="gal__tab" role="tab" id="tab-batizado" aria-controls="panel-batizado" aria-selected="true">Batizados</button>
+      <button class="gal__tab" role="tab" id="tab-casamento" aria-controls="panel-casamento" aria-selected="false">Casamentos</button>
+      <button class="gal__tab" role="tab" id="tab-charevelacao" aria-controls="panel-charevelacao" aria-selected="false">Chá Revelação</button>
+    </div>
+
+    <!-- Painel: Batizados -->
+    <div class="gal__panel" id="panel-batizado" role="tabpanel" aria-labelledby="tab-batizado">
+      <div class="carousel" data-carousel data-autoplay>
+        <button class="carousel__arrow carousel__arrow--prev" data-prev aria-label="Foto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <div class="carousel__track" data-track tabindex="0" role="group" aria-roledescription="carrossel" aria-label="Fotos de batizados">
+          <figure class="slide"><img src="assets/galeria/batizado-01.webp" width="720" height="1280" loading="lazy" alt="Bolo de batizado branco com pombinhas e folhagem"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/batizado-02.webp" width="720" height="1280" loading="lazy" alt="Mesa de batizado com topiárias de flores brancas e cupcakes"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/batizado-03.webp" width="720" height="1280" loading="lazy" alt="Bolo de batizado branco com lírios e vasos de flores"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/batizado-04.webp" width="720" height="1280" loading="lazy" alt="Vasos de hortênsias brancas e bolo de batizado"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/batizado-05.webp" width="720" height="1280" loading="lazy" alt="Bolo de batizado com laço e folhagem"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/batizado-06.webp" width="720" height="1280" loading="lazy" alt="Doces finos de batizado com laços e pombinhas"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/batizado-07.webp" width="720" height="1280" loading="lazy" alt="Mesa de batizado com bolo branco e doces"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/batizado-08.webp" width="720" height="1280" loading="lazy" alt="Display de doces brancos de batizado"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/batizado-09.webp" width="720" height="1280" loading="lazy" alt="Bolo de batizado branco com laço, em destaque"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/batizado-10.webp" width="720" height="1280" loading="lazy" alt="Doces finos de batizado com folhagem verde"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
+        </div>
+        <button class="carousel__arrow carousel__arrow--next" data-next aria-label="Próxima foto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        <div class="carousel__dots" data-dots aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <!-- Painel: Casamentos -->
+    <div class="gal__panel" id="panel-casamento" role="tabpanel" aria-labelledby="tab-casamento" hidden>
+      <div class="carousel" data-carousel data-autoplay>
+        <button class="carousel__arrow carousel__arrow--prev" data-prev aria-label="Foto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <div class="carousel__track" data-track tabindex="0" role="group" aria-roledescription="carrossel" aria-label="Fotos de casamentos">
+          <figure class="slide"><img src="assets/galeria/casamento-01.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento de andares com copo-de-leite"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/casamento-02.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento branco com babados e flores"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/casamento-03.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento de andares com orquídeas brancas"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/casamento-04.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento texturizado com folhagem"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/casamento-05.webp" width="591" height="1280" loading="lazy" alt="Mesa de casamento com rosas brancas e bolo"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/casamento-06.webp" width="720" height="1280" loading="lazy" alt="Mesa de doces de casamento com rosas cor-de-rosa"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/casamento-07.webp" width="720" height="1280" loading="lazy" alt="Mesa de casamento com flores e cupcakes"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/casamento-08.webp" width="720" height="1280" loading="lazy" alt="Doces finos de casamento com cobertura vermelha"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/casamento-09.webp" width="720" height="1280" loading="lazy" alt="Doces finos de casamento com detalhes dourados"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/casamento-10.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento com topo de noivos"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+        </div>
+        <button class="carousel__arrow carousel__arrow--next" data-next aria-label="Próxima foto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        <div class="carousel__dots" data-dots aria-hidden="true"></div>
+      </div>
+    </div>
+
+    <!-- Painel: Chá Revelação -->
+    <div class="gal__panel" id="panel-charevelacao" role="tabpanel" aria-labelledby="tab-charevelacao" hidden>
+      <div class="carousel" data-carousel data-autoplay>
+        <button class="carousel__arrow carousel__arrow--prev" data-prev aria-label="Foto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
+        <div class="carousel__track" data-track tabindex="0" role="group" aria-roledescription="carrossel" aria-label="Fotos de chá revelação">
+          <figure class="slide"><img src="assets/galeria/charevelacao-01.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação em tons pastel com figuras de bebê e balões azuis e rosas"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/charevelacao-02.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação com balões em rosa e prata"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/charevelacao-03.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação com coelhinho e confeitos pastel"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/charevelacao-04.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação com balão"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/charevelacao-05.webp" width="720" height="1280" loading="lazy" alt="Cupcakes de chá revelação em tons pastel e azul"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/charevelacao-06.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação com ursinho em tons de azul"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/charevelacao-07.webp" width="720" height="1280" loading="lazy" alt="Mesa de chá revelação com ursinho e doces em azul"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/charevelacao-08.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação branco com balões"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
+        </div>
+        <button class="carousel__arrow carousel__arrow--next" data-next aria-label="Próxima foto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
+        <div class="carousel__dots" data-dots aria-hidden="true"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== S6 · COMO FUNCIONA =================== -->
+<section class="section s6" id="processo">
+  <div class="wrap">
+    <div class="s6__head">
+      <span class="eyebrow reveal">06 — Como funciona</span>
+      <h2 class="s6__title reveal">Do sonho à mesa, em quatro passos.</h2>
+    </div>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step__num" data-count="1">1</div>
+        <h3 class="step__title">Conte o seu sonho</h3>
+        <p class="step__text">Fale com a gente pelo WhatsApp. Compartilhe os detalhes da festa, o tema, o que você imaginou. Quanto mais você contar, mais preciso fica o orçamento.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step__num" data-count="2">2</div>
+        <h3 class="step__title">Receba sua proposta</h3>
+        <p class="step__text">Montamos um kit sob medida para o seu evento — peças, sabores, identidade visual. Tudo pensado para você, do zero.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step__num" data-count="3">3</div>
+        <h3 class="step__title">Produção artesanal</h3>
+        <p class="step__text">Com o pedido confirmado, cada detalhe é produzido com capricho no nosso ateliê em Goiânia. Acompanhamento transparente.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step__num" data-count="4">4</div>
+        <h3 class="step__title">Entrega no local</h3>
+        <p class="step__text">Você cuida de aproveitar o momento. A gente cuida de estar lá, pontualmente, com tudo pronto para encantar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== S7 · FAQ =================== -->
+<section class="section s7" id="faq">
+  <div class="wrap">
+    <div class="s7__head">
+      <span class="eyebrow on-dark reveal">07 — Dúvidas frequentes</span>
+      <h2 class="s7__title reveal">Tudo o que você precisa saber antes de falar com a gente.</h2>
+    </div>
+    <div class="faq" id="faq-list">
+      <div class="faq__item reveal">
+        <button class="faq__q" aria-expanded="false">Fica igual à foto?<span class="faq__icon" aria-hidden="true"></span></button>
+        <div class="faq__a"><div class="faq__a-inner">Cada doce é personalizado com a identidade visual do seu tema — não replicamos modelos prontos. Fazemos o seu, único. Nosso acervo de 13 anos fala por nós.</div></div>
+      </div>
+      <div class="faq__item reveal">
+        <button class="faq__q" aria-expanded="false">Entrega mesmo no dia da festa?<span class="faq__icon" aria-hidden="true"></span></button>
+        <div class="faq__a"><div class="faq__a-inner">Sim. A entrega no local é parte do nosso serviço. Pontualidade é um dos nossos valores inegociáveis.</div></div>
+      </div>
+      <div class="faq__item reveal">
+        <button class="faq__q" aria-expanded="false">Qual o prazo mínimo para encomendar?<span class="faq__icon" aria-hidden="true"></span></button>
+        <div class="faq__a"><div class="faq__a-inner">Trabalhamos apenas sob encomenda. Quanto antes você entrar em contato, mais tranquila fica a produção. Fale para verificar disponibilidade.</div></div>
+      </div>
+      <div class="faq__item reveal">
+        <button class="faq__q" aria-expanded="false">Vocês parcelam?<span class="faq__icon" aria-hidden="true"></span></button>
+        <div class="faq__a"><div class="faq__a-inner">Sim. Parcelamos no cartão. Fale com a gente para mais detalhes sobre as condições.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =================== S8 · CTA FINAL =================== -->
+<section class="section s8" id="cta">
+  <img class="s8__bg" src="assets/cta-bg.webp" width="1400" height="2489" loading="lazy" alt="">
+  <div class="s8__overlay"></div>
+  <div class="wrap s8__content">
+    <span class="eyebrow on-dark reveal">13 anos · Goiânia · Parque Amazonas</span>
+    <h2 class="s8__title reveal" id="s8-title">A sua festa mais especial começa com uma mensagem.</h2>
+    <p class="s8__body reveal">Conte o seu sonho para a gente. Respondemos com uma proposta sob medida para o seu evento — com exclusividade, capricho e a pontualidade que você merece.</p>
+    <a href="#" class="btn btn--jade reveal" data-wa>
+      <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
+      Solicitar orçamento pelo WhatsApp
+    </a>
+    <p class="s8__micro reveal">Atendimento personalizado · Pedido mínimo de 6 unidades por item · Goiânia e região</p>
+  </div>
+</section>
+
+</main>
+
+<!-- =================== FOOTER =================== -->
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <div class="footer__col">
+      <span class="logo__name" style="font-size:30px">Duetto</span>
+      <p class="footer__slogan">As melhores coisas da vida são doces</p>
+    </div>
+    <div class="footer__col">
+      <h4>Contato</h4>
+      <p>Goiânia · Parque Amazonas</p>
+      <a href="#" data-wa>WhatsApp · (62) 99951-0173</a>
+      <a href="https://instagram.com/duetto.ateliedechocolate" target="_blank" rel="noopener">Instagram · @duetto.ateliedechocolate</a>
+    </div>
+    <div class="footer__col">
+      <h4>Navegação</h4>
+      <a href="#kits">Kits</a>
+      <a href="#galeria">Portfólio</a>
+      <a href="#processo">Como funciona</a>
+      <a href="#faq">Dúvidas frequentes</a>
+    </div>
+  </div>
+  <div class="wrap footer__base">© 2025 Duetto Ateliê de Chocolate · Goiânia · Feito com capricho</div>
+</footer>
+
+<!-- CTA sticky mobile -->
+<div class="sticky-cta">
+  <a href="#" class="btn btn--jade" data-wa>
+    <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24z"/></svg>
+    Solicitar orçamento
+  </a>
+</div>
+
+<!-- Cursor customizado (desktop) -->
+<div class="cursor" id="cursor" aria-hidden="true"></div>
+
+<!-- GSAP -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+
+<script>
+(function(){
+  "use strict";
+  const WA_NUMBER = "5562999510173";
+  const WA_MSG = encodeURIComponent("Olá! Vim pelo site da Duetto e gostaria de solicitar um orçamento para o meu evento.");
+  const WA_URL = `https://wa.me/${WA_NUMBER}?text=${WA_MSG}`;
+  const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const isFinePointer = window.matchMedia("(hover:hover) and (pointer:fine)").matches;
+
+  /* ---- WhatsApp em todos os [data-wa] ---- */
+  document.querySelectorAll("[data-wa]").forEach(el=>{
+    el.setAttribute("href", WA_URL);
+    el.setAttribute("target","_blank");
+    el.setAttribute("rel","noopener");
+  });
+
+  /* ---- Navbar scrolled ---- */
+  const nav = document.getElementById("nav");
+  const onScrollNav = ()=>nav.classList.toggle("scrolled", window.scrollY > 80);
+  onScrollNav(); window.addEventListener("scroll", onScrollNav, {passive:true});
+
+  /* ---- Drawer mobile ---- */
+  const burger = document.getElementById("burger");
+  const drawer = document.getElementById("drawer");
+  const toggleDrawer = (force)=>{
+    const open = force!==undefined ? force : !drawer.classList.contains("open");
+    drawer.classList.toggle("open", open);
+    burger.classList.toggle("open", open);
+    burger.setAttribute("aria-expanded", String(open));
+    document.body.style.overflow = open ? "hidden" : "";
+  };
+  burger.addEventListener("click", ()=>toggleDrawer());
+  drawer.querySelectorAll("a").forEach(a=>a.addEventListener("click", ()=>toggleDrawer(false)));
+
+  /* ---- FAQ accordion ---- */
+  const faqItems = Array.from(document.querySelectorAll(".faq__item"));
+  function setFaq(item, open){
+    const btn = item.querySelector(".faq__q");
+    const ans = item.querySelector(".faq__a");
+    item.classList.toggle("open", open);
+    btn.setAttribute("aria-expanded", String(open));
+    ans.style.maxHeight = open ? (ans.scrollHeight + "px") : "0px";
+  }
+  faqItems.forEach(item=>{
+    item.querySelector(".faq__q").addEventListener("click", ()=>{
+      const willOpen = !item.classList.contains("open");
+      faqItems.forEach(i=>setFaq(i,false));
+      if(willOpen) setFaq(item,true);
+    });
+  });
+
+  /* ---- Partículas douradas no hero ---- */
+  const pc = document.getElementById("particles");
+  if(pc && !reduceMotion){
+    for(let i=0;i<8;i++){
+      const p=document.createElement("span");
+      p.className="particle";
+      p.style.left=(Math.random()*100)+"%";
+      p.style.top=(Math.random()*100)+"%";
+      p.style.animationDelay=(Math.random()*9)+"s";
+      p.style.animationDuration=(7+Math.random()*5)+"s";
+      pc.appendChild(p);
+    }
+  }
+
+  /* ---- Cursor customizado ---- */
+  if(isFinePointer && !reduceMotion){
+    const cursor=document.getElementById("cursor");
+    let x=0,y=0,cx=0,cy=0;
+    window.addEventListener("mousemove",e=>{x=e.clientX;y=e.clientY;});
+    const loop=()=>{cx+=(x-cx)*.18;cy+=(y-cy)*.18;cursor.style.transform=`translate(${cx}px,${cy}px) translate(-50%,-50%)`;requestAnimationFrame(loop);};
+    requestAnimationFrame(loop);
+    document.querySelectorAll("a,button,.btn").forEach(el=>{
+      el.addEventListener("mouseenter",()=>cursor.classList.add("on-cta"));
+      el.addEventListener("mouseleave",()=>cursor.classList.remove("on-cta"));
+    });
+    window.addEventListener("mousedown",()=>cursor.classList.add("click"));
+    window.addEventListener("mouseup",()=>cursor.classList.remove("click"));
+  }
+
+  /* ---- CTA sticky mobile (após 40vh) ---- */
+  const sticky=document.querySelector(".sticky-cta");
+  if(sticky){
+    const onScrollSticky=()=>sticky.classList.toggle("visible", window.scrollY > window.innerHeight*0.4);
+    window.addEventListener("scroll", onScrollSticky, {passive:true});
+  }
+
+  /* ---- Revelação de conteúdo (IntersectionObserver — robusto a saltos de âncora) ---- */
+  function revealInit(){
+    const items=document.querySelectorAll(".reveal,[data-kit]");
+    if(reduceMotion || !("IntersectionObserver" in window)){
+      items.forEach(el=>el.classList.add("in"));
+      return;
+    }
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target); }
+      });
+    },{threshold:0.12,rootMargin:"0px 0px -8% 0px"});
+    items.forEach(el=>io.observe(el));
+  }
+
+  /* ---- Contadores dos passos ---- */
+  function countersInit(){
+    const nums=document.querySelectorAll(".step__num");
+    if(reduceMotion || !("IntersectionObserver" in window)) return;
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{
+        if(!e.isIntersecting) return;
+        const el=e.target,target=+el.dataset.count;let cur=0;
+        const t=setInterval(()=>{cur++;el.textContent=cur;if(cur>=target)clearInterval(t);},120);
+        io.unobserve(el);
+      });
+    },{threshold:0.6});
+    nums.forEach(n=>io.observe(n));
+  }
+
+  /* ---- Primeiro FAQ abre sozinho ao entrar ---- */
+  function faqAutoOpen(){
+    const faq=document.querySelector(".faq");
+    if(!faq || !("IntersectionObserver" in window)){ if(faqItems[0]) setFaq(faqItems[0],true); return; }
+    const io=new IntersectionObserver((entries)=>{
+      entries.forEach(e=>{ if(e.isIntersecting){ if(faqItems[0]) setTimeout(()=>setFaq(faqItems[0],true),500); io.disconnect(); }});
+    },{threshold:0.3});
+    io.observe(faq);
+  }
+
+  /* ---- Galeria: abas + carrossel com autoplay ---- */
+  function galleryInit(){
+    const gal = document.getElementById("galeria");
+    if(!gal) return;
+    const tabs = Array.from(gal.querySelectorAll(".gal__tab"));
+    const panels = Array.from(gal.querySelectorAll(".gal__panel"));
+
+    // Instancia um carrossel por painel
+    const carousels = Array.from(gal.querySelectorAll("[data-carousel]")).map(setupCarousel);
+
+    // Abas
+    function selectTab(idx){
+      tabs.forEach((t,i)=>{
+        const on = i===idx;
+        t.setAttribute("aria-selected", String(on));
+        t.tabIndex = on ? 0 : -1;
+        panels[i].hidden = !on;
+      });
+      const c = carousels[idx];
+      if(c){ c.reset(); c.restart(); }
+      // pausa os demais
+      carousels.forEach((cc,i)=>{ if(i!==idx) cc.stop(); });
+    }
+    tabs.forEach((tab,i)=>{
+      tab.addEventListener("click", ()=>selectTab(i));
+      tab.addEventListener("keydown",(e)=>{
+        if(e.key==="ArrowRight"||e.key==="ArrowLeft"){
+          e.preventDefault();
+          const dir = e.key==="ArrowRight" ? 1 : -1;
+          const next = (i + dir + tabs.length) % tabs.length;
+          selectTab(next); tabs[next].focus();
+        }
+      });
+    });
+
+    // Só o carrossel ativo roda; pausa quando a seção sai da tela
+    if("IntersectionObserver" in window){
+      const io = new IntersectionObserver((entries)=>{
+        entries.forEach(e=>{
+          const active = carousels[tabs.findIndex(t=>t.getAttribute("aria-selected")==="true")] || carousels[0];
+          if(e.isIntersecting) active.start(); else carousels.forEach(c=>c.stop());
+        });
+      },{threshold:0.25});
+      io.observe(gal);
+    } else {
+      carousels[0] && carousels[0].start();
+    }
+  }
+
+  function setupCarousel(root){
+    const track = root.querySelector("[data-track]");
+    const slides = Array.from(track.querySelectorAll(".slide"));
+    const dotsWrap = root.querySelector("[data-dots]");
+    const prev = root.querySelector("[data-prev]");
+    const next = root.querySelector("[data-next]");
+    const wantsAutoplay = root.hasAttribute("data-autoplay") && !reduceMotion;
+    let timer = null, index = 0, running = false;
+    const DELAY = 4000;
+
+    // Dots
+    slides.forEach((_,i)=>{
+      const d=document.createElement("button");
+      d.className="carousel__dot";
+      d.type="button";
+      d.setAttribute("aria-label","Ir para a foto "+(i+1));
+      d.addEventListener("click",()=>{ goTo(i,true); restart(); });
+      dotsWrap.appendChild(d);
+    });
+    const dots = Array.from(dotsWrap.children);
+
+    function current(){
+      // slide mais próximo do centro do track visível
+      const c = track.scrollLeft + track.clientWidth/2;
+      let best=0, bestDist=Infinity;
+      slides.forEach((s,i)=>{
+        const center = s.offsetLeft + s.offsetWidth/2;
+        const dist = Math.abs(center - c);
+        if(dist<bestDist){ bestDist=dist; best=i; }
+      });
+      return best;
+    }
+    function syncDots(){
+      index = current();
+      dots.forEach((d,i)=>d.setAttribute("aria-current", String(i===index)));
+    }
+    function goTo(i, smooth){
+      index = (i + slides.length) % slides.length;
+      const s = slides[index];
+      const left = s.offsetLeft - (track.clientWidth - s.offsetWidth)/2;
+      track.scrollTo({left, behavior: smooth ? "smooth" : "auto"});
+    }
+    function nextSlide(){ goTo(index+1, true); }
+    function prevSlide(){ goTo(index-1, true); }
+
+    function start(){ if(!wantsAutoplay || running) return; running=true; timer=setInterval(nextSlide, DELAY); }
+    function stop(){ running=false; if(timer){ clearInterval(timer); timer=null; } }
+    function restart(){ if(!wantsAutoplay) return; stop(); start(); }
+    function reset(){ goTo(0,false); }
+
+    prev && prev.addEventListener("click",()=>{ prevSlide(); restart(); });
+    next && next.addEventListener("click",()=>{ nextSlide(); restart(); });
+
+    // Pausa em hover/foco/toque
+    ["mouseenter","focusin","touchstart","pointerdown"].forEach(ev=>root.addEventListener(ev, stop, {passive:true}));
+    ["mouseleave","focusout","touchend"].forEach(ev=>root.addEventListener(ev, ()=>restart(), {passive:true}));
+
+    // Teclado no track
+    track.addEventListener("keydown",(e)=>{
+      if(e.key==="ArrowRight"){ e.preventDefault(); nextSlide(); restart(); }
+      else if(e.key==="ArrowLeft"){ e.preventDefault(); prevSlide(); restart(); }
+    });
+
+    // Sincroniza dots durante o scroll/swipe
+    let raf=null;
+    track.addEventListener("scroll",()=>{
+      if(raf) cancelAnimationFrame(raf);
+      raf=requestAnimationFrame(syncDots);
+    },{passive:true});
+
+    syncDots();
+    return { start, stop, restart, reset, syncDots };
+  }
+
+  /* ---- Efeitos GSAP (não escondem conteúdo): hero, parallax, pulse ---- */
+  function gsapEffects(){
+    if(reduceMotion || typeof gsap==="undefined") return;
+    gsap.registerPlugin(ScrollTrigger);
+    const tl=gsap.timeline({defaults:{ease:"power3.out"}});
+    tl.from('[data-hero="eyebrow"]',{y:20,opacity:0,duration:.8,delay:.2})
+      .from('[data-hero="headline"]',{y:60,opacity:0,duration:1.2},"-=.4")
+      .from('[data-hero="slogan"]',{opacity:0,scale:.9,duration:1},"-=.6")
+      .from('[data-hero="sub"]',{y:20,opacity:0,duration:.9},"-=.5")
+      .from('[data-hero="cta"]',{scale:.85,opacity:0,duration:.7},"-=.4");
+    gsap.to(".hero__bg",{yPercent:12,ease:"none",
+      scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:true}});
+    gsap.to('.kit__tag--jade',{scale:1.04,duration:1.4,repeat:-1,yoyo:true,ease:"sine.inOut",transformOrigin:"left center"});
+  }
+
+  function initAll(){ revealInit(); countersInit(); faqAutoOpen(); galleryInit(); gsapEffects(); }
+  // GSAP carrega com defer — esperar window load
+  if(document.readyState==="complete") initAll();
+  else window.addEventListener("load", initAll);
+})();
+</script>
+</body>
+</html>
