@@ -106,24 +106,24 @@ h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:
 .nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   height:var(--nav-h);display:flex;align-items:center;
+  background:rgba(250,246,239,.92);
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 1px 0 rgba(198,161,91,.30);
   transition:background .4s ease,backdrop-filter .4s ease,box-shadow .4s ease;
 }
 .nav__inner{display:flex;align-items:center;justify-content:space-between;width:100%}
 .nav.scrolled{
-  background:rgba(33,26,22,.9);
-  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
-  box-shadow:0 1px 0 rgba(198,161,91,.18);
+  background:rgba(250,246,239,.97);
+  box-shadow:0 6px 24px -10px rgba(33,26,22,.22);
 }
-/* Wordmark logo (substituir por SVG oficial quando chegar) */
-.logo{display:flex;flex-direction:column;line-height:1;color:var(--color-ivory)}
-.logo__name{font-family:var(--font-display);font-weight:600;font-size:26px;letter-spacing:.02em;color:var(--color-jade)}
-.logo__sub{font-family:var(--font-body);font-weight:400;font-size:9px;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-gold-soft);margin-top:3px}
-.nav.scrolled .logo__name{color:var(--color-jade)}
+/* Logo oficial (horizontal) */
+.logo{display:flex;align-items:center;line-height:0}
+.logo__img{height:46px;width:auto;display:block}
 
 .nav__links{display:flex;align-items:center;gap:var(--space-lg)}
 .nav__link{
   font-size:var(--text-eyebrow);letter-spacing:var(--tracking-wide);
-  text-transform:uppercase;color:var(--color-ivory);position:relative;font-weight:400;
+  text-transform:uppercase;color:var(--color-cacau);position:relative;font-weight:400;
   padding-block:6px;
 }
 .nav__link::after{
@@ -133,16 +133,17 @@ h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:
 .nav__link:hover::after,.nav__link:focus-visible::after{width:100%}
 
 .nav__cta{
-  border:1.5px solid var(--color-jade);color:var(--color-jade);
+  border:1.5px solid var(--color-jade-dark);color:var(--color-jade-dark);
   padding:9px 20px;border-radius:var(--radius-pill);
   font-size:var(--text-eyebrow);letter-spacing:var(--tracking-wide);text-transform:uppercase;
   transition:background .25s ease,color .25s ease;
 }
-.nav__cta:hover{background:var(--color-jade);color:var(--color-cacau)}
+.nav__cta:hover{background:var(--color-jade-dark);color:var(--color-ivory)}
 
 .nav__burger{display:none;flex-direction:column;gap:5px;padding:8px;z-index:110}
-.nav__burger span{width:24px;height:2px;background:var(--color-ivory);transition:.3s}
-.nav.scrolled .nav__burger span{background:var(--color-ivory)}
+.nav__burger span{width:24px;height:2px;background:var(--color-cacau);transition:.3s}
+.nav.scrolled .nav__burger span{background:var(--color-cacau)}
+.nav__burger.open span{background:var(--color-ivory)}
 .nav__burger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .nav__burger.open span:nth-child(2){opacity:0}
 .nav__burger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
@@ -484,6 +485,7 @@ h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:
    ============================================================ */
 .footer{background:var(--color-cacau);border-top:1px solid rgba(198,161,91,.3);padding-block:var(--space-xl) var(--space-lg)}
 .footer__grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:var(--space-lg)}
+.footer__logo{height:64px;width:auto;display:block;margin-left:-6px}
 .footer__slogan{font-family:var(--font-script);font-size:26px;color:var(--color-jade);margin-top:var(--space-sm)}
 .footer__col h4{font-family:var(--font-body);font-weight:500;font-size:12px;letter-spacing:var(--tracking-wide);text-transform:uppercase;color:var(--color-gold-soft);margin-bottom:var(--space-md)}
 .footer__col a,.footer__col p{color:rgba(250,246,239,.7);font-size:14px;font-weight:300;display:block;margin-bottom:10px;transition:color .25s ease}
@@ -593,9 +595,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
 <nav class="nav" id="nav">
   <div class="wrap nav__inner">
     <a href="#hero" class="logo" aria-label="Duetto Ateliê de Chocolate">
-      <!-- LOGO: wordmark provisório. Substituir por SVG oficial (assets/logo.svg) quando disponível. -->
-      <span class="logo__name">Duetto</span>
-      <span class="logo__sub">Ateliê de Chocolate</span>
+      <img src="assets/logo-horizontal.png" alt="Duetto Ateliê de Chocolate" class="logo__img">
     </a>
     <ul class="nav__links">
       <li><a class="nav__link" href="#kits">Kits</a></li>
@@ -945,7 +945,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
 <footer class="footer">
   <div class="wrap footer__grid">
     <div class="footer__col">
-      <span class="logo__name" style="font-size:30px">Duetto</span>
+      <img src="assets/logo-horizontal-light.png" alt="Duetto Ateliê de Chocolate" class="footer__logo">
       <p class="footer__slogan">As melhores coisas da vida são doces</p>
     </div>
     <div class="footer__col">
