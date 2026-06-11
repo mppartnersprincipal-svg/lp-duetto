@@ -641,12 +641,16 @@ h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:
   .gal{padding-bottom:calc(clamp(72px,11vw,var(--space-2xl)) + 72px)}
   .steps{grid-template-columns:1fr;gap:var(--space-lg)}
   .steps::before{display:none}
-  .step{display:grid;grid-template-columns:56px 1fr;gap:var(--space-md);text-align:left;align-items:start;position:relative}
-  .step__num{margin:0}
-  .step::before{content:"";position:absolute;left:27px;top:60px;bottom:-44px;width:2px;background:repeating-linear-gradient(var(--color-jade) 0 8px,transparent 8px 16px);opacity:.5}
+  .step{display:grid;grid-template-columns:56px 1fr;column-gap:var(--space-md);row-gap:10px;text-align:left;align-items:start;position:relative}
+  .step__num{grid-column:1;grid-row:1 / span 2;align-self:start;margin:0}
+  .step__title{grid-column:2;align-self:center;margin-bottom:0}
+  .step__text{grid-column:2}
+  .step::before{content:"";position:absolute;left:27px;top:64px;bottom:-44px;width:2px;background:repeating-linear-gradient(var(--color-jade) 0 8px,transparent 8px 16px);opacity:.5}
   .step:last-child::before{display:none}
   .footer__grid{grid-template-columns:1fr;gap:var(--space-lg);text-align:center}
   .footer__slogan{margin-inline:auto}
+  /* Respiro para o CTA sticky não cobrir o rodapé */
+  .footer{padding-bottom:calc(var(--space-lg) + 76px)}
   /* CTA sticky no bottom */
   .sticky-cta{
     display:block;position:fixed;bottom:0;left:0;right:0;z-index:90;
@@ -657,6 +661,16 @@ h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:
   }
   .sticky-cta.visible{transform:translateY(0)}
   .sticky-cta .btn{width:100%;height:52px}
+}
+
+/* Telas pequenas (smartphones) */
+@media (max-width:480px){
+  :root{--text-display:clamp(38px,11vw,52px);--text-h1:clamp(30px,8vw,40px)}
+  .wrap{padding-inline:20px}
+  .hero__sub{font-size:15px}
+  .insta__grid{gap:8px}
+  .insta__profile{flex-direction:column;text-align:center;gap:14px}
+  .insta__meta{text-align:center}
 }
 
 /* ============================================================
