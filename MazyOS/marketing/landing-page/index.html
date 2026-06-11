@@ -423,6 +423,97 @@ h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:
 .carousel__dot[aria-current="true"]{background:var(--color-jade);border-color:var(--color-jade);width:24px;border-radius:var(--radius-pill)}
 
 /* ============================================================
+   S5D — INSTAGRAM (teaser de feed · fundo ivory)
+   ============================================================ */
+.insta{background:var(--color-ivory);position:relative;overflow:hidden}
+.insta__head{text-align:center;max-width:640px;margin:0 auto var(--space-lg)}
+.insta__title{font-size:var(--text-h1);color:var(--color-cacau)}
+.insta__sub{font-size:var(--text-body-sm);color:var(--color-cocoa);margin-top:var(--space-md)}
+
+/* Cartão de perfil */
+.insta__profile{
+  display:inline-flex;align-items:center;gap:var(--space-md);
+  margin:0 auto var(--space-lg);justify-content:center;width:100%;
+  transition:opacity .25s ease;
+}
+.insta__profile:hover{opacity:.88}
+.insta__avatar{
+  width:74px;height:74px;border-radius:50%;flex:none;display:block;padding:3px;
+  background:conic-gradient(from 215deg,var(--color-gold),var(--color-jade) 40%,var(--color-jade-dark) 65%,var(--color-gold));
+  box-shadow:0 10px 26px -12px rgba(83,202,150,.6);
+}
+.insta__avatar img{width:100%;height:100%;border-radius:50%;object-fit:cover;border:2px solid var(--color-ivory)}
+.insta__meta{text-align:left}
+.insta__handle{display:block;font-family:var(--font-display);font-size:22px;font-weight:600;color:var(--color-cacau);line-height:1.15}
+.insta__stats{display:block;font-size:13px;color:var(--color-cocoa);margin-top:5px}
+.insta__stats strong{color:var(--color-cacau);font-weight:500}
+.insta__tag{display:block;font-size:13px;color:var(--color-jade-dark);letter-spacing:.02em;margin-top:2px}
+
+/* Grade estilo feed */
+.insta__grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}
+.insta__cell{
+  position:relative;aspect-ratio:1/1;overflow:hidden;border-radius:var(--radius-md);
+  display:block;background:var(--color-sand);
+  box-shadow:0 14px 30px -22px rgba(33,26,22,.55);border:1px solid rgba(255,255,255,.5);
+}
+.insta__cell img{width:100%;height:100%;object-fit:cover;transition:transform .55s ease}
+.insta__cell::after{content:"";position:absolute;inset:0;background:rgba(30,142,98,0);transition:background .35s ease}
+.insta__cell:hover img,.insta__cell:focus-visible img{transform:scale(1.07)}
+.insta__cell:hover::after,.insta__cell:focus-visible::after{background:rgba(30,142,98,.42)}
+.insta__cell svg{
+  position:absolute;top:50%;left:50%;width:30px;height:30px;color:#fff;z-index:2;
+  transform:translate(-50%,-50%) scale(.6);opacity:0;
+  transition:opacity .35s ease,transform .35s ease;filter:drop-shadow(0 2px 6px rgba(33,26,22,.4));
+}
+.insta__cell:hover svg,.insta__cell:focus-visible svg{opacity:1;transform:translate(-50%,-50%) scale(1)}
+
+.insta__cta{display:flex;justify-content:center;margin-top:var(--space-lg)}
+.btn--insta{
+  background:linear-gradient(95deg,var(--color-gold) 0%,var(--color-jade) 55%,var(--color-jade-dark) 100%);
+  color:#fff;box-shadow:0 10px 30px -10px rgba(83,202,150,.6);
+}
+.btn--insta:hover{transform:scale(1.03);box-shadow:0 16px 44px -10px rgba(83,202,150,.7);color:#fff}
+.btn--insta:active{transform:scale(.97)}
+.btn__ig{width:20px;height:20px;flex:none}
+
+/* ============================================================
+   S5C — FUNDADORA (fundo ivory, retrato + carta)
+   ============================================================ */
+.founder{background:var(--color-ivory);position:relative;overflow:hidden}
+.founder__grid{
+  display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1fr);
+  gap:var(--space-xl);align-items:center;
+}
+.founder__visual{position:relative;display:flex;justify-content:center}
+.founder__frame{
+  position:relative;z-index:1;width:100%;max-width:380px;
+  border-radius:var(--radius-lg);overflow:hidden;
+  border:1px solid rgba(255,255,255,.6);
+  box-shadow:0 34px 70px -28px rgba(33,26,22,.42);
+}
+.founder__frame::after{
+  content:"";position:absolute;inset:0;border-radius:var(--radius-lg);
+  box-shadow:inset 0 0 0 1px rgba(198,161,91,.45);pointer-events:none;
+}
+.founder__img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.founder__badge{
+  position:absolute;z-index:2;left:50%;bottom:-22px;transform:translateX(-50%);
+  background:var(--color-jade);color:var(--color-cacau);
+  font-family:var(--font-body);font-weight:500;font-size:12px;
+  letter-spacing:var(--tracking-wide);text-transform:uppercase;
+  padding:11px 26px;border-radius:var(--radius-pill);white-space:nowrap;
+  box-shadow:0 12px 30px -10px rgba(83,202,150,.7);
+}
+.founder__head{max-width:560px}
+.founder__title{font-size:var(--text-h1);color:var(--color-cacau);margin-bottom:var(--space-md)}
+.founder__title::after{content:"";display:block;width:64px;height:3px;background:var(--color-jade);margin-top:var(--space-md)}
+.founder__body{display:flex;flex-direction:column;gap:var(--space-sm)}
+.founder__body p{font-size:var(--text-body);color:var(--color-cocoa);line-height:1.7}
+.founder__body .lead{font-family:var(--font-display);font-style:italic;font-size:clamp(20px,2.4vw,26px);color:var(--color-jade-deeper);line-height:1.4}
+.founder__sign{font-family:var(--font-script);font-size:clamp(40px,6vw,58px);color:var(--color-jade-dark);line-height:.9;margin-top:var(--space-md)}
+.founder__role{font-family:var(--font-body);font-weight:500;font-size:12px;letter-spacing:var(--tracking-wider);text-transform:uppercase;color:var(--color-gold-deep);display:block;margin-top:6px}
+
+/* ============================================================
    S6 — COMO FUNCIONA (fundo tiffany claro, timeline)
    ============================================================ */
 .s6{background:var(--color-jade-100)}
@@ -526,6 +617,7 @@ h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:
   .cards3,.cards4,.kits{grid-template-columns:repeat(2,1fr)}
   .s2__grid{gap:var(--space-lg)}
   .slide{width:calc((100% - var(--space-md))/2)}
+  .insta__grid{grid-template-columns:repeat(3,1fr)}
 }
 @media (max-width:768px){
   :root{--space-2xl:96px}
@@ -533,12 +625,19 @@ h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:
   .nav__burger{display:flex}
   .s2__grid{grid-template-columns:1fr;gap:var(--space-md)}
   .s2__visual{order:-1}
+  .founder__grid{grid-template-columns:1fr;gap:var(--space-lg)}
+  .founder__visual{order:-1;margin-bottom:var(--space-sm)}
+  .founder__frame{max-width:320px}
+  .founder__title{text-align:center}
+  .founder__title::after{margin-inline:auto}
   .s2__num{font-size:clamp(140px,42vw,220px)}
   .cards3,.cards4,.kits{grid-template-columns:1fr;max-width:440px;margin-inline:auto}
   /* Carrossel mobile: slide largo deixando "espiar" o próximo */
   .slide{width:82%}
   .carousel__track{gap:var(--space-sm);scroll-padding-inline:24px}
   .carousel__arrow{display:none}
+  .insta__grid{grid-template-columns:repeat(2,1fr)}
+  .insta__handle{font-size:18px}
   .gal{padding-bottom:calc(clamp(72px,11vw,var(--space-2xl)) + 72px)}
   .steps{grid-template-columns:1fr;gap:var(--space-lg)}
   .steps::before{display:none}
@@ -600,6 +699,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
     <ul class="nav__links">
       <li><a class="nav__link" href="#kits">Kits</a></li>
       <li><a class="nav__link" href="#galeria">Portfólio</a></li>
+      <li><a class="nav__link" href="#fundadora">Sobre</a></li>
       <li><a class="nav__link" href="#processo">Como funciona</a></li>
       <li><a class="nav__link" href="#faq">Dúvidas</a></li>
       <li><a class="nav__cta" href="#cta" data-wa>Orçamento</a></li>
@@ -614,6 +714,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
 <div class="drawer" id="drawer">
   <a href="#kits">Kits</a>
   <a href="#galeria">Portfólio</a>
+  <a href="#fundadora">Sobre</a>
   <a href="#processo">Como funciona</a>
   <a href="#faq">Dúvidas</a>
   <a href="#cta" class="drawer__cta" data-wa>Solicitar orçamento</a>
@@ -643,7 +744,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
 <section class="section s2" id="nao-vendemos">
   <div class="wrap s2__grid">
     <div class="s2__head">
-      <span class="eyebrow reveal">01 — Posicionamento</span>
+      <span class="eyebrow reveal">Posicionamento</span>
       <h2 class="s2__title reveal">Não vendemos bolos.</h2>
       <!-- "docinhos tradicionais": copy do PRD §03. NB: o checklist §08 do PRD bane diminutivos. Decisão pendente da Lucianne. -->
       <blockquote class="blockquote reveal">Vendemos o momento em que sua filha vê a mesinha e abre um sorriso que você nunca vai esquecer.</blockquote>
@@ -656,6 +757,30 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
   </div>
 </section>
 
+<!-- =================== S2B · FUNDADORA =================== -->
+<section class="section founder" id="fundadora">
+  <div class="wrap founder__grid">
+    <div class="founder__visual reveal">
+      <div class="founder__frame">
+        <img class="founder__img" src="assets/lucianne.jpg" width="760" height="950" loading="lazy" alt="Lucianne, fundadora da Duetto Ateliê de Chocolate">
+      </div>
+      <span class="founder__badge">Desde 2011</span>
+    </div>
+    <div class="founder__head">
+      <span class="eyebrow reveal">Quem faz acontecer</span>
+      <h2 class="founder__title reveal">A mente criativa por trás da Duetto.</h2>
+      <div class="founder__body reveal">
+        <p class="lead">Olá! Sou a Lucianne — e é com muito carinho que dou as boas-vindas a você.</p>
+        <p>Desde 2011, conduzo este ateliê familiar guiada por uma certeza: cada festa merece doces tão únicos quanto o momento que ela celebra. Foi mais de uma década transformando datas especiais em obras de arte comestíveis — feitas à mão, com a dedicação que eu daria à minha própria família.</p>
+        <p>Aqui, amor e técnica caminham juntos. Cada bolo, cada doce, carrega uma história: a sua. E é exatamente isso que me move todos os dias.</p>
+        <p>É uma honra dividir essa paixão com você. Seja muito bem-vindo — e sinta-se em casa.</p>
+      </div>
+      <p class="founder__sign reveal">Lucianne</p>
+      <span class="founder__role reveal">Fundadora da Duetto</span>
+    </div>
+  </div>
+</section>
+
 <!-- =================== S3 · PROVA SOCIAL ===================
      OCULTA até depoimentos reais aprovados pela Lucianne (PRD §08).
      Para reativar: remova este comentário de abertura e o de fechamento,
@@ -663,7 +788,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
 <section class="section s3" id="prova-social">
   <div class="wrap">
     <div class="s3__head">
-      <span class="eyebrow on-dark reveal">03 — Quem confia</span>
+      <span class="eyebrow on-dark reveal">Quem confia</span>
       <h2 class="s3__title reveal">Quem já viveu um momento Duetto sabe o que é exclusividade de verdade.</h2>
     </div>
     <div class="cards3">
@@ -727,7 +852,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
 <section class="section s5" id="kits">
   <div class="wrap">
     <div class="s5__head">
-      <span class="eyebrow reveal">05 — Nossas especialidades</span>
+      <span class="eyebrow reveal">Nossas especialidades</span>
       <h2 class="s5__title reveal">Para os momentos que você só vai viver uma vez.</h2>
       <p class="s5__sub reveal">Kits completos para Batizado, Chá Revelação e Casamento — do bolo aos doces finos, personalizados com a identidade visual do seu evento, entregues no local, no horário.</p>
     </div>
@@ -863,11 +988,65 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
   </div>
 </section>
 
+<!-- =================== S5D · INSTAGRAM =================== -->
+<section class="section insta" id="instagram">
+  <div class="wrap">
+    <div class="insta__head">
+      <span class="eyebrow reveal">Nosso dia a dia</span>
+      <h2 class="insta__title reveal">Conheça a Duetto no Instagram.</h2>
+      <p class="insta__sub reveal">Bastidores do ateliê, mesas montadas e os detalhes que fazem cada festa única — é por lá que tudo aparece primeiro. Acompanhe e inspire-se para o seu evento.</p>
+    </div>
+
+    <a class="insta__profile reveal" href="https://instagram.com/duetto.ateliedechocolate" target="_blank" rel="noopener" aria-label="Abrir o perfil @duetto.ateliedechocolate no Instagram">
+      <span class="insta__avatar"><img src="assets/instagram-avatar.jpg" width="150" height="150" loading="lazy" alt="Selo da Duetto Ateliê de Chocolate"></span>
+      <span class="insta__meta">
+        <span class="insta__handle">@duetto.ateliedechocolate</span>
+        <span class="insta__stats"><strong>10,2&nbsp;mil</strong> seguidores · <strong>+4.700</strong> publicações</span>
+        <span class="insta__tag">Ateliê de Chocolate de luxo · Goiânia</span>
+      </span>
+    </a>
+
+    <div class="insta__grid reveal">
+      <a class="insta__cell" href="https://instagram.com/duetto.ateliedechocolate" target="_blank" rel="noopener" aria-label="Ver no Instagram da Duetto">
+        <img src="assets/galeria/batizado-09.webp" width="720" height="720" loading="lazy" alt="Bolo de batizado branco com laço de chocolate">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 1.62c-3.15 0-3.5.01-4.74.07-1.14.05-1.76.24-2.17.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.17-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.14.24 1.76.4 2.17.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.14-.05 1.76-.24 2.17-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.14-.24-1.76-.4-2.17a3.6 3.6 0 00-.88-1.35 3.6 3.6 0 00-1.35-.88c-.41-.16-1.03-.35-2.17-.4-1.24-.06-1.59-.07-4.74-.07zm0 2.76a5.46 5.46 0 110 10.92 5.46 5.46 0 010-10.92zm0 9a3.54 3.54 0 100-7.08 3.54 3.54 0 000 7.08zm5.68-9.23a1.27 1.27 0 11-2.55 0 1.27 1.27 0 012.55 0z"/></svg>
+      </a>
+      <a class="insta__cell" href="https://instagram.com/duetto.ateliedechocolate" target="_blank" rel="noopener" aria-label="Ver no Instagram da Duetto">
+        <img src="assets/galeria/casamento-03.webp" width="720" height="720" loading="lazy" alt="Bolo de casamento de andares com orquídeas brancas">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 1.62c-3.15 0-3.5.01-4.74.07-1.14.05-1.76.24-2.17.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.17-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.14.24 1.76.4 2.17.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.14-.05 1.76-.24 2.17-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.14-.24-1.76-.4-2.17a3.6 3.6 0 00-.88-1.35 3.6 3.6 0 00-1.35-.88c-.41-.16-1.03-.35-2.17-.4-1.24-.06-1.59-.07-4.74-.07zm0 2.76a5.46 5.46 0 110 10.92 5.46 5.46 0 010-10.92zm0 9a3.54 3.54 0 100-7.08 3.54 3.54 0 000 7.08zm5.68-9.23a1.27 1.27 0 11-2.55 0 1.27 1.27 0 012.55 0z"/></svg>
+      </a>
+      <a class="insta__cell" href="https://instagram.com/duetto.ateliedechocolate" target="_blank" rel="noopener" aria-label="Ver no Instagram da Duetto">
+        <img src="assets/galeria/charevelacao-01.webp" width="720" height="720" loading="lazy" alt="Bolo de chá revelação em tons pastel com figuras de bebê e balões">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 1.62c-3.15 0-3.5.01-4.74.07-1.14.05-1.76.24-2.17.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.17-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.14.24 1.76.4 2.17.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.14-.05 1.76-.24 2.17-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.14-.24-1.76-.4-2.17a3.6 3.6 0 00-.88-1.35 3.6 3.6 0 00-1.35-.88c-.41-.16-1.03-.35-2.17-.4-1.24-.06-1.59-.07-4.74-.07zm0 2.76a5.46 5.46 0 110 10.92 5.46 5.46 0 010-10.92zm0 9a3.54 3.54 0 100-7.08 3.54 3.54 0 000 7.08zm5.68-9.23a1.27 1.27 0 11-2.55 0 1.27 1.27 0 012.55 0z"/></svg>
+      </a>
+      <a class="insta__cell" href="https://instagram.com/duetto.ateliedechocolate" target="_blank" rel="noopener" aria-label="Ver no Instagram da Duetto">
+        <img src="assets/galeria/casamento-06.webp" width="720" height="720" loading="lazy" alt="Mesa de doces de casamento com rosas">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 1.62c-3.15 0-3.5.01-4.74.07-1.14.05-1.76.24-2.17.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.17-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.14.24 1.76.4 2.17.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.14-.05 1.76-.24 2.17-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.14-.24-1.76-.4-2.17a3.6 3.6 0 00-.88-1.35 3.6 3.6 0 00-1.35-.88c-.41-.16-1.03-.35-2.17-.4-1.24-.06-1.59-.07-4.74-.07zm0 2.76a5.46 5.46 0 110 10.92 5.46 5.46 0 010-10.92zm0 9a3.54 3.54 0 100-7.08 3.54 3.54 0 000 7.08zm5.68-9.23a1.27 1.27 0 11-2.55 0 1.27 1.27 0 012.55 0z"/></svg>
+      </a>
+      <a class="insta__cell" href="https://instagram.com/duetto.ateliedechocolate" target="_blank" rel="noopener" aria-label="Ver no Instagram da Duetto">
+        <img src="assets/galeria/batizado-02.webp" width="720" height="720" loading="lazy" alt="Mesa de batizado com topiárias de flores brancas">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 1.62c-3.15 0-3.5.01-4.74.07-1.14.05-1.76.24-2.17.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.17-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.14.24 1.76.4 2.17.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.14-.05 1.76-.24 2.17-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.14-.24-1.76-.4-2.17a3.6 3.6 0 00-.88-1.35 3.6 3.6 0 00-1.35-.88c-.41-.16-1.03-.35-2.17-.4-1.24-.06-1.59-.07-4.74-.07zm0 2.76a5.46 5.46 0 110 10.92 5.46 5.46 0 010-10.92zm0 9a3.54 3.54 0 100-7.08 3.54 3.54 0 000 7.08zm5.68-9.23a1.27 1.27 0 11-2.55 0 1.27 1.27 0 012.55 0z"/></svg>
+      </a>
+      <a class="insta__cell" href="https://instagram.com/duetto.ateliedechocolate" target="_blank" rel="noopener" aria-label="Ver no Instagram da Duetto">
+        <img src="assets/galeria/charevelacao-06.webp" width="720" height="720" loading="lazy" alt="Bolo de chá revelação com ursinho em tons de azul">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 1.62c-3.15 0-3.5.01-4.74.07-1.14.05-1.76.24-2.17.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.17-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.14.24 1.76.4 2.17.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.14-.05 1.76-.24 2.17-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.14-.24-1.76-.4-2.17a3.6 3.6 0 00-.88-1.35 3.6 3.6 0 00-1.35-.88c-.41-.16-1.03-.35-2.17-.4-1.24-.06-1.59-.07-4.74-.07zm0 2.76a5.46 5.46 0 110 10.92 5.46 5.46 0 010-10.92zm0 9a3.54 3.54 0 100-7.08 3.54 3.54 0 000 7.08zm5.68-9.23a1.27 1.27 0 11-2.55 0 1.27 1.27 0 012.55 0z"/></svg>
+      </a>
+    </div>
+
+    <div class="insta__cta reveal">
+      <a href="https://instagram.com/duetto.ateliedechocolate" target="_blank" rel="noopener" class="btn btn--insta">
+        <svg class="btn__ig" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 1.62c-3.15 0-3.5.01-4.74.07-1.14.05-1.76.24-2.17.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.17-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.14.24 1.76.4 2.17.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.14-.05 1.76-.24 2.17-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.14-.24-1.76-.4-2.17a3.6 3.6 0 00-.88-1.35 3.6 3.6 0 00-1.35-.88c-.41-.16-1.03-.35-2.17-.4-1.24-.06-1.59-.07-4.74-.07zm0 2.76a5.46 5.46 0 110 10.92 5.46 5.46 0 010-10.92zm0 9a3.54 3.54 0 100-7.08 3.54 3.54 0 000 7.08zm5.68-9.23a1.27 1.27 0 11-2.55 0 1.27 1.27 0 012.55 0z"/></svg>
+        Seguir @duetto.ateliedechocolate
+      </a>
+    </div>
+  </div>
+</section>
+
 <!-- =================== S6 · COMO FUNCIONA =================== -->
 <section class="section s6" id="processo">
   <div class="wrap">
     <div class="s6__head">
-      <span class="eyebrow reveal">06 — Como funciona</span>
+      <span class="eyebrow reveal">Como funciona</span>
       <h2 class="s6__title reveal">Do sonho à mesa, em quatro passos.</h2>
     </div>
     <div class="steps">
@@ -899,7 +1078,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
 <section class="section s7" id="faq">
   <div class="wrap">
     <div class="s7__head">
-      <span class="eyebrow on-dark reveal">07 — Dúvidas frequentes</span>
+      <span class="eyebrow on-dark reveal">Dúvidas frequentes</span>
       <h2 class="s7__title reveal">Tudo o que você precisa saber antes de falar com a gente.</h2>
     </div>
     <div class="faq" id="faq-list">
@@ -968,7 +1147,7 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
 <!-- CTA sticky mobile -->
 <div class="sticky-cta">
   <a href="#" class="btn btn--jade" data-wa>
-    <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24z"/></svg>
+    <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.47 14.38c-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.26-.46-2.4-1.48-.89-.79-1.49-1.77-1.66-2.07-.17-.3-.02-.46.13-.61.13-.13.3-.35.45-.52.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.61-.92-2.21-.24-.58-.49-.5-.67-.51-.17-.01-.37-.01-.57-.01-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.48s1.06 2.88 1.21 3.08c.15.2 2.1 3.2 5.08 4.49.71.31 1.26.49 1.69.62.71.23 1.36.2 1.87.12.57-.09 1.76-.72 2.01-1.41.25-.69.25-1.29.17-1.41-.07-.12-.27-.2-.57-.35zM12.04 21.5h-.01a9.42 9.42 0 01-4.8-1.31l-.34-.2-3.57.93.95-3.48-.22-.36a9.39 9.39 0 01-1.44-5.01c0-5.19 4.23-9.41 9.43-9.41 2.52 0 4.88.98 6.66 2.76a9.34 9.34 0 012.76 6.66c0 5.19-4.23 9.42-9.42 9.42zm8.02-17.44A11.32 11.32 0 0012.04.5C5.8.5.72 5.58.72 11.82c0 2 .52 3.95 1.52 5.67L.62 23.5l6.15-1.61a11.31 11.31 0 005.27 1.34h.01c6.24 0 11.32-5.08 11.32-11.32 0-3.02-1.18-5.87-3.31-8.01z"/></svg>
     Solicitar orçamento
   </a>
 </div>

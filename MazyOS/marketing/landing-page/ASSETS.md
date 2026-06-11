@@ -15,9 +15,25 @@ Origem: `Desktop/Duetto/Fotos/Batismo/Fotos/`.
 | `detalhe-1.webp` | IMG_8256 | extra (não usado ainda) | 900×900 |
 | `detalhe-2.webp` | IMG_8259 | extra (não usado ainda) | 900×900 |
 | `boy-girl.webp` | IMG_6454 | extra — piruletas Boy/Girl | 900×1600 |
+| `instagram-avatar.jpg` | **Foto de perfil oficial do @duetto.ateliedechocolate** (baixada do Instagram em 11/06/2026) | S5D Instagram (avatar do cartão de perfil) | 150×150 |
 
 `detalhe-1`, `detalhe-2` e `boy-girl` ficaram disponíveis como reserva (ex: galeria
 futura ou troca de imagem de kit).
+
+## Seção S5D — Instagram (`#instagram`)
+
+Teaser de feed entre o Portfólio e "Como funciona". Cabeçalho + cartão de perfil
+(avatar real `instagram-avatar.jpg`, @handle, **10,2 mil seguidores · +4.700
+publicações** — números reais do perfil em 11/06/2026), grade de 6 fotos e botão
+"Seguir" linkando para `instagram.com/duetto.ateliedechocolate`.
+
+> **Por que não são prints do feed:** o Instagram exige login para o grid completo
+> e só serve thumbnails em 150×150 (baixa resolução, fora do padrão de luxo da
+> marca). A grade usa 6 fotos em alta da própria galeria (`batizado-09`,
+> `casamento-03`, `charevelacao-01`, `casamento-06`, `batizado-02`,
+> `charevelacao-06`). Só o **avatar** e os **números** foram puxados do perfil real.
+> Para um feed 100% ao vivo seria preciso a API oficial do Instagram (Graph API,
+> token do Meta Business) ou um widget tipo EmbedSocial/Elfsight.
 
 ## Galeria / Portfólio (`assets/galeria/`)
 
