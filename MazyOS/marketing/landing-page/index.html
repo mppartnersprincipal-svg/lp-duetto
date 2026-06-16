@@ -584,9 +584,44 @@ h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:
 .footer__base{margin-top:var(--space-xl);padding-top:var(--space-md);border-top:1px solid rgba(74,56,45,.6);text-align:center;font-size:12px;color:rgba(250,246,239,.45);letter-spacing:.03em}
 
 /* ============================================================
+   CTA POR SEÇÃO (dobra a dobra)
+   ============================================================ */
+.section-cta{display:flex;justify-content:center;margin-top:var(--space-xl)}
+.section-cta--start{justify-content:flex-start;margin-top:var(--space-lg)}
+@media (max-width:768px){
+  .section-cta--start{justify-content:center}
+}
+
+/* ============================================================
    CTA STICKY MOBILE
    ============================================================ */
 .sticky-cta{display:none}
+
+/* ============================================================
+   BOTÃO FLUTUANTE DE WHATSAPP (FAB)
+   ============================================================ */
+.fab-wa{
+  position:fixed;z-index:95;right:24px;bottom:24px;
+  width:62px;height:62px;border-radius:50%;
+  background:#25D366;color:#fff;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 12px 32px -8px rgba(37,211,102,.7);
+  transition:transform .25s ease,box-shadow .25s ease,opacity .35s ease;
+  animation:fabPulse 2.8s ease-in-out infinite;
+}
+.fab-wa svg{width:34px;height:34px}
+.fab-wa:hover{transform:scale(1.08);box-shadow:0 16px 42px -8px rgba(37,211,102,.85);color:#fff}
+.fab-wa:active{transform:scale(.95)}
+@keyframes fabPulse{
+  0%{box-shadow:0 12px 32px -8px rgba(37,211,102,.7),0 0 0 0 rgba(37,211,102,.5)}
+  70%{box-shadow:0 12px 32px -8px rgba(37,211,102,.7),0 0 0 16px rgba(37,211,102,0)}
+  100%{box-shadow:0 12px 32px -8px rgba(37,211,102,.7),0 0 0 0 rgba(37,211,102,0)}
+}
+@media (max-width:768px){
+  /* Sobe o FAB para não colidir com o CTA sticky no rodapé */
+  .fab-wa{right:16px;bottom:84px;width:54px;height:54px}
+  .fab-wa svg{width:30px;height:30px}
+}
 
 /* ============================================================
    CURSOR CUSTOMIZADO (apenas desktop com hover)
@@ -763,6 +798,12 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
       <!-- "docinhos tradicionais": copy do PRD §03. NB: o checklist §08 do PRD bane diminutivos. Decisão pendente da Lucianne. -->
       <blockquote class="blockquote reveal">Vendemos o momento em que sua filha vê a mesinha e abre um sorriso que você nunca vai esquecer.</blockquote>
       <p class="s2__body reveal">Cada doce que sai do Duetto foi pensado para a sua festa — com a identidade visual do seu tema, com o capricho de quem entende que detalhes fazem toda a diferença. Não fazemos produção em série. Fazemos o seu evento, do jeito que você sonhou.</p>
+      <div class="section-cta section-cta--start reveal">
+        <a href="#cta" class="btn btn--jade" data-wa>
+          <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
+          Quero algo assim para minha festa
+        </a>
+      </div>
     </div>
     <div class="s2__visual reveal">
       <span class="s2__num" aria-hidden="true">13</span>
@@ -791,6 +832,12 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
       </div>
       <p class="founder__sign reveal">Lucianne</p>
       <span class="founder__role reveal">Fundadora da Duetto</span>
+      <div class="section-cta section-cta--start reveal">
+        <a href="#cta" class="btn btn--jade" data-wa>
+          <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
+          Falar com a Lucianne
+        </a>
+      </div>
     </div>
   </div>
 </section>
@@ -859,6 +906,12 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
         <span class="dcard__chip">Status</span>
       </article>
     </div>
+    <div class="section-cta reveal">
+      <a href="#cta" class="btn btn--jade" data-wa>
+        <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
+        Quero esse cuidado no meu evento
+      </a>
+    </div>
   </div>
 </section>
 
@@ -919,6 +972,12 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
     </div>
     <div class="banner-jade reveal">
       <p>Somos uma das únicas em Goiânia que entregam o pacote completo da festa: bolo + doces personalizados + doces tradicionais + entrega no local.</p>
+    </div>
+    <div class="section-cta reveal">
+      <a href="#cta" class="btn btn--jade" data-wa>
+        <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
+        Montar meu kit personalizado
+      </a>
     </div>
   </div>
 </section>
@@ -998,6 +1057,13 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
         <button class="carousel__arrow carousel__arrow--next" data-next aria-label="Próxima foto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         <div class="carousel__dots" data-dots aria-hidden="true"></div>
       </div>
+    </div>
+
+    <div class="section-cta reveal">
+      <a href="#cta" class="btn btn--jade" data-wa>
+        <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
+        Quero uma mesa como essas
+      </a>
     </div>
   </div>
 </section>
@@ -1085,6 +1151,12 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
         <p class="step__text">Você cuida de aproveitar o momento. A gente cuida de estar lá, pontualmente, com tudo pronto para encantar.</p>
       </div>
     </div>
+    <div class="section-cta reveal">
+      <a href="#cta" class="btn btn--jade" data-wa>
+        <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
+        Começar pelo passo 1
+      </a>
+    </div>
   </div>
 </section>
 
@@ -1112,6 +1184,12 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
         <button class="faq__q" aria-expanded="false">Vocês parcelam?<span class="faq__icon" aria-hidden="true"></span></button>
         <div class="faq__a"><div class="faq__a-inner">Sim. Parcelamos no cartão. Fale com a gente para mais detalhes sobre as condições.</div></div>
       </div>
+    </div>
+    <div class="section-cta reveal">
+      <a href="#cta" class="btn btn--jade" data-wa>
+        <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
+        Ainda tenho dúvidas — falar no WhatsApp
+      </a>
     </div>
   </div>
 </section>
@@ -1165,6 +1243,11 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
     Solicitar orçamento
   </a>
 </div>
+
+<!-- Botão flutuante de WhatsApp -->
+<a class="fab-wa" data-wa aria-label="Falar com a Duetto no WhatsApp" title="Falar no WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
+</a>
 
 <!-- Cursor customizado (desktop) -->
 <div class="cursor" id="cursor" aria-hidden="true"></div>
