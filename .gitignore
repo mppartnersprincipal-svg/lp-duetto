@@ -1,6 +1,20 @@
 # Arquivos de mídia brutos (muito grandes para o GitHub)
 Fotos/
 
+# Mídia bruta da galeria da landing page (mantém apenas os .webp otimizados usados no site)
+MazyOS/marketing/landing-page/assets/galeria/*.JPG
+MazyOS/marketing/landing-page/assets/galeria/*.jpg
+MazyOS/marketing/landing-page/assets/galeria/*.JPEG
+MazyOS/marketing/landing-page/assets/galeria/*.jpeg
+MazyOS/marketing/landing-page/assets/galeria/*.PNG
+MazyOS/marketing/landing-page/assets/galeria/*.png
+MazyOS/marketing/landing-page/assets/galeria/*.MOV
+MazyOS/marketing/landing-page/assets/galeria/*.mov
+MazyOS/marketing/landing-page/assets/galeria/*.MP4
+MazyOS/marketing/landing-page/assets/galeria/*.mp4
+MazyOS/marketing/landing-page/assets/galeria/*.HEIC
+MazyOS/marketing/landing-page/assets/galeria/*.heic
+
 # Sistema
 Thumbs.db
 ehthumbs.db
