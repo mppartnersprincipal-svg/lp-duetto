@@ -11,12 +11,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Duetto Ateliê de Chocolate · Doces de luxo para o seu evento · Goiânia</title>
-<meta name="description" content="Ateliê de chocolate de luxo em Goiânia. Bolos e doces personalizados para batizado e chá revelação, com entrega no local. Há 13 anos transformando sonhos em beleza e sabor.">
+<title>Bolo Personalizado e Doces Finos em Goiânia · Duetto Ateliê de Chocolate</title>
+<meta name="description" content="Bolo personalizado, doces finos e mesa de doces para batizado, chá revelação, casamento e aniversário em Goiânia. Ateliê de luxo há 13 anos, com entrega no local.">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Duetto Ateliê de Chocolate · Doces de luxo para o seu evento">
-<meta property="og:description" content="Bolos e doces personalizados para batizado e chá revelação, com entrega no local. Goiânia · 13 anos.">
+<meta property="og:title" content="Bolo Personalizado e Doces Finos em Goiânia · Duetto Ateliê de Chocolate">
+<meta property="og:description" content="Bolos personalizados, doces finos e mesa de doces para batizado, chá revelação, casamento e aniversário. Goiânia · 13 anos · entrega no local.">
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/hero.webp">
 
@@ -355,6 +355,47 @@ h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:
 }
 
 /* ============================================================
+   S5A — NOSSAS CRIAÇÕES (mosaico de fotos · sem separar por serviço)
+   ============================================================ */
+.cria{background:var(--color-jade-50);position:relative;overflow:hidden}
+.cria__head{text-align:center;max-width:760px;margin:0 auto var(--space-lg)}
+.cria__title{font-size:var(--text-h1);color:var(--color-cacau)}
+.cria__sub{font-size:var(--text-body-sm);color:var(--color-cocoa);margin-top:var(--space-md);line-height:1.7}
+.cria__sub strong{font-weight:500;color:var(--color-jade-deeper)}
+
+/* Nuvem de termos (chips) — microcopy SEO visível */
+.cria__chips{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;margin-top:var(--space-md)}
+.cria__chip{
+  font-size:11px;letter-spacing:var(--tracking-wide);text-transform:uppercase;
+  color:var(--color-jade-dark);background:#fff;
+  border:1px solid var(--color-jade);border-radius:var(--radius-pill);padding:7px 16px;line-height:1;
+}
+
+/* Mosaico CSS Grid */
+.mosaic{
+  display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:200px;
+  gap:14px;grid-auto-flow:dense;
+}
+.mosaic__item{
+  position:relative;overflow:hidden;border-radius:var(--radius-lg);
+  background:var(--color-sand);
+  box-shadow:0 18px 40px -26px rgba(33,26,22,.45);border:1px solid rgba(255,255,255,.6);
+}
+.mosaic__item img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.mosaic__item:hover img{transform:scale(1.06)}
+.mosaic__item::after{content:"";position:absolute;inset:0;background:rgba(30,142,98,0);transition:background .35s ease}
+.mosaic__item:hover::after{background:rgba(30,142,98,.18)}
+.mosaic__cap{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;padding:22px 14px 12px;
+  font-family:var(--font-body);font-weight:400;font-size:12px;letter-spacing:.03em;color:var(--color-ivory);
+  background:linear-gradient(180deg,transparent,rgba(33,26,22,.78));
+}
+/* Variação de ritmo: alguns itens maiores */
+.mosaic__item--wide{grid-column:span 2}
+.mosaic__item--tall{grid-row:span 2}
+.mosaic__item--big{grid-column:span 2;grid-row:span 2}
+
+/* ============================================================
    S5B — GALERIA / PORTFÓLIO (Eventos que já fizemos)
    ============================================================ */
 .gal{background:var(--color-cream);position:relative;overflow:hidden}
@@ -661,6 +702,11 @@ h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:
   .s2__grid{gap:var(--space-lg)}
   .slide{width:calc((100% - var(--space-md))/2)}
   .insta__grid{grid-template-columns:repeat(3,1fr)}
+  /* Mosaico: 2 colunas; mantém só o destaque grande */
+  .mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:170px}
+  .mosaic__item--wide{grid-column:span 2}
+  .mosaic__item--tall{grid-row:span 1}
+  .mosaic__item--big{grid-column:span 2;grid-row:span 2}
 }
 @media (max-width:768px){
   :root{--space-2xl:96px}
@@ -675,6 +721,10 @@ h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:
   .founder__title::after{margin-inline:auto}
   .s2__num{font-size:clamp(140px,42vw,220px)}
   .cards3,.cards4,.kits{grid-template-columns:1fr;max-width:440px;margin-inline:auto}
+  /* Mosaico mobile: 2 colunas compactas, sem spans irregulares */
+  .mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px;gap:10px}
+  .mosaic__item--wide,.mosaic__item--tall{grid-column:span 1;grid-row:span 1}
+  .mosaic__item--big{grid-column:span 2;grid-row:span 2}
   /* Carrossel mobile: slide largo deixando "espiar" o próximo */
   .slide{width:82%}
   .carousel__track{gap:var(--space-sm);scroll-padding-inline:24px}
@@ -759,6 +809,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </a>
     <ul class="nav__links">
       <li><a class="nav__link" href="#kits">Kits</a></li>
+      <li><a class="nav__link" href="#criacoes">Criações</a></li>
       <li><a class="nav__link" href="#galeria">Portfólio</a></li>
       <li><a class="nav__link" href="#fundadora">Sobre</a></li>
       <li><a class="nav__link" href="#processo">Como funciona</a></li>
@@ -774,6 +825,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- Drawer mobile -->
 <div class="drawer" id="drawer">
   <a href="#kits">Kits</a>
+  <a href="#criacoes">Criações</a>
   <a href="#galeria">Portfólio</a>
   <a href="#fundadora">Sobre</a>
   <a href="#processo">Como funciona</a>
@@ -939,7 +991,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <article class="kit" data-kit="left">
         <div class="kit__media">
           <span class="kit__tag kit__tag--jade">Mais pedido</span>
-          <img src="assets/kit-batizado.webp" width="1000" height="1000" loading="lazy" alt="Bolo de batizado branco da Duetto, com flores brancas, rendas e pintura floral em tons de rosa">
+          <img src="assets/kit-batizado.webp" width="1000" height="1000" loading="lazy" alt="Bolo de batizado personalizado da Duetto em Goiânia, branco com flores, rendas e pintura floral">
         </div>
         <div class="kit__body">
           <h3 class="kit__name">Kit Batizado</h3>
@@ -954,7 +1006,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <article class="kit reveal">
         <div class="kit__media">
           <span class="kit__tag kit__tag--gold">Guarda o segredo com beleza</span>
-          <img src="assets/kit-cha-revelacao.webp" width="1000" height="1000" loading="lazy" alt="Kit de chá revelação da Duetto: doces personalizados em tons de azul e verde">
+          <img src="assets/kit-cha-revelacao.webp" width="1000" height="1000" loading="lazy" alt="Kit de chá revelação da Duetto em Goiânia: doces personalizados em tons de azul e verde">
         </div>
         <div class="kit__body">
           <h3 class="kit__name">Chá Revelação</h3>
@@ -969,7 +1021,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <article class="kit" data-kit="right">
         <div class="kit__media">
           <span class="kit__tag kit__tag--gold">Para o grande dia</span>
-          <img src="assets/galeria/casamento-02.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento da Duetto: bolo de andares branco texturizado com flores">
+          <img src="assets/galeria/casamento-02.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento personalizado da Duetto: bolo de andares branco texturizado com flores, Goiânia">
         </div>
         <div class="kit__body">
           <h3 class="kit__name">Casamento</h3>
@@ -989,6 +1041,87 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="#cta" class="btn btn--jade" data-wa>
         <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
         Montar meu kit personalizado
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- =================== S5A · NOSSAS CRIAÇÕES =================== -->
+<section class="section cria" id="criacoes">
+  <div class="wrap">
+    <div class="cria__head">
+      <span class="eyebrow reveal">Bolos &amp; doces personalizados · Goiânia</span>
+      <h2 class="cria__title reveal">Nossas criações.</h2>
+      <p class="cria__sub reveal">Do <strong>bolo personalizado</strong> e <strong>decorado</strong> à <strong>mesa de doces finos</strong> — criamos <strong>doces personalizados</strong> para <strong>batizado</strong>, <strong>chá revelação</strong>, <strong>casamento</strong>, <strong>aniversário</strong> e <strong>mesversário</strong> em <strong>Goiânia</strong>. Bolos temáticos e cenográficos, <strong>docinhos para festa</strong>, <strong>doces gourmet</strong> e <strong>bem-casados</strong> — tudo artesanal e com a identidade visual do seu evento.</p>
+      <div class="cria__chips reveal" aria-label="Nossos serviços">
+        <span class="cria__chip">Bolos personalizados</span>
+        <span class="cria__chip">Bolos decorados</span>
+        <span class="cria__chip">Bolo cenográfico</span>
+        <span class="cria__chip">Bolos temáticos</span>
+        <span class="cria__chip">Doces finos</span>
+        <span class="cria__chip">Mesa de doces</span>
+        <span class="cria__chip">Docinhos para festa</span>
+        <span class="cria__chip">Doces gourmet</span>
+        <span class="cria__chip">Bem-casados</span>
+        <span class="cria__chip">Entrega no local</span>
+      </div>
+    </div>
+
+    <div class="mosaic reveal" role="list" aria-label="Fotos das nossas criações">
+      <figure class="mosaic__item mosaic__item--big" role="listitem">
+        <img src="assets/galeria/casamento-02.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento personalizado branco com babados e flores, da Duetto, Goiânia">
+        <figcaption class="mosaic__cap">Bolo de casamento personalizado</figcaption>
+      </figure>
+      <figure class="mosaic__item" role="listitem">
+        <img src="assets/galeria/batizado-09.webp" width="720" height="1280" loading="lazy" alt="Bolo de batizado decorado branco com laço de chocolate">
+        <figcaption class="mosaic__cap">Bolo de batizado decorado</figcaption>
+      </figure>
+      <figure class="mosaic__item" role="listitem">
+        <img src="assets/galeria/charevelacao-06.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação temático com ursinho em tons de azul">
+        <figcaption class="mosaic__cap">Bolo de chá revelação</figcaption>
+      </figure>
+      <figure class="mosaic__item mosaic__item--wide" role="listitem">
+        <img src="assets/galeria/batizado-06.webp" width="720" height="1280" loading="lazy" alt="Doces finos e docinhos para festa de batizado com laços e pombinhas, Goiânia">
+        <figcaption class="mosaic__cap">Doces finos para festa</figcaption>
+      </figure>
+      <figure class="mosaic__item mosaic__item--tall" role="listitem">
+        <img src="assets/galeria/casamento-03.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento cenográfico de andares com orquídeas brancas">
+        <figcaption class="mosaic__cap">Bolo de casamento de andares</figcaption>
+      </figure>
+      <figure class="mosaic__item" role="listitem">
+        <img src="assets/galeria/charevelacao-05.webp" width="720" height="1280" loading="lazy" alt="Cupcakes e doces personalizados de chá revelação em tons pastel">
+        <figcaption class="mosaic__cap">Doces personalizados</figcaption>
+      </figure>
+      <figure class="mosaic__item mosaic__item--wide" role="listitem">
+        <img src="assets/galeria/casamento-09.webp" width="720" height="1280" loading="lazy" alt="Mesa de doces finos e bem-casados de casamento com detalhes dourados, Goiânia">
+        <figcaption class="mosaic__cap">Mesa de doces finos</figcaption>
+      </figure>
+      <figure class="mosaic__item" role="listitem">
+        <img src="assets/galeria/batizado-02.webp" width="720" height="1280" loading="lazy" alt="Mesa de doces de batizado com topiárias de flores brancas e cupcakes">
+        <figcaption class="mosaic__cap">Mesa de doces de batizado</figcaption>
+      </figure>
+      <figure class="mosaic__item mosaic__item--tall" role="listitem">
+        <img src="assets/galeria/charevelacao-01.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação personalizado em tons pastel com figuras de bebê e balões">
+        <figcaption class="mosaic__cap">Bolo temático de chá revelação</figcaption>
+      </figure>
+      <figure class="mosaic__item" role="listitem">
+        <img src="assets/galeria/batizado-10.webp" width="720" height="1280" loading="lazy" alt="Docinhos para festa de batizado com folhagem verde">
+        <figcaption class="mosaic__cap">Docinhos para festa</figcaption>
+      </figure>
+      <figure class="mosaic__item mosaic__item--wide" role="listitem">
+        <img src="assets/galeria/casamento-06.webp" width="720" height="1280" loading="lazy" alt="Mesa de doces personalizados de casamento com rosas, em Goiânia">
+        <figcaption class="mosaic__cap">Doces de casamento sob medida</figcaption>
+      </figure>
+      <figure class="mosaic__item" role="listitem">
+        <img src="assets/galeria/batizado-01.webp" width="720" height="1280" loading="lazy" alt="Bolo de batizado personalizado branco com pombinhas e folhagem">
+        <figcaption class="mosaic__cap">Bolo de batizado</figcaption>
+      </figure>
+    </div>
+
+    <div class="section-cta reveal">
+      <a href="#cta" class="btn btn--jade" data-wa>
+        <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
+        Quero doces personalizados para minha festa
       </a>
     </div>
   </div>
@@ -1017,11 +1150,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="carousel__track" data-track tabindex="0" role="group" aria-roledescription="carrossel" aria-label="Fotos de batizados">
           <figure class="slide"><img src="assets/galeria/batizado-01.webp" width="720" height="1280" loading="lazy" alt="Bolo de batizado branco com pombinhas e folhagem"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
           <figure class="slide"><img src="assets/galeria/batizado-02.webp" width="720" height="1280" loading="lazy" alt="Mesa de batizado com topiárias de flores brancas e cupcakes"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/batizado-03.webp" width="720" height="1280" loading="lazy" alt="Bolo de batizado branco com lírios e vasos de flores"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/batizado-03.webp" width="720" height="1280" loading="lazy" alt="Bolo de batizado decorado branco com lírios e vasos de flores, em Goiânia"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
           <figure class="slide"><img src="assets/galeria/batizado-04.webp" width="720" height="1280" loading="lazy" alt="Vasos de hortênsias brancas e bolo de batizado"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
           <figure class="slide"><img src="assets/galeria/batizado-05.webp" width="720" height="1280" loading="lazy" alt="Bolo de batizado com laço e folhagem"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
           <figure class="slide"><img src="assets/galeria/batizado-06.webp" width="720" height="1280" loading="lazy" alt="Doces finos de batizado com laços e pombinhas"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/batizado-07.webp" width="720" height="1280" loading="lazy" alt="Mesa de batizado com bolo branco e doces"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/batizado-07.webp" width="720" height="1280" loading="lazy" alt="Mesa de doces de batizado com bolo personalizado branco e docinhos para festa"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
           <figure class="slide"><img src="assets/galeria/batizado-08.webp" width="720" height="1280" loading="lazy" alt="Display de doces brancos de batizado"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
           <figure class="slide"><img src="assets/galeria/batizado-09.webp" width="720" height="1280" loading="lazy" alt="Bolo de batizado branco com laço, em destaque"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
           <figure class="slide"><img src="assets/galeria/batizado-10.webp" width="720" height="1280" loading="lazy" alt="Doces finos de batizado com folhagem verde"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
@@ -1036,14 +1169,14 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <div class="carousel" data-carousel data-autoplay>
         <button class="carousel__arrow carousel__arrow--prev" data-prev aria-label="Foto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
         <div class="carousel__track" data-track tabindex="0" role="group" aria-roledescription="carrossel" aria-label="Fotos de casamentos">
-          <figure class="slide"><img src="assets/galeria/casamento-01.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento de andares com copo-de-leite"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/casamento-01.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento de andares com copo-de-leite, personalizado em Goiânia"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
           <figure class="slide"><img src="assets/galeria/casamento-02.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento branco com babados e flores"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
           <figure class="slide"><img src="assets/galeria/casamento-03.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento de andares com orquídeas brancas"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
           <figure class="slide"><img src="assets/galeria/casamento-04.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento texturizado com folhagem"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
           <figure class="slide"><img src="assets/galeria/casamento-05.webp" width="591" height="1280" loading="lazy" alt="Mesa de casamento com rosas brancas e bolo"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
           <figure class="slide"><img src="assets/galeria/casamento-06.webp" width="720" height="1280" loading="lazy" alt="Mesa de doces de casamento com rosas cor-de-rosa"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
           <figure class="slide"><img src="assets/galeria/casamento-07.webp" width="720" height="1280" loading="lazy" alt="Mesa de casamento com flores e cupcakes"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/casamento-08.webp" width="720" height="1280" loading="lazy" alt="Doces finos de casamento com cobertura vermelha"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/casamento-08.webp" width="720" height="1280" loading="lazy" alt="Doces finos para casamento com cobertura vermelha, em Goiânia"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
           <figure class="slide"><img src="assets/galeria/casamento-09.webp" width="720" height="1280" loading="lazy" alt="Doces finos de casamento com detalhes dourados"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
           <figure class="slide"><img src="assets/galeria/casamento-10.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento com topo de noivos"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
         </div>
@@ -1058,12 +1191,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <button class="carousel__arrow carousel__arrow--prev" data-prev aria-label="Foto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
         <div class="carousel__track" data-track tabindex="0" role="group" aria-roledescription="carrossel" aria-label="Fotos de chá revelação">
           <figure class="slide"><img src="assets/galeria/charevelacao-01.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação em tons pastel com figuras de bebê e balões azuis e rosas"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/charevelacao-02.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação com balões em rosa e prata"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/charevelacao-02.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação personalizado com balões em rosa e prata, Goiânia"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
           <figure class="slide"><img src="assets/galeria/charevelacao-03.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação com coelhinho e confeitos pastel"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
           <figure class="slide"><img src="assets/galeria/charevelacao-04.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação com balão"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
           <figure class="slide"><img src="assets/galeria/charevelacao-05.webp" width="720" height="1280" loading="lazy" alt="Cupcakes de chá revelação em tons pastel e azul"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
           <figure class="slide"><img src="assets/galeria/charevelacao-06.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação com ursinho em tons de azul"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/charevelacao-07.webp" width="720" height="1280" loading="lazy" alt="Mesa de chá revelação com ursinho e doces em azul"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="assets/galeria/charevelacao-07.webp" width="720" height="1280" loading="lazy" alt="Mesa de doces de chá revelação com ursinho e doces personalizados em azul"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
           <figure class="slide"><img src="assets/galeria/charevelacao-08.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação branco com balões"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
         </div>
         <button class="carousel__arrow carousel__arrow--next" data-next aria-label="Próxima foto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
@@ -1240,6 +1373,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="footer__col">
       <h4>Navegação</h4>
       <a href="#kits">Kits</a>
+      <a href="#criacoes">Criações</a>
       <a href="#galeria">Portfólio</a>
       <a href="#processo">Como funciona</a>
       <a href="#faq">Dúvidas frequentes</a>
