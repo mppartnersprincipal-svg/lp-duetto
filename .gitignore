@@ -15,6 +15,9 @@ MazyOS/marketing/landing-page/assets/galeria/*.mp4
 MazyOS/marketing/landing-page/assets/galeria/*.HEIC
 MazyOS/marketing/landing-page/assets/galeria/*.heic
 
+# Configuração local do Claude Code (permissões da máquina, não versionar)
+/.claude/
+
 # Sistema
 Thumbs.db
 ehthumbs.db

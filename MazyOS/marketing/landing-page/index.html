@@ -9,8 +9,29 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-WWT354LJ');</script>
 <!-- End Google Tag Manager -->
 
+<!-- Google Ads — Conversão (preencher os 2 valores abaixo para ativar) -->
+<script>
+  /* Cole aqui os dados da ação de conversão do Google Ads:
+       GADS_ID    = ID da conversão  (ex.: "AW-123456789")
+       GADS_LABEL = rótulo (label)   (ex.: "AbC-D_efGhIjKlmNoP")
+     Enquanto estiverem vazios, nada é carregado e a página funciona normal. */
+  window.GADS_ID = "";
+  window.GADS_LABEL = "";
+  (function(){
+    if(!window.GADS_ID) return;
+    var s=document.createElement('script');
+    s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id='+window.GADS_ID;
+    document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];
+    window.gtag=function(){dataLayer.push(arguments);};
+    gtag('js',new Date());
+    gtag('config',window.GADS_ID);
+  })();
+</script>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#211A16">
 <title>Bolo Personalizado e Doces Finos em Goiânia · Duetto Ateliê de Chocolate</title>
 <meta name="description" content="Bolo personalizado, doces finos e mesa de doces para batizado, chá revelação, casamento e aniversário em Goiânia. Ateliê de luxo há 13 anos, com entrega no local.">
 
@@ -20,10 +41,40 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta property="og:type" content="website">
 <meta property="og:image" content="assets/hero.webp">
 
+<!-- Dados estruturados — negócio local -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Bakery",
+  "name": "Duetto Ateliê de Chocolate",
+  "description": "Ateliê de chocolate de luxo em Goiânia: bolos personalizados, doces finos e mesa de doces para batizado, chá revelação, casamento e aniversário, com entrega no local. 13 anos de mercado.",
+  "image": "assets/hero.webp",
+  "telephone": "+5562999510172",
+  "priceRange": "$$$",
+  "foundingDate": "2011",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Goiânia",
+    "addressRegion": "GO",
+    "addressCountry": "BR"
+  },
+  "areaServed": { "@type": "City", "name": "Goiânia" },
+  "sameAs": ["https://www.instagram.com/duetto.ateliedechocolate"],
+  "makesOffer": [
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Bolo personalizado" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Mesa de doces para festas" } },
+    { "@type": "Offer", "itemOffered": { "@type": "Product", "name": "Doces finos e brigadeiros gourmet" } }
+  ]
+}
+</script>
+
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+
+<!-- Preload da imagem LCP da hero (1º tile) -->
+<link rel="preload" as="image" href="assets/kit-batizado.webp" fetchpriority="high">
 
 <style>
 /* ============================================================
@@ -193,35 +244,60 @@ h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:
    ============================================================ */
 .hero{
   position:relative;min-height:100vh;min-height:100svh;
-  display:flex;align-items:center;justify-content:center;text-align:center;
-  background:var(--color-cacau);overflow:hidden;
-  padding-top:var(--nav-h);
+  display:flex;align-items:center;
+  overflow:hidden;padding-top:var(--nav-h);
+  background:var(--color-cacau);
+  background-image:
+    radial-gradient(120% 90% at 50% 8%,rgba(83,202,150,.16) 0%,transparent 55%),
+    linear-gradient(180deg,#2A211C 0%,var(--color-cacau) 60%,#1A1410 100%);
 }
-.hero__bg{
-  position:absolute;inset:-8% 0;width:100%;height:116%;
-  object-fit:cover;object-position:center;z-index:0;
-  opacity:.42;will-change:transform;
+.hero__inner{
+  position:relative;z-index:2;width:100%;
+  display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,1fr);
+  gap:clamp(32px,5vw,72px);align-items:center;
 }
-.hero__overlay{
-  position:absolute;inset:0;z-index:1;
-  background:
-    radial-gradient(120% 90% at 50% 12%,rgba(83,202,150,.20) 0%,transparent 55%),
-    linear-gradient(180deg,rgba(33,26,22,.55) 0%,rgba(33,26,22,.72) 60%,rgba(33,26,22,.94) 100%);
-}
-.hero__content{position:relative;z-index:2;max-width:880px;padding-inline:24px}
+.hero__content{max-width:560px}
 .hero__headline{
-  font-style:italic;font-size:var(--text-display);color:var(--color-ivory);
-  margin-bottom:var(--space-sm);
+  font-style:italic;font-size:clamp(40px,5vw,64px);color:var(--color-ivory);
+  line-height:1.08;margin-bottom:var(--space-sm);
 }
 .hero__slogan{
-  font-family:var(--font-script);font-size:clamp(30px,5vw,48px);
+  font-family:var(--font-script);font-size:clamp(26px,3.4vw,40px);
   color:var(--color-jade);font-weight:400;line-height:1;margin-bottom:var(--space-md);
 }
 .hero__sub{
-  font-weight:300;font-size:clamp(15px,2vw,19px);color:rgba(250,246,239,.82);
-  max-width:600px;margin:0 auto var(--space-lg);line-height:1.7;
+  font-weight:300;font-size:clamp(15px,1.4vw,18px);color:rgba(250,246,239,.84);
+  max-width:480px;margin:0 0 var(--space-lg);line-height:1.7;
 }
+.hero__cta-row{display:flex;gap:var(--space-sm);flex-wrap:wrap}
 .hero .btn--jade{font-size:16px}
+
+/* Linha de confiança */
+.hero__trust{
+  display:flex;flex-wrap:wrap;gap:18px;margin-top:var(--space-md);
+  font-size:13px;letter-spacing:.04em;color:var(--color-gold-soft);
+}
+.hero__trust li{display:flex;align-items:center;gap:8px}
+.hero__trust li::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--color-jade);flex:none}
+
+/* Quadrante de fotos (espelha o estilo do .mosaic) */
+.hero__grid{
+  display:grid;grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(2,1fr);gap:14px;
+}
+.hero__tile{
+  position:relative;overflow:hidden;border-radius:var(--radius-lg);
+  aspect-ratio:3/4;background:var(--color-sand);
+  box-shadow:0 24px 50px -26px rgba(0,0,0,.6);border:1px solid rgba(255,255,255,.10);
+}
+.hero__tile img{width:100%;height:100%;object-fit:cover;transition:transform .6s ease}
+.hero__tile:hover img{transform:scale(1.06)}
+.hero__tile::after{content:"";position:absolute;inset:0;background:rgba(30,142,98,0);transition:background .35s ease}
+.hero__tile:hover::after{background:rgba(30,142,98,.18)}
+.hero__tile-cap{
+  position:absolute;left:0;right:0;bottom:0;z-index:2;padding:24px 14px 12px;
+  font-family:var(--font-body);font-weight:400;font-size:12px;letter-spacing:.03em;color:var(--color-ivory);
+  background:linear-gradient(180deg,transparent,rgba(33,26,22,.82));
+}
 
 .scroll-ind{
   position:absolute;left:50%;bottom:28px;transform:translateX(-50%);z-index:2;
@@ -240,7 +316,7 @@ h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:
    S2 — POSICIONAMENTO (fundo tiffany claro)
    ============================================================ */
 .s2{background:var(--color-jade-50);position:relative;overflow:hidden}
-.s2__grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.7fr);gap:var(--space-xl);align-items:center}
+.s2__grid{display:grid;grid-template-columns:1fr}
 .s2__head{max-width:560px}
 .s2__title{font-size:var(--text-h1);color:var(--color-cacau);margin-bottom:var(--space-md)}
 .s2__title::after{content:"";display:block;width:64px;height:3px;background:var(--color-jade);margin-top:var(--space-md)}
@@ -251,16 +327,6 @@ h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:
   margin-block:var(--space-md);
 }
 .s2__body{font-size:var(--text-body);color:var(--color-cocoa);max-width:var(--max-w-text)}
-.s2__visual{position:relative;display:flex;justify-content:center;align-items:center}
-.s2__num{
-  font-family:var(--font-display);font-weight:600;font-size:clamp(180px,26vw,340px);
-  color:var(--color-jade);opacity:.10;line-height:.8;letter-spacing:-.03em;
-  position:absolute;z-index:0;user-select:none;
-}
-.s2__img{
-  position:relative;z-index:1;width:78%;max-width:300px;border-radius:var(--radius-lg);
-  box-shadow:0 30px 60px -24px rgba(33,26,22,.4);border:1px solid rgba(255,255,255,.6);
-}
 
 /* ============================================================
    S3 — PROVA SOCIAL  (estilos prontos; seção oculta até depoimentos reais)
@@ -731,7 +797,6 @@ h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:
 @media (max-width:1199px){
   .nav__links{gap:var(--space-md)}
   .cards3,.cards4,.kits{grid-template-columns:repeat(2,1fr)}
-  .s2__grid{gap:var(--space-lg)}
   .slide{width:calc((100% - var(--space-md))/2)}
   .insta__grid{grid-template-columns:repeat(3,1fr)}
   /* Mosaico: 2 colunas; mantém só o destaque grande */
@@ -741,18 +806,37 @@ h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:
   .mosaic__item--big{grid-column:span 2;grid-row:span 2}
   .doces__grid{grid-template-columns:repeat(2,1fr)}
 }
+/* Hero: empilha texto + quadrante */
+@media (max-width:980px){
+  .hero__inner{grid-template-columns:minmax(0,1fr);gap:var(--space-lg)}
+  .hero__content{max-width:none;min-width:0;text-align:center;margin-inline:auto}
+  .hero__sub{margin-inline:auto}
+  .hero__cta-row,.hero__trust{justify-content:center}
+  .hero__cta-row .btn{white-space:normal;height:auto;min-height:56px;padding-block:14px}
+  .hero__grid{max-width:520px;margin-inline:auto}
+}
+
 @media (max-width:768px){
   :root{--space-2xl:96px}
   .nav__links{display:none}
   .nav__burger{display:flex}
-  .s2__grid{grid-template-columns:1fr;gap:var(--space-md)}
-  .s2__visual{order:-1}
+  /* Hero deixa de ocupar a tela inteira: CTA acessível sem rolar */
+  .hero{min-height:auto;padding-block:calc(var(--nav-h) + 24px) var(--space-lg)}
+  .scroll-ind{display:none}
+  /* Alvos de toque >=44px (usabilidade mobile / Lighthouse / Google Ads) */
+  .nav__burger{min-width:44px;min-height:44px;justify-content:center;align-items:center}
+  .kit__cta{padding-block:11px}
+  .gal__tab{padding:14px 22px}
+  .carousel__dots{gap:12px}
+  .carousel__dot{position:relative;width:11px;height:11px}
+  .carousel__dot[aria-current="true"]{width:26px}
+  .carousel__dot::after{content:"";position:absolute;inset:-9px}
+  .footer__col a{padding-block:10px;margin-bottom:2px}
   .founder__grid{grid-template-columns:1fr;gap:var(--space-lg)}
   .founder__visual{order:-1;margin-bottom:var(--space-sm)}
   .founder__frame{max-width:320px}
   .founder__title{text-align:center}
   .founder__title::after{margin-inline:auto}
-  .s2__num{font-size:clamp(140px,42vw,220px)}
   .cards3,.cards4,.kits{grid-template-columns:1fr;max-width:440px;margin-inline:auto}
   /* Mosaico mobile: 2 colunas compactas, sem spans irregulares */
   .mosaic{grid-template-columns:repeat(2,1fr);grid-auto-rows:140px;gap:10px}
@@ -820,7 +904,6 @@ h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:
 @media (prefers-reduced-motion:reduce){
   *,*::before,*::after{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.001ms!important;scroll-behavior:auto!important}
   .reveal{opacity:1!important;transform:none!important}
-  .hero__bg{transform:none!important}
 }
 
 /* Foco visível */
@@ -873,15 +956,48 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- =================== S1 · HERO =================== -->
 <section class="hero" id="hero">
-  <img class="hero__bg" src="assets/hero.webp" width="1400" height="2489" alt="Mesa de doces de batizado personalizada da Duetto, com tema ursinho e parede verde-jade" fetchpriority="high">
-  <div class="hero__overlay"></div>
   <div class="particles" id="particles" aria-hidden="true"></div>
-  <div class="hero__content">
-    <span class="eyebrow on-dark" data-hero="eyebrow">Ateliê de Chocolate · Goiânia</span>
-    <h1 class="hero__headline" data-hero="headline">O seu momento mais especial merece doces tão únicos quanto ele.</h1>
-    <p class="hero__slogan" data-hero="slogan">As melhores coisas da vida são doces</p>
-    <p class="hero__sub" data-hero="sub">Criamos doces artesanais e personalizados para festas que ficam na memória — de quem organiza e de todos que aparecem. Há 13 anos transformando sonhos em beleza e sabor.</p>
-    <a href="#cta" class="btn btn--jade" data-hero="cta" data-wa>Quero realizar meu sonho</a>
+  <div class="wrap hero__inner">
+
+    <!-- Coluna texto -->
+    <div class="hero__content">
+      <span class="eyebrow on-dark">Ateliê de Chocolate · Goiânia · 13 anos</span>
+      <h1 class="hero__headline">Bolos personalizados e mesa de doces em Goiânia.</h1>
+      <p class="hero__slogan">As melhores coisas da vida são doces</p>
+      <p class="hero__sub">Do bolo aos doces finos e brigadeiros — a doceria completa do seu batizado, chá revelação, casamento ou aniversário, entregue no local.</p>
+      <div class="hero__cta-row">
+        <a href="#cta" class="btn btn--jade" data-wa="bolo e mesa de doces para o meu evento">
+          <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
+          Pedir orçamento no WhatsApp
+        </a>
+      </div>
+      <ul class="hero__trust" aria-label="Diferenciais">
+        <li>13 anos de ateliê</li>
+        <li>Entrega no local</li>
+        <li>Goiânia e região</li>
+      </ul>
+    </div>
+
+    <!-- Coluna quadrante de fotos -->
+    <div class="hero__grid" aria-label="Nossas criações">
+      <figure class="hero__tile">
+        <img src="assets/kit-batizado.webp" width="1000" height="1000" fetchpriority="high" decoding="async" alt="Bolo de batizado personalizado da Duetto, em Goiânia">
+        <figcaption class="hero__tile-cap">Bolos personalizados</figcaption>
+      </figure>
+      <figure class="hero__tile">
+        <img src="assets/galeria/casamento-02.webp" width="720" height="1280" decoding="async" alt="Bolo de casamento de andares da Duetto, em Goiânia">
+        <figcaption class="hero__tile-cap">Bolos de casamento</figcaption>
+      </figure>
+      <figure class="hero__tile">
+        <img src="assets/galeria/mesa-de-doces.webp" width="900" height="900" decoding="async" alt="Mesa de doces personalizada da Duetto, em Goiânia">
+        <figcaption class="hero__tile-cap">Mesa de doces</figcaption>
+      </figure>
+      <figure class="hero__tile">
+        <img src="assets/doces-finos.webp" width="745" height="513" decoding="async" alt="Doces finos personalizados e brigadeiros gourmet da Duetto">
+        <figcaption class="hero__tile-cap">Doces finos &amp; brigadeiros</figcaption>
+      </figure>
+    </div>
+
   </div>
   <div class="scroll-ind" aria-hidden="true">
     <div class="scroll-ind__arrow"></div>
@@ -899,15 +1015,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <blockquote class="blockquote reveal">Vendemos o momento em que sua filha vê a mesinha e abre um sorriso que você nunca vai esquecer.</blockquote>
       <p class="s2__body reveal">Cada doce que sai do Duetto foi pensado para a sua festa — com a identidade visual do seu tema, com o capricho de quem entende que detalhes fazem toda a diferença. Não fazemos produção em série. Fazemos o seu evento, do jeito que você sonhou.</p>
       <div class="section-cta section-cta--start reveal">
-        <a href="#cta" class="btn btn--jade" data-wa>
+        <a href="#cta" class="btn btn--jade" data-wa="uma mesa de doces personalizada">
           <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
-          Quero algo assim para minha festa
+          Pedir orçamento no WhatsApp
         </a>
       </div>
-    </div>
-    <div class="s2__visual reveal">
-      <span class="s2__num" aria-hidden="true">13</span>
-      <img class="s2__img" src="assets/detalhe-bolo.webp" width="900" height="1600" loading="lazy" alt="Bolo branco com laço de chocolate, detalhe artesanal da Duetto">
     </div>
   </div>
 </section>
@@ -1007,9 +1119,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </article>
     </div>
     <div class="section-cta reveal">
-      <a href="#cta" class="btn btn--jade" data-wa>
+      <a href="#cta" class="btn btn--jade" data-wa="o pacote completo da minha festa">
         <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
-        Quero esse cuidado no meu evento
+        Pedir orçamento no WhatsApp
       </a>
     </div>
   </div>
@@ -1074,9 +1186,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <p>Somos uma das únicas em Goiânia que entregam o pacote completo da festa: bolo + doces personalizados + doces tradicionais + entrega no local.</p>
     </div>
     <div class="section-cta reveal">
-      <a href="#cta" class="btn btn--jade" data-wa>
+      <a href="#cta" class="btn btn--jade" data-wa="um kit personalizado completo">
         <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
-        Montar meu kit personalizado
+        Pedir orçamento no WhatsApp
       </a>
     </div>
   </div>
@@ -1391,9 +1503,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
     <div class="section-cta reveal">
-      <a href="#cta" class="btn btn--jade" data-wa>
+      <a href="#cta" class="btn btn--jade" data-wa="começar o pedido do meu evento">
         <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
-        Começar pelo passo 1
+        Pedir orçamento no WhatsApp
       </a>
     </div>
   </div>
@@ -1420,6 +1532,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="faq__a"><div class="faq__a-inner">Trabalhamos apenas sob encomenda. Quanto antes você entrar em contato, mais tranquila fica a produção. Fale para verificar disponibilidade.</div></div>
       </div>
       <div class="faq__item reveal">
+        <button class="faq__q" aria-expanded="false">Quanto custa? Vocês atendem a minha região?<span class="faq__icon" aria-hidden="true"></span></button>
+        <div class="faq__a"><div class="faq__a-inner">Cada festa tem um orçamento sob medida — o valor depende do bolo, da variedade e da quantidade de doces e do tamanho do evento. Não trabalhamos com tabela pronta porque nada aqui é de prateleira: montamos a proposta a partir do que você imaginou. Atendemos Goiânia e região, com entrega no local no dia do evento. Conte os detalhes no WhatsApp e devolvemos uma proposta personalizada.</div></div>
+      </div>
+      <div class="faq__item reveal">
         <button class="faq__q" aria-expanded="false">Vocês parcelam?<span class="faq__icon" aria-hidden="true"></span></button>
         <div class="faq__a"><div class="faq__a-inner">Sim. Parcelamos no cartão. Fale com a gente para mais detalhes sobre as condições.</div></div>
       </div>
@@ -1441,7 +1557,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <span class="eyebrow on-dark reveal">13 anos · Goiânia · Parque Amazonas</span>
     <h2 class="s8__title reveal" id="s8-title">A sua festa mais especial começa com uma mensagem.</h2>
     <p class="s8__body reveal">Conte o seu sonho para a gente. Respondemos com uma proposta sob medida para o seu evento — com exclusividade, capricho e a pontualidade que você merece.</p>
-    <a href="#" class="btn btn--jade reveal" data-wa>
+    <a href="#" class="btn btn--jade reveal" data-wa="fechar o orçamento do meu evento">
       <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
       Solicitar orçamento pelo WhatsApp
     </a>
@@ -1500,24 +1616,36 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 (function(){
   "use strict";
   const WA_NUMBER = "5562999510172";
-  const WA_MSG = encodeURIComponent("Olá! Vim pelo site da Duetto e gostaria de solicitar um orçamento para o meu evento.");
-  const WA_URL = `https://wa.me/${WA_NUMBER}?text=${WA_MSG}`;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const isFinePointer = window.matchMedia("(hover:hover) and (pointer:fine)").matches;
 
+  /* Monta a URL do WhatsApp com mensagem já qualificada (pede evento, data e cidade) */
+  function buildWaUrl(ctx){
+    const intro = ctx
+      ? `Olá! Vim pelo site da Duetto e gostaria de um orçamento de ${ctx}.`
+      : "Olá! Vim pelo site da Duetto e gostaria de solicitar um orçamento para o meu evento.";
+    const msg = `${intro}\n\nPara agilizar, já adianto:\n• Tipo de evento: \n• Data prevista: \n• Cidade: `;
+    return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+  }
+
   /* ---- WhatsApp em todos os [data-wa] ---- */
   document.querySelectorAll("[data-wa]").forEach(el=>{
-    el.setAttribute("href", WA_URL);
+    const ctx = (el.getAttribute("data-wa") || "").trim();
+    el.setAttribute("href", buildWaUrl(ctx));
     el.setAttribute("target","_blank");
     el.setAttribute("rel","noopener");
-    /* Evento customizado p/ GTM em cada clique de WhatsApp */
     el.addEventListener("click", ()=>{
+      /* Evento customizado p/ GTM em cada clique de WhatsApp */
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         event: "whatsapp_click",
-        wa_location: el.getAttribute("data-wa") || el.id || el.className || "wa-button",
+        wa_location: ctx || el.id || el.className || "wa-button",
         wa_text: (el.textContent || "").trim().slice(0,60)
       });
+      /* Conversão Google Ads — dispara só quando ID + label estão configurados */
+      if(window.GADS_ID && window.GADS_LABEL && typeof window.gtag === "function"){
+        window.gtag('event','conversion',{send_to:window.GADS_ID+'/'+window.GADS_LABEL});
+      }
     });
   });
 
@@ -1760,13 +1888,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     if(reduceMotion || typeof gsap==="undefined") return;
     gsap.registerPlugin(ScrollTrigger);
     const tl=gsap.timeline({defaults:{ease:"power3.out"}});
-    tl.from('[data-hero="eyebrow"]',{y:20,opacity:0,duration:.8,delay:.2})
-      .from('[data-hero="headline"]',{y:60,opacity:0,duration:1.2},"-=.4")
-      .from('[data-hero="slogan"]',{opacity:0,scale:.9,duration:1},"-=.6")
-      .from('[data-hero="sub"]',{y:20,opacity:0,duration:.9},"-=.5")
-      .from('[data-hero="cta"]',{scale:.85,opacity:0,duration:.7},"-=.4");
-    gsap.to(".hero__bg",{yPercent:12,ease:"none",
-      scrollTrigger:{trigger:".hero",start:"top top",end:"bottom top",scrub:true}});
+    tl.from('.hero__content .eyebrow',{y:20,opacity:0,duration:.8,delay:.2})
+      .from('.hero__headline',{y:60,opacity:0,duration:1.2},"-=.4")
+      .from('.hero__slogan',{opacity:0,scale:.9,duration:1},"-=.6")
+      .from('.hero__sub',{y:20,opacity:0,duration:.9},"-=.5")
+      .from('.hero__cta-row',{scale:.85,opacity:0,duration:.7},"-=.4")
+      .from('.hero__trust',{y:14,opacity:0,duration:.7},"-=.4")
+      .from('.hero__tile',{y:30,opacity:0,duration:.7,stagger:.12},"-=.9");
     gsap.to('.kit__tag--jade',{scale:1.04,duration:1.4,repeat:-1,yoyo:true,ease:"sine.inOut",transformOrigin:"left center"});
   }
 
