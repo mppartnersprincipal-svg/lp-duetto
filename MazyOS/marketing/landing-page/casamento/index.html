@@ -32,14 +32,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#211A16">
-<title>Bolo Personalizado e Doces Finos em Goiânia · Duetto Ateliê de Chocolate</title>
-<meta name="description" content="Bolo personalizado, doces finos e mesa de doces para batizado, chá revelação, casamento e aniversário em Goiânia. Ateliê de luxo há 13 anos, com entrega no local.">
+<title>Bolo de Casamento em Goiânia · Duetto Ateliê de Chocolate</title>
+<meta name="description" content="Bolo de casamento de andares, mesa de doces finos e bem-casados em Goiânia. Projeto exclusivo para o grande dia, com montagem no local. Ateliê de luxo há 13 anos.">
 
 <!-- Open Graph -->
-<meta property="og:title" content="Bolo Personalizado e Doces Finos em Goiânia · Duetto Ateliê de Chocolate">
-<meta property="og:description" content="Bolos personalizados, doces finos e mesa de doces para batizado, chá revelação, casamento e aniversário. Goiânia · 13 anos · entrega no local.">
+<meta property="og:title" content="Bolo de Casamento em Goiânia · Duetto Ateliê de Chocolate">
+<meta property="og:description" content="Bolo de andares, doces finos e bem-casados com a identidade do seu casamento. Goiânia · 13 anos · montagem no local.">
 <meta property="og:type" content="website">
-<meta property="og:image" content="assets/hero.webp">
+<meta property="og:image" content="../assets/galeria/casamento-02.webp">
 
 <!-- Dados estruturados — negócio local -->
 <script type="application/ld+json">
@@ -47,8 +47,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   "@context": "https://schema.org",
   "@type": "Bakery",
   "name": "Duetto Ateliê de Chocolate",
-  "description": "Ateliê de chocolate de luxo em Goiânia: bolos personalizados, doces finos e mesa de doces para batizado, chá revelação, casamento e aniversário, com entrega no local. 13 anos de mercado.",
-  "image": "assets/hero.webp",
+  "description": "Ateliê de chocolate de luxo em Goiânia: bolo de casamento de andares, mesa de doces finos e bem-casados, com montagem e entrega no local. 13 anos de mercado.",
+  "image": "../assets/galeria/casamento-02.webp",
   "telephone": "+5562999510172",
   "priceRange": "$$$",
   "foundingDate": "2011",
@@ -74,7 +74,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
 
 <!-- Preload da imagem LCP da hero (1º tile) -->
-<link rel="preload" as="image" href="assets/kit-batizado.webp" fetchpriority="high">
+<link rel="preload" as="image" href="../assets/galeria/casamento-02.webp" fetchpriority="high">
 
 <style>
 /* ============================================================
@@ -199,27 +199,6 @@ h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:
 }
 .nav__cta:hover{background:var(--color-jade-dark);color:var(--color-ivory)}
 
-/* Dropdown "Serviços" (páginas de casamento, batizado e chá revelação) */
-.nav__item{position:relative}
-.nav__item .caret{display:inline-block;margin-left:6px;font-size:8px;transform:translateY(-2px)}
-.nav__sub{
-  position:absolute;top:calc(100% + 14px);left:50%;
-  transform:translateX(-50%) translateY(6px);min-width:220px;
-  background:rgba(250,246,239,.98);border:1px solid var(--color-sand);
-  border-radius:var(--radius-md);box-shadow:0 22px 48px -20px rgba(33,26,22,.4);
-  padding:10px;opacity:0;visibility:hidden;z-index:110;
-  transition:opacity .25s ease,transform .25s ease,visibility .25s ease;
-}
-.nav__sub::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
-.nav__item:hover .nav__sub,.nav__item:focus-within .nav__sub{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
-.nav__sub a{
-  display:block;padding:11px 14px;font-size:var(--text-eyebrow);
-  letter-spacing:var(--tracking-wide);text-transform:uppercase;
-  color:var(--color-cacau);border-radius:var(--radius-sm);font-weight:400;
-  transition:background .2s ease,color .2s ease;
-}
-.nav__sub a:hover{background:var(--color-jade-50);color:var(--color-jade-dark)}
-
 .nav__burger{display:none;flex-direction:column;gap:5px;padding:8px;z-index:110}
 .nav__burger span{width:24px;height:2px;background:var(--color-cacau);transition:.3s}
 .nav.scrolled .nav__burger span{background:var(--color-cacau)}
@@ -235,8 +214,6 @@ h1,h2,h3,blockquote{font-family:var(--font-display);font-weight:500;line-height:
   transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);
 }
 .drawer.open{transform:translateX(0)}
-.drawer{overflow-y:auto}
-@media (max-height:720px){.drawer{justify-content:flex-start;padding-block:96px 48px}}
 .drawer a{font-family:var(--font-display);font-size:32px;color:var(--color-ivory)}
 .drawer a.drawer__cta{
   margin-top:var(--space-md);font-family:var(--font-body);font-size:16px;text-transform:uppercase;
@@ -934,6 +911,35 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
   outline:2px solid var(--color-jade);outline-offset:3px;border-radius:var(--radius-sm);
 }
 </style>
+<style>
+/* ============================================================
+   PÁGINA DE SERVIÇO — dropdown do menu, hero solo, drawer rolável
+   ============================================================ */
+.nav__item{position:relative}
+.nav__item .caret{display:inline-block;margin-left:6px;font-size:8px;transform:translateY(-2px)}
+.nav__sub{
+  position:absolute;top:calc(100% + 14px);left:50%;
+  transform:translateX(-50%) translateY(6px);min-width:220px;
+  background:rgba(250,246,239,.98);border:1px solid var(--color-sand);
+  border-radius:var(--radius-md);box-shadow:0 22px 48px -20px rgba(33,26,22,.4);
+  padding:10px;opacity:0;visibility:hidden;z-index:110;
+  transition:opacity .25s ease,transform .25s ease,visibility .25s ease;
+}
+.nav__sub::before{content:"";position:absolute;top:-14px;left:0;right:0;height:14px}
+.nav__item:hover .nav__sub,.nav__item:focus-within .nav__sub{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+.nav__sub a{
+  display:block;padding:11px 14px;font-size:var(--text-eyebrow);
+  letter-spacing:var(--tracking-wide);text-transform:uppercase;
+  color:var(--color-cacau);border-radius:var(--radius-sm);font-weight:400;
+  transition:background .2s ease,color .2s ease;
+}
+.nav__sub a:hover{background:var(--color-jade-50);color:var(--color-jade-dark)}
+.nav__sub a[aria-current="page"]{background:var(--color-jade-50);color:var(--color-jade-dark)}
+.hero__grid--solo{grid-template-columns:1fr;max-width:440px;margin-inline:auto;width:100%}
+.hero__grid--solo .hero__tile{aspect-ratio:4/5}
+.drawer{overflow-y:auto}
+@media (max-height:720px){.drawer{justify-content:flex-start;padding-block:96px 48px}}
+</style>
 </head>
 <body>
 <!-- Google Tag Manager (noscript) -->
@@ -941,25 +947,22 @@ a:focus-visible,button:focus-visible,.btn:focus-visible,.nav__link:focus-visible
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
 
-<!-- =================== NAVBAR =================== -->
 <nav class="nav" id="nav">
   <div class="wrap nav__inner">
-    <a href="#hero" class="logo" aria-label="Duetto Ateliê de Chocolate">
-      <img src="assets/logo-horizontal.png" alt="Duetto Ateliê de Chocolate" class="logo__img">
+    <a href="../" class="logo" aria-label="Duetto Ateliê de Chocolate — página inicial">
+      <img src="../assets/logo-horizontal.png" alt="Duetto Ateliê de Chocolate" class="logo__img">
     </a>
     <ul class="nav__links">
+      <li><a class="nav__link" href="../">Início</a></li>
       <li class="nav__item">
-        <a class="nav__link" href="#kits">Serviços<span class="caret" aria-hidden="true">▾</span></a>
+        <a class="nav__link" href="../#kits">Serviços<span class="caret" aria-hidden="true">▾</span></a>
         <ul class="nav__sub">
-          <li><a href="casamento/">Casamento</a></li>
-          <li><a href="batizado/">Batizado</a></li>
-          <li><a href="cha-revelacao/">Chá Revelação</a></li>
+          <li><a href="../casamento/" aria-current="page">Casamento</a></li>
+          <li><a href="../batizado/">Batizado</a></li>
+          <li><a href="../cha-revelacao/">Chá Revelação</a></li>
         </ul>
       </li>
-      <li><a class="nav__link" href="#criacoes">Criações</a></li>
-      <li><a class="nav__link" href="#doces">Doces</a></li>
-      <li><a class="nav__link" href="#galeria">Portfólio</a></li>
-      <li><a class="nav__link" href="#fundadora">Sobre</a></li>
+      <li><a class="nav__link" href="#galeria">Galeria</a></li>
       <li><a class="nav__link" href="#processo">Como funciona</a></li>
       <li><a class="nav__link" href="#faq">Dúvidas</a></li>
       <li><a class="nav__cta" href="#cta" data-wa>Orçamento</a></li>
@@ -972,13 +975,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
 <!-- Drawer mobile -->
 <div class="drawer" id="drawer">
-  <a href="casamento/">Casamento</a>
-  <a href="batizado/">Batizado</a>
-  <a href="cha-revelacao/">Chá Revelação</a>
-  <a href="#criacoes">Criações</a>
-  <a href="#doces">Doces</a>
-  <a href="#galeria">Portfólio</a>
-  <a href="#fundadora">Sobre</a>
+  <a href="../">Início</a>
+  <a href="../casamento/">Casamento</a>
+  <a href="../batizado/">Batizado</a>
+  <a href="../cha-revelacao/">Chá Revelação</a>
+  <a href="#galeria">Galeria</a>
   <a href="#processo">Como funciona</a>
   <a href="#faq">Dúvidas</a>
   <a href="#cta" class="drawer__cta" data-wa>Solicitar orçamento</a>
@@ -991,42 +992,28 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="particles" id="particles" aria-hidden="true"></div>
   <div class="wrap hero__inner">
 
-    <!-- Coluna texto -->
     <div class="hero__content">
-      <span class="eyebrow on-dark">Ateliê de Chocolate · Goiânia · 13 anos</span>
-      <h1 class="hero__headline">Bolos personalizados e mesa de doces em Goiânia.</h1>
+      <span class="eyebrow on-dark">Casamentos · Goiânia · 13 anos</span>
+      <h1 class="hero__headline">O bolo do seu casamento, à altura do grande dia.</h1>
       <p class="hero__slogan">As melhores coisas da vida são doces</p>
-      <p class="hero__sub">Do bolo aos doces finos e brigadeiros — a doceria completa do seu batizado, chá revelação, casamento ou aniversário, entregue no local.</p>
+      <p class="hero__sub">Projeto exclusivo do bolo de andares, mesa de doces finos e bem-casados — tudo com a paleta e a identidade do seu casamento, montado no local, no horário.</p>
       <div class="hero__cta-row">
-        <a href="#cta" class="btn btn--jade" data-wa="bolo e mesa de doces para o meu evento">
+        <a href="#cta" class="btn btn--jade" data-wa="bolo e mesa de doces para o meu casamento">
           <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
           Pedir orçamento no WhatsApp
         </a>
       </div>
       <ul class="hero__trust" aria-label="Diferenciais">
-        <li>13 anos de ateliê</li>
-        <li>Entrega no local</li>
-        <li>Goiânia e região</li>
+        <li>Projeto exclusivo do bolo</li>
+        <li>Bem-casados &amp; doces finos</li>
+        <li>Montagem no local</li>
       </ul>
     </div>
 
-    <!-- Coluna quadrante de fotos -->
-    <div class="hero__grid" aria-label="Nossas criações">
+    <div class="hero__grid hero__grid--solo" aria-label="Bolo de casamento da Duetto">
       <figure class="hero__tile">
-        <img src="assets/kit-batizado.webp" width="1000" height="1000" fetchpriority="high" decoding="async" alt="Bolo de batizado personalizado da Duetto, em Goiânia">
-        <figcaption class="hero__tile-cap">Bolos personalizados</figcaption>
-      </figure>
-      <figure class="hero__tile">
-        <img src="assets/galeria/casamento-02.webp" width="720" height="1280" decoding="async" alt="Bolo de casamento de andares da Duetto, em Goiânia">
-        <figcaption class="hero__tile-cap">Bolos de casamento</figcaption>
-      </figure>
-      <figure class="hero__tile">
-        <img src="assets/galeria/mesa-de-doces.webp" width="900" height="900" decoding="async" alt="Mesa de doces personalizada da Duetto, em Goiânia">
-        <figcaption class="hero__tile-cap">Mesa de doces</figcaption>
-      </figure>
-      <figure class="hero__tile">
-        <img src="assets/doces-finos.webp" width="745" height="513" decoding="async" alt="Doces finos personalizados e brigadeiros gourmet da Duetto">
-        <figcaption class="hero__tile-cap">Doces finos &amp; brigadeiros</figcaption>
+        <img src="../assets/galeria/casamento-02.webp" width="720" height="1280" fetchpriority="high" decoding="async" alt="Bolo de casamento de andares branco com babados e flores, da Duetto, em Goiânia">
+        <figcaption class="hero__tile-cap">Casamento · Goiânia</figcaption>
       </figure>
     </div>
 
@@ -1038,16 +1025,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- =================== S2 · POSICIONAMENTO =================== -->
-<section class="section s2" id="nao-vendemos">
+<section class="section s2" id="posicionamento">
   <div class="wrap s2__grid">
     <div class="s2__head">
-      <span class="eyebrow reveal">Posicionamento</span>
-      <h2 class="s2__title reveal">Não vendemos bolos.</h2>
-      <!-- "docinhos tradicionais": copy do PRD §03. NB: o checklist §08 do PRD bane diminutivos. Decisão pendente da Lucianne. -->
-      <blockquote class="blockquote reveal">Vendemos o momento em que sua filha vê a mesinha e abre um sorriso que você nunca vai esquecer.</blockquote>
-      <p class="s2__body reveal">Cada doce que sai do Duetto foi pensado para a sua festa — com a identidade visual do seu tema, com o capricho de quem entende que detalhes fazem toda a diferença. Não fazemos produção em série. Fazemos o seu evento, do jeito que você sonhou.</p>
+      <span class="eyebrow reveal">Para noivos</span>
+      <h2 class="s2__title reveal">Cada casamento, um projeto.</h2>
+      <blockquote class="blockquote reveal">Vendemos o momento em que os noivos param diante da mesa e percebem: ficou exatamente como sonharam.</blockquote>
+      <p class="s2__body reveal">O bolo do casamento não é um item do checklist — é o centro da mesa mais fotografada da noite. Por isso, na Duetto ele nasce de um projeto: ouvimos vocês, estudamos a paleta e a identidade do casamento e desenhamos o bolo e os doces sob medida. Nada aqui é de prateleira.</p>
       <div class="section-cta section-cta--start reveal">
-        <a href="#cta" class="btn btn--jade" data-wa="uma mesa de doces personalizada">
+        <a href="#cta" class="btn btn--jade" data-wa="um projeto de bolo de casamento">
           <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
           Pedir orçamento no WhatsApp
         </a>
@@ -1056,102 +1042,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- =================== S2B · FUNDADORA =================== -->
-<section class="section founder" id="fundadora">
-  <div class="wrap founder__grid">
-    <div class="founder__visual reveal">
-      <div class="founder__frame">
-        <img class="founder__img" src="assets/lucianne.jpg" width="760" height="950" loading="lazy" alt="Lucianne, fundadora da Duetto Ateliê de Chocolate">
-      </div>
-      <span class="founder__badge">Desde 2011</span>
-    </div>
-    <div class="founder__head">
-      <span class="eyebrow reveal">Quem faz acontecer</span>
-      <h2 class="founder__title reveal">A mente criativa por trás da Duetto.</h2>
-      <div class="founder__body reveal">
-        <p class="lead">Olá! Sou a Lucianne — e é com muito carinho que dou as boas-vindas a você.</p>
-        <p>Desde 2011, conduzo este ateliê familiar guiada por uma certeza: cada festa merece doces tão únicos quanto o momento que ela celebra. Foi mais de uma década transformando datas especiais em obras de arte comestíveis — feitas à mão, com a dedicação que eu daria à minha própria família.</p>
-        <p>Aqui, amor e técnica caminham juntos. Cada bolo, cada doce, carrega uma história: a sua. E é exatamente isso que me move todos os dias.</p>
-        <p>É uma honra dividir essa paixão com você. Seja muito bem-vindo — e sinta-se em casa.</p>
-      </div>
-      <p class="founder__sign reveal">Lucianne</p>
-      <span class="founder__role reveal">Fundadora da Duetto</span>
-      <div class="section-cta section-cta--start reveal">
-        <a href="#cta" class="btn btn--jade" data-wa>
-          <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
-          Falar com a Lucianne
-        </a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- =================== S3 · PROVA SOCIAL ===================
-     OCULTA até depoimentos reais aprovados pela Lucianne (PRD §08).
-     Para reativar: remova este comentário de abertura e o de fechamento,
-     troque os avatares por fotos reais e os textos pelos depoimentos aprovados.
-<section class="section s3" id="prova-social">
-  <div class="wrap">
-    <div class="s3__head">
-      <span class="eyebrow on-dark reveal">Quem confia</span>
-      <h2 class="s3__title reveal">Quem já viveu um momento Duetto sabe o que é exclusividade de verdade.</h2>
-    </div>
-    <div class="cards3">
-      <article class="tcard reveal">
-        <div class="tcard__top"><div class="tcard__avatar"></div><div><div class="tcard__name">[Nome real]</div><div class="tcard__role">[Ocupação]</div></div></div>
-        <p class="tcard__text">[Depoimento real aprovado pela Lucianne]</p>
-        <div class="tcard__sep"></div><span class="tcard__tag">Batizado · 2024</span>
-      </article>
-      <article class="tcard reveal">
-        <div class="tcard__top"><div class="tcard__avatar"></div><div><div class="tcard__name">[Nome real]</div><div class="tcard__role">[Ocupação]</div></div></div>
-        <p class="tcard__text">[Depoimento real aprovado pela Lucianne]</p>
-        <div class="tcard__sep"></div><span class="tcard__tag">Chá Revelação · 2024</span>
-      </article>
-      <article class="tcard reveal">
-        <div class="tcard__top"><div class="tcard__avatar"></div><div><div class="tcard__name">[Nome real]</div><div class="tcard__role">[Ocupação]</div></div></div>
-        <p class="tcard__text">[Depoimento real aprovado pela Lucianne]</p>
-        <div class="tcard__sep"></div><span class="tcard__tag">Casamento · 2024</span>
-      </article>
-    </div>
-    <div class="seals">
-      <span class="seal">13 anos de mercado</span>
-      <span class="seal">Entrega pontual garantida</span>
-      <span class="seal">Personalização exclusiva</span>
-      <span class="seal">Goiânia e região</span>
-    </div>
-  </div>
-</section>
-=================== /S3 =================== -->
-
-<!-- =================== S4 · DIFERENCIAIS =================== -->
-<section class="section s4" id="diferenciais">
+<!-- =================== S3 · O QUE FAZEMOS =================== -->
+<section class="section s4" id="servico">
   <div class="wrap">
     <div class="s4__head">
-      <span class="eyebrow reveal">O que nos torna únicos</span>
-      <h2 class="s4__title reveal">Por que a Duetto é diferente.</h2>
+      <span class="eyebrow reveal">Nossas especialidades</span>
+      <h2 class="s4__title reveal">O que fazemos pelo seu casamento.</h2>
     </div>
     <div class="cards4">
       <article class="dcard reveal">
         <div class="dcard__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 2.5l2.7 5.8 6.3.7-4.7 4.3 1.3 6.2L12 16.9 6.1 19.8l1.3-6.2L2.7 9l6.3-.7z"/></svg></div>
-        <h3 class="dcard__title">Cada evento, único.</h3>
-        <p class="dcard__text">Lemos o seu sonho e o transformamos em doce. Nenhum doce é genérico — cada peça carrega a identidade visual da sua festa.</p>
-        <span class="dcard__chip">Exclusividade</span>
+        <h3 class="dcard__title">Bolo de andares sob medida</h3>
+        <p class="dcard__text">Do clássico texturizado ao cenográfico com flores: o bolo é desenhado para o estilo da cerimônia e da decoração — único, como o dia pede.</p>
+        <span class="dcard__chip">Projeto exclusivo</span>
       </article>
       <article class="dcard reveal">
         <div class="dcard__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 8l9-4 9 4-9 4-9-4z"/><path d="M3 8v8l9 4 9-4V8"/><path d="M12 12v8"/></svg></div>
-        <h3 class="dcard__title">Do bolo à entrega.</h3>
-        <p class="dcard__text">Bolo + doces personalizados + docinhos tradicionais + serviço de entrega no local. Poucos ateliês em Goiânia entregam tudo junto.</p>
-        <span class="dcard__chip">Comodidade</span>
+        <h3 class="dcard__title">Mesa de doces finos &amp; bem-casados</h3>
+        <p class="dcard__text">Doces finos, brigadeiros gourmet e bem-casados com acabamento de ateliê, em harmonia com o bolo e a paleta do casamento.</p>
+        <span class="dcard__chip">Doces finos</span>
       </article>
       <article class="dcard reveal">
         <div class="dcard__icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 8l4 4 5-7 5 7 4-4-1.5 11h-15z"/></svg></div>
-        <h3 class="dcard__title">O ateliê que as mães de referência escolhem.</h3>
-        <p class="dcard__text">Nossos clientes não buscam apenas sabor — buscam a experiência de ter um ateliê de luxo cuidando do momento mais especial das suas vidas.</p>
-        <span class="dcard__chip">Status</span>
+        <h3 class="dcard__title">Montagem e entrega no local</h3>
+        <p class="dcard__text">No grande dia, chegamos antes, montamos tudo e deixamos impecável. Vocês só se preocupam em dizer sim.</p>
+        <span class="dcard__chip">Tranquilidade</span>
       </article>
     </div>
     <div class="section-cta reveal">
-      <a href="#cta" class="btn btn--jade" data-wa="o pacote completo da minha festa">
+      <a href="#cta" class="btn btn--jade" data-wa="o pacote completo do meu casamento">
         <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
         Pedir orçamento no WhatsApp
       </a>
@@ -1159,291 +1078,35 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- =================== S5 · KITS =================== -->
-<section class="section s5" id="kits">
-  <div class="wrap">
-    <div class="s5__head">
-      <span class="eyebrow reveal">Nossas especialidades</span>
-      <h2 class="s5__title reveal">Para os momentos que você só vai viver uma vez.</h2>
-      <p class="s5__sub reveal">Kits completos para Batizado, Chá Revelação e Casamento — do bolo aos doces finos, personalizados com a identidade visual do seu evento, entregues no local, no horário.</p>
-    </div>
-    <div class="kits">
-      <article class="kit" data-kit="left">
-        <div class="kit__media">
-          <span class="kit__tag kit__tag--jade">Mais pedido</span>
-          <img src="assets/kit-batizado.webp" width="1000" height="1000" loading="lazy" alt="Bolo de batizado personalizado da Duetto em Goiânia, branco com flores, rendas e pintura floral">
-        </div>
-        <div class="kit__body">
-          <h3 class="kit__name">Kit Batizado</h3>
-          <ul class="kit__list">
-            <li>Bolos personalizados + doces finos + bem-casados + doces tradicionais</li>
-            <li>Identidade visual única para cada tema</li>
-            <li>Resultado encantador — produção otimizada</li>
-          </ul>
-          <a href="#cta" class="kit__cta" data-wa>Pedir orçamento →</a>
-        </div>
-      </article>
-      <article class="kit reveal">
-        <div class="kit__media">
-          <span class="kit__tag kit__tag--gold">Guarda o segredo com beleza</span>
-          <img src="assets/kit-cha-revelacao.webp" width="1000" height="1000" loading="lazy" alt="Kit de chá revelação da Duetto em Goiânia: doces personalizados em tons de azul e verde">
-        </div>
-        <div class="kit__body">
-          <h3 class="kit__name">Chá Revelação</h3>
-          <ul class="kit__list">
-            <li>Doces personalizados que revelam o sexo do bebê</li>
-            <li>Do anúncio à mesa: tudo em harmonia</li>
-            <li>Emoção que a data pede — precisão na entrega</li>
-          </ul>
-          <a href="#cta" class="kit__cta" data-wa>Pedir orçamento →</a>
-        </div>
-      </article>
-      <article class="kit" data-kit="right">
-        <div class="kit__media">
-          <span class="kit__tag kit__tag--gold">Para o grande dia</span>
-          <img src="assets/galeria/casamento-02.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento personalizado da Duetto: bolo de andares branco texturizado com flores, Goiânia">
-        </div>
-        <div class="kit__body">
-          <h3 class="kit__name">Casamento</h3>
-          <ul class="kit__list">
-            <li>Projeto do bolo + mesa de doces finos sob medida</li>
-            <li>Paleta e identidade visual do seu casamento</li>
-            <li>Elegância de ateliê — montagem e entrega no local</li>
-          </ul>
-          <a href="#cta" class="kit__cta" data-wa>Pedir orçamento →</a>
-        </div>
-      </article>
-    </div>
-    <div class="banner-jade reveal">
-      <p>Somos uma das únicas em Goiânia que entregam o pacote completo da festa: bolo + doces personalizados + doces tradicionais + entrega no local.</p>
-    </div>
-    <div class="section-cta reveal">
-      <a href="#cta" class="btn btn--jade" data-wa="um kit personalizado completo">
-        <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
-        Pedir orçamento no WhatsApp
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- =================== S5A · NOSSAS CRIAÇÕES =================== -->
-<section class="section cria" id="criacoes">
-  <div class="wrap">
-    <div class="cria__head">
-      <span class="eyebrow reveal">Bolos &amp; doces personalizados · Goiânia</span>
-      <h2 class="cria__title reveal">Nossas criações.</h2>
-      <p class="cria__sub reveal">Do <strong>bolo personalizado</strong> e <strong>decorado</strong> à <strong>mesa de doces finos</strong> — criamos <strong>doces personalizados</strong> para <strong>batizado</strong>, <strong>chá revelação</strong>, <strong>casamento</strong>, <strong>aniversário</strong> e <strong>mesversário</strong> em <strong>Goiânia</strong>. Bolos temáticos e cenográficos, <strong>docinhos para festa</strong>, <strong>doces gourmet</strong> e <strong>bem-casados</strong> — tudo artesanal e com a identidade visual do seu evento.</p>
-      <div class="cria__chips reveal" aria-label="Nossos serviços">
-        <span class="cria__chip">Bolos personalizados</span>
-        <span class="cria__chip">Bolos decorados</span>
-        <span class="cria__chip">Bolo cenográfico</span>
-        <span class="cria__chip">Bolos temáticos</span>
-        <span class="cria__chip">Doces finos</span>
-        <span class="cria__chip">Mesa de doces</span>
-        <span class="cria__chip">Docinhos para festa</span>
-        <span class="cria__chip">Doces gourmet</span>
-        <span class="cria__chip">Bem-casados</span>
-        <span class="cria__chip">Entrega no local</span>
-      </div>
-    </div>
-
-    <div class="mosaic reveal" role="list" aria-label="Fotos das nossas criações">
-      <figure class="mosaic__item mosaic__item--big" role="listitem">
-        <img src="assets/galeria/casamento-02.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento personalizado branco com babados e flores, da Duetto, Goiânia">
-        <figcaption class="mosaic__cap">Bolo de casamento personalizado</figcaption>
-      </figure>
-      <figure class="mosaic__item" role="listitem">
-        <img src="assets/galeria/batizado-09.webp" width="720" height="1280" loading="lazy" alt="Bolo de batizado decorado branco com laço de chocolate">
-        <figcaption class="mosaic__cap">Bolo de batizado decorado</figcaption>
-      </figure>
-      <figure class="mosaic__item" role="listitem">
-        <img src="assets/galeria/charevelacao-06.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação temático com ursinho em tons de azul">
-        <figcaption class="mosaic__cap">Bolo de chá revelação</figcaption>
-      </figure>
-      <figure class="mosaic__item mosaic__item--wide" role="listitem">
-        <img src="assets/galeria/batizado-06.webp" width="720" height="1280" loading="lazy" alt="Doces finos e docinhos para festa de batizado com laços e pombinhas, Goiânia">
-        <figcaption class="mosaic__cap">Doces finos para festa</figcaption>
-      </figure>
-      <figure class="mosaic__item mosaic__item--tall" role="listitem">
-        <img src="assets/galeria/casamento-03.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento cenográfico de andares com orquídeas brancas">
-        <figcaption class="mosaic__cap">Bolo de casamento de andares</figcaption>
-      </figure>
-      <figure class="mosaic__item" role="listitem">
-        <img src="assets/galeria/charevelacao-05.webp" width="720" height="1280" loading="lazy" alt="Cupcakes e doces personalizados de chá revelação em tons pastel">
-        <figcaption class="mosaic__cap">Doces personalizados</figcaption>
-      </figure>
-      <figure class="mosaic__item mosaic__item--wide" role="listitem">
-        <img src="assets/galeria/casamento-09.webp" width="720" height="1280" loading="lazy" alt="Mesa de doces finos e bem-casados de casamento com detalhes dourados, Goiânia">
-        <figcaption class="mosaic__cap">Mesa de doces finos</figcaption>
-      </figure>
-      <figure class="mosaic__item" role="listitem">
-        <img src="assets/galeria/batizado-02.webp" width="720" height="1280" loading="lazy" alt="Mesa de doces de batizado com topiárias de flores brancas e cupcakes">
-        <figcaption class="mosaic__cap">Mesa de doces de batizado</figcaption>
-      </figure>
-      <figure class="mosaic__item mosaic__item--tall" role="listitem">
-        <img src="assets/galeria/charevelacao-01.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação personalizado em tons pastel com figuras de bebê e balões">
-        <figcaption class="mosaic__cap">Bolo temático de chá revelação</figcaption>
-      </figure>
-      <figure class="mosaic__item" role="listitem">
-        <img src="assets/galeria/batizado-10.webp" width="720" height="1280" loading="lazy" alt="Docinhos para festa de batizado com folhagem verde">
-        <figcaption class="mosaic__cap">Docinhos para festa</figcaption>
-      </figure>
-      <figure class="mosaic__item mosaic__item--wide" role="listitem">
-        <img src="assets/galeria/casamento-06.webp" width="720" height="1280" loading="lazy" alt="Mesa de doces personalizados de casamento com rosas, em Goiânia">
-        <figcaption class="mosaic__cap">Doces de casamento sob medida</figcaption>
-      </figure>
-      <figure class="mosaic__item" role="listitem">
-        <img src="assets/galeria/batizado-01.webp" width="720" height="1280" loading="lazy" alt="Bolo de batizado personalizado branco com pombinhas e folhagem">
-        <figcaption class="mosaic__cap">Bolo de batizado</figcaption>
-      </figure>
-    </div>
-
-    <div class="section-cta reveal">
-      <a href="#cta" class="btn btn--jade" data-wa>
-        <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
-        Quero doces personalizados para minha festa
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- =================== S5E · DOCES PARA FESTA =================== -->
-<section class="section doces" id="doces">
-  <div class="wrap">
-    <div class="doces__head">
-      <span class="eyebrow reveal">Doces finos &amp; docinhos gourmet · Goiânia</span>
-      <h2 class="doces__title reveal">Doces para festas que roubam a cena.</h2>
-      <p class="doces__sub reveal">Cada <strong>doce para festa</strong> é feito à mão, sem fôrma genérica. Criamos <strong>docinhos gourmet</strong>, <strong>doces finos</strong> e <strong>mesa de doces</strong> personalizada — <strong>brigadeiro gourmet</strong>, <strong>bem-casados</strong>, cupcakes e doces temáticos — para <strong>batizado</strong>, <strong>chá revelação</strong>, <strong>casamento</strong>, <strong>aniversário</strong> e <strong>mesversário</strong> em <strong>Goiânia</strong>. Sabores autorais, com a identidade visual do seu evento e <strong>entrega montada no local</strong>.</p>
-      <div class="doces__points reveal">
-        <span class="doces__point">Sabores autorais &amp; recheios premium</span>
-        <span class="doces__point">Personalizados do tema à cor</span>
-        <span class="doces__point">Entrega e montagem no local</span>
-      </div>
-    </div>
-
-    <div class="doces__grid reveal" role="list" aria-label="Fotos de doces para festa">
-      <figure class="dsweet" role="listitem">
-        <img src="assets/galeria/casamento-09.webp" width="720" height="1280" loading="lazy" alt="Doces finos gourmet de casamento com acabamento dourado, da Duetto, Goiânia">
-        <figcaption class="dsweet__cap">Doces finos com acabamento dourado</figcaption>
-      </figure>
-      <figure class="dsweet" role="listitem">
-        <img src="assets/galeria/batizado-06.webp" width="720" height="1280" loading="lazy" alt="Doces finos personalizados para festa de batizado com laços e pombinhas, Goiânia">
-        <figcaption class="dsweet__cap">Doces finos personalizados</figcaption>
-      </figure>
-      <figure class="dsweet" role="listitem">
-        <img src="assets/galeria/casamento-08.webp" width="720" height="1280" loading="lazy" alt="Docinhos gourmet para festa de casamento com cobertura vermelha brilhante, Goiânia">
-        <figcaption class="dsweet__cap">Docinhos gourmet</figcaption>
-      </figure>
-      <figure class="dsweet" role="listitem">
-        <img src="assets/galeria/charevelacao-05.webp" width="720" height="1280" loading="lazy" alt="Cupcakes e doces temáticos para festa de chá revelação em tons pastel e azul">
-        <figcaption class="dsweet__cap">Cupcakes &amp; doces temáticos</figcaption>
-      </figure>
-      <figure class="dsweet" role="listitem">
-        <img src="assets/galeria/batizado-10.webp" width="720" height="1280" loading="lazy" alt="Docinhos para festa de batizado com folhagem verde, doces finos da Duetto">
-        <figcaption class="dsweet__cap">Docinhos para festa</figcaption>
-      </figure>
-      <figure class="dsweet" role="listitem">
-        <img src="assets/galeria/casamento-06.webp" width="720" height="1280" loading="lazy" alt="Mesa de doces finos personalizados de casamento com rosas, em Goiânia">
-        <figcaption class="dsweet__cap">Mesa de doces para festa</figcaption>
-      </figure>
-      <figure class="dsweet" role="listitem">
-        <img src="assets/galeria/batizado-08.webp" width="720" height="1280" loading="lazy" alt="Display de doces finos brancos de batizado, docinhos gourmet personalizados">
-        <figcaption class="dsweet__cap">Display de doces finos</figcaption>
-      </figure>
-      <figure class="dsweet" role="listitem">
-        <img src="assets/galeria/charevelacao-07.webp" width="720" height="1280" loading="lazy" alt="Mesa de doces temática de chá revelação com ursinho e doces personalizados em azul">
-        <figcaption class="dsweet__cap">Mesa de doces temática</figcaption>
-      </figure>
-    </div>
-
-    <div class="section-cta reveal">
-      <a href="#cta" class="btn btn--jade" data-wa>
-        <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
-        Quero doces gourmet para minha festa
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- =================== S5B · GALERIA / PORTFÓLIO =================== -->
+<!-- =================== S4 · GALERIA =================== -->
 <section class="section gal" id="galeria">
   <div class="wrap">
     <div class="gal__head">
       <span class="eyebrow reveal">Portfólio · 13 anos de festas</span>
-      <h2 class="gal__title reveal">Eventos que já fizemos.</h2>
-      <p class="gal__sub reveal">Um recorte do nosso acervo. Cada mesa, um sonho diferente — personalizada do bolo ao último doce. Escolha um momento e deslize para ver.</p>
+      <h2 class="gal__title reveal">Casamentos que já adoçamos.</h2>
+      <p class="gal__sub reveal">Um recorte do nosso acervo de 13 anos — cada bolo, um casal diferente. Deslize para ver.</p>
     </div>
-
-    <!-- Abas -->
-    <div class="gal__tabs reveal" role="tablist" aria-label="Categorias de eventos">
-      <button class="gal__tab" role="tab" id="tab-batizado" aria-controls="panel-batizado" aria-selected="true">Batizados</button>
-      <button class="gal__tab" role="tab" id="tab-casamento" aria-controls="panel-casamento" aria-selected="false">Casamentos</button>
-      <button class="gal__tab" role="tab" id="tab-charevelacao" aria-controls="panel-charevelacao" aria-selected="false">Chá Revelação</button>
-    </div>
-
-    <!-- Painel: Batizados -->
-    <div class="gal__panel" id="panel-batizado" role="tabpanel" aria-labelledby="tab-batizado">
-      <div class="carousel" data-carousel data-autoplay>
-        <button class="carousel__arrow carousel__arrow--prev" data-prev aria-label="Foto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-        <div class="carousel__track" data-track tabindex="0" role="group" aria-roledescription="carrossel" aria-label="Fotos de batizados">
-          <figure class="slide"><img src="assets/galeria/batizado-01.webp" width="720" height="1280" loading="lazy" alt="Bolo de batizado branco com pombinhas e folhagem"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/batizado-02.webp" width="720" height="1280" loading="lazy" alt="Mesa de batizado com topiárias de flores brancas e cupcakes"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/batizado-03.webp" width="720" height="1280" loading="lazy" alt="Bolo de batizado decorado branco com lírios e vasos de flores, em Goiânia"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/batizado-04.webp" width="720" height="1280" loading="lazy" alt="Vasos de hortênsias brancas e bolo de batizado"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/batizado-05.webp" width="720" height="1280" loading="lazy" alt="Bolo de batizado com laço e folhagem"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/batizado-06.webp" width="720" height="1280" loading="lazy" alt="Doces finos de batizado com laços e pombinhas"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/batizado-07.webp" width="720" height="1280" loading="lazy" alt="Mesa de doces de batizado com bolo personalizado branco e docinhos para festa"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/batizado-08.webp" width="720" height="1280" loading="lazy" alt="Display de doces brancos de batizado"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/batizado-09.webp" width="720" height="1280" loading="lazy" alt="Bolo de batizado branco com laço, em destaque"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/batizado-10.webp" width="720" height="1280" loading="lazy" alt="Doces finos de batizado com folhagem verde"><figcaption class="slide__cap">Batizado · Goiânia</figcaption></figure>
-        </div>
-        <button class="carousel__arrow carousel__arrow--next" data-next aria-label="Próxima foto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-        <div class="carousel__dots" data-dots aria-hidden="true"></div>
-      </div>
-    </div>
-
-    <!-- Painel: Casamentos -->
-    <div class="gal__panel" id="panel-casamento" role="tabpanel" aria-labelledby="tab-casamento" hidden>
+    <div class="gal__panel">
       <div class="carousel" data-carousel data-autoplay>
         <button class="carousel__arrow carousel__arrow--prev" data-prev aria-label="Foto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
         <div class="carousel__track" data-track tabindex="0" role="group" aria-roledescription="carrossel" aria-label="Fotos de casamentos">
-          <figure class="slide"><img src="assets/galeria/casamento-01.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento de andares com copo-de-leite, personalizado em Goiânia"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/casamento-02.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento branco com babados e flores"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/casamento-03.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento de andares com orquídeas brancas"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/casamento-04.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento texturizado com folhagem"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/casamento-05.webp" width="591" height="1280" loading="lazy" alt="Mesa de casamento com rosas brancas e bolo"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/casamento-06.webp" width="720" height="1280" loading="lazy" alt="Mesa de doces de casamento com rosas cor-de-rosa"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/casamento-07.webp" width="720" height="1280" loading="lazy" alt="Mesa de casamento com flores e cupcakes"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/casamento-08.webp" width="720" height="1280" loading="lazy" alt="Doces finos para casamento com cobertura vermelha, em Goiânia"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/casamento-09.webp" width="720" height="1280" loading="lazy" alt="Doces finos de casamento com detalhes dourados"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/casamento-10.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento com topo de noivos"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="../assets/galeria/casamento-01.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento de andares com copo-de-leite, personalizado em Goiânia"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="../assets/galeria/casamento-02.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento branco com babados e flores"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="../assets/galeria/casamento-03.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento de andares com orquídeas brancas"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="../assets/galeria/casamento-04.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento texturizado com folhagem"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="../assets/galeria/casamento-05.webp" width="720" height="1280" loading="lazy" alt="Mesa de casamento com rosas brancas e bolo"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="../assets/galeria/casamento-06.webp" width="720" height="1280" loading="lazy" alt="Mesa de doces de casamento com rosas cor-de-rosa"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="../assets/galeria/casamento-07.webp" width="720" height="1280" loading="lazy" alt="Mesa de casamento com flores e cupcakes"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="../assets/galeria/casamento-08.webp" width="720" height="1280" loading="lazy" alt="Doces finos para casamento com cobertura vermelha, em Goiânia"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="../assets/galeria/casamento-09.webp" width="720" height="1280" loading="lazy" alt="Doces finos de casamento com detalhes dourados"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
+          <figure class="slide"><img src="../assets/galeria/casamento-10.webp" width="720" height="1280" loading="lazy" alt="Bolo de casamento com topo de noivos"><figcaption class="slide__cap">Casamento · Goiânia</figcaption></figure>
         </div>
         <button class="carousel__arrow carousel__arrow--next" data-next aria-label="Próxima foto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
         <div class="carousel__dots" data-dots aria-hidden="true"></div>
       </div>
     </div>
-
-    <!-- Painel: Chá Revelação -->
-    <div class="gal__panel" id="panel-charevelacao" role="tabpanel" aria-labelledby="tab-charevelacao" hidden>
-      <div class="carousel" data-carousel data-autoplay>
-        <button class="carousel__arrow carousel__arrow--prev" data-prev aria-label="Foto anterior"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5l-7 7 7 7"/></svg></button>
-        <div class="carousel__track" data-track tabindex="0" role="group" aria-roledescription="carrossel" aria-label="Fotos de chá revelação">
-          <figure class="slide"><img src="assets/galeria/charevelacao-01.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação em tons pastel com figuras de bebê e balões azuis e rosas"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/charevelacao-02.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação personalizado com balões em rosa e prata, Goiânia"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/charevelacao-03.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação com coelhinho e confeitos pastel"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/charevelacao-04.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação com balão"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/charevelacao-05.webp" width="720" height="1280" loading="lazy" alt="Cupcakes de chá revelação em tons pastel e azul"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/charevelacao-06.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação com ursinho em tons de azul"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/charevelacao-07.webp" width="720" height="1280" loading="lazy" alt="Mesa de doces de chá revelação com ursinho e doces personalizados em azul"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
-          <figure class="slide"><img src="assets/galeria/charevelacao-08.webp" width="720" height="1280" loading="lazy" alt="Bolo de chá revelação branco com balões"><figcaption class="slide__cap">Chá Revelação · Goiânia</figcaption></figure>
-        </div>
-        <button class="carousel__arrow carousel__arrow--next" data-next aria-label="Próxima foto"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></button>
-        <div class="carousel__dots" data-dots aria-hidden="true"></div>
-      </div>
-    </div>
-
     <div class="section-cta reveal">
-      <a href="#cta" class="btn btn--jade" data-wa>
+      <a href="#cta" class="btn btn--jade" data-wa="uma mesa de casamento como as do portfólio">
         <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
         Quero uma mesa como essas
       </a>
@@ -1451,91 +1114,37 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- =================== S5D · INSTAGRAM =================== -->
-<section class="section insta" id="instagram">
-  <div class="wrap">
-    <div class="insta__head">
-      <span class="eyebrow reveal">Nosso dia a dia</span>
-      <h2 class="insta__title reveal">Conheça a Duetto no Instagram.</h2>
-      <p class="insta__sub reveal">Bastidores do ateliê, mesas montadas e os detalhes que fazem cada festa única — é por lá que tudo aparece primeiro. Acompanhe e inspire-se para o seu evento.</p>
-    </div>
-
-    <a class="insta__profile reveal" href="https://instagram.com/duetto.ateliedechocolate" target="_blank" rel="noopener" aria-label="Abrir o perfil @duetto.ateliedechocolate no Instagram">
-      <span class="insta__avatar"><img src="assets/instagram-avatar.jpg" width="150" height="150" loading="lazy" alt="Selo da Duetto Ateliê de Chocolate"></span>
-      <span class="insta__meta">
-        <span class="insta__handle">@duetto.ateliedechocolate</span>
-        <span class="insta__stats"><strong>10,2&nbsp;mil</strong> seguidores · <strong>+4.700</strong> publicações</span>
-        <span class="insta__tag">Ateliê de Chocolate de luxo · Goiânia</span>
-      </span>
-    </a>
-
-    <div class="insta__grid reveal">
-      <a class="insta__cell" href="https://instagram.com/duetto.ateliedechocolate" target="_blank" rel="noopener" aria-label="Ver no Instagram da Duetto">
-        <img src="assets/galeria/batizado-09.webp" width="720" height="720" loading="lazy" alt="Bolo de batizado branco com laço de chocolate">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 1.62c-3.15 0-3.5.01-4.74.07-1.14.05-1.76.24-2.17.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.17-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.14.24 1.76.4 2.17.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.14-.05 1.76-.24 2.17-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.14-.24-1.76-.4-2.17a3.6 3.6 0 00-.88-1.35 3.6 3.6 0 00-1.35-.88c-.41-.16-1.03-.35-2.17-.4-1.24-.06-1.59-.07-4.74-.07zm0 2.76a5.46 5.46 0 110 10.92 5.46 5.46 0 010-10.92zm0 9a3.54 3.54 0 100-7.08 3.54 3.54 0 000 7.08zm5.68-9.23a1.27 1.27 0 11-2.55 0 1.27 1.27 0 012.55 0z"/></svg>
-      </a>
-      <a class="insta__cell" href="https://instagram.com/duetto.ateliedechocolate" target="_blank" rel="noopener" aria-label="Ver no Instagram da Duetto">
-        <img src="assets/galeria/casamento-03.webp" width="720" height="720" loading="lazy" alt="Bolo de casamento de andares com orquídeas brancas">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 1.62c-3.15 0-3.5.01-4.74.07-1.14.05-1.76.24-2.17.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.17-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.14.24 1.76.4 2.17.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.14-.05 1.76-.24 2.17-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.14-.24-1.76-.4-2.17a3.6 3.6 0 00-.88-1.35 3.6 3.6 0 00-1.35-.88c-.41-.16-1.03-.35-2.17-.4-1.24-.06-1.59-.07-4.74-.07zm0 2.76a5.46 5.46 0 110 10.92 5.46 5.46 0 010-10.92zm0 9a3.54 3.54 0 100-7.08 3.54 3.54 0 000 7.08zm5.68-9.23a1.27 1.27 0 11-2.55 0 1.27 1.27 0 012.55 0z"/></svg>
-      </a>
-      <a class="insta__cell" href="https://instagram.com/duetto.ateliedechocolate" target="_blank" rel="noopener" aria-label="Ver no Instagram da Duetto">
-        <img src="assets/galeria/charevelacao-01.webp" width="720" height="720" loading="lazy" alt="Bolo de chá revelação em tons pastel com figuras de bebê e balões">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 1.62c-3.15 0-3.5.01-4.74.07-1.14.05-1.76.24-2.17.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.17-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.14.24 1.76.4 2.17.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.14-.05 1.76-.24 2.17-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.14-.24-1.76-.4-2.17a3.6 3.6 0 00-.88-1.35 3.6 3.6 0 00-1.35-.88c-.41-.16-1.03-.35-2.17-.4-1.24-.06-1.59-.07-4.74-.07zm0 2.76a5.46 5.46 0 110 10.92 5.46 5.46 0 010-10.92zm0 9a3.54 3.54 0 100-7.08 3.54 3.54 0 000 7.08zm5.68-9.23a1.27 1.27 0 11-2.55 0 1.27 1.27 0 012.55 0z"/></svg>
-      </a>
-      <a class="insta__cell" href="https://instagram.com/duetto.ateliedechocolate" target="_blank" rel="noopener" aria-label="Ver no Instagram da Duetto">
-        <img src="assets/galeria/casamento-06.webp" width="720" height="720" loading="lazy" alt="Mesa de doces de casamento com rosas">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 1.62c-3.15 0-3.5.01-4.74.07-1.14.05-1.76.24-2.17.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.17-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.14.24 1.76.4 2.17.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.14-.05 1.76-.24 2.17-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.14-.24-1.76-.4-2.17a3.6 3.6 0 00-.88-1.35 3.6 3.6 0 00-1.35-.88c-.41-.16-1.03-.35-2.17-.4-1.24-.06-1.59-.07-4.74-.07zm0 2.76a5.46 5.46 0 110 10.92 5.46 5.46 0 010-10.92zm0 9a3.54 3.54 0 100-7.08 3.54 3.54 0 000 7.08zm5.68-9.23a1.27 1.27 0 11-2.55 0 1.27 1.27 0 012.55 0z"/></svg>
-      </a>
-      <a class="insta__cell" href="https://instagram.com/duetto.ateliedechocolate" target="_blank" rel="noopener" aria-label="Ver no Instagram da Duetto">
-        <img src="assets/galeria/batizado-02.webp" width="720" height="720" loading="lazy" alt="Mesa de batizado com topiárias de flores brancas">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 1.62c-3.15 0-3.5.01-4.74.07-1.14.05-1.76.24-2.17.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.17-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.14.24 1.76.4 2.17.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.14-.05 1.76-.24 2.17-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.14-.24-1.76-.4-2.17a3.6 3.6 0 00-.88-1.35 3.6 3.6 0 00-1.35-.88c-.41-.16-1.03-.35-2.17-.4-1.24-.06-1.59-.07-4.74-.07zm0 2.76a5.46 5.46 0 110 10.92 5.46 5.46 0 010-10.92zm0 9a3.54 3.54 0 100-7.08 3.54 3.54 0 000 7.08zm5.68-9.23a1.27 1.27 0 11-2.55 0 1.27 1.27 0 012.55 0z"/></svg>
-      </a>
-      <a class="insta__cell" href="https://instagram.com/duetto.ateliedechocolate" target="_blank" rel="noopener" aria-label="Ver no Instagram da Duetto">
-        <img src="assets/galeria/charevelacao-06.webp" width="720" height="720" loading="lazy" alt="Bolo de chá revelação com ursinho em tons de azul">
-        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 1.62c-3.15 0-3.5.01-4.74.07-1.14.05-1.76.24-2.17.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.17-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.14.24 1.76.4 2.17.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.14-.05 1.76-.24 2.17-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.14-.24-1.76-.4-2.17a3.6 3.6 0 00-.88-1.35 3.6 3.6 0 00-1.35-.88c-.41-.16-1.03-.35-2.17-.4-1.24-.06-1.59-.07-4.74-.07zm0 2.76a5.46 5.46 0 110 10.92 5.46 5.46 0 010-10.92zm0 9a3.54 3.54 0 100-7.08 3.54 3.54 0 000 7.08zm5.68-9.23a1.27 1.27 0 11-2.55 0 1.27 1.27 0 012.55 0z"/></svg>
-      </a>
-    </div>
-
-    <div class="insta__cta reveal">
-      <a href="https://instagram.com/duetto.ateliedechocolate" target="_blank" rel="noopener" class="btn btn--insta">
-        <svg class="btn__ig" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.16c3.2 0 3.58.01 4.85.07 1.17.05 1.8.25 2.23.41.56.22.96.48 1.38.9.42.42.68.82.9 1.38.16.42.36 1.06.41 2.23.06 1.27.07 1.65.07 4.85s-.01 3.58-.07 4.85c-.05 1.17-.25 1.8-.41 2.23-.22.56-.48.96-.9 1.38-.42.42-.82.68-1.38.9-.42.16-1.06.36-2.23.41-1.27.06-1.65.07-4.85.07s-3.58-.01-4.85-.07c-1.17-.05-1.8-.25-2.23-.41a3.7 3.7 0 01-1.38-.9 3.7 3.7 0 01-.9-1.38c-.16-.42-.36-1.06-.41-2.23-.06-1.27-.07-1.65-.07-4.85s.01-3.58.07-4.85c.05-1.17.25-1.8.41-2.23.22-.56.48-.96.9-1.38.42-.42.82-.68 1.38-.9.42-.16 1.06-.36 2.23-.41 1.27-.06 1.65-.07 4.85-.07zm0 1.62c-3.15 0-3.5.01-4.74.07-1.14.05-1.76.24-2.17.4-.55.21-.94.47-1.35.88-.41.41-.67.8-.88 1.35-.16.41-.35 1.03-.4 2.17-.06 1.24-.07 1.59-.07 4.74s.01 3.5.07 4.74c.05 1.14.24 1.76.4 2.17.21.55.47.94.88 1.35.41.41.8.67 1.35.88.41.16 1.03.35 2.17.4 1.24.06 1.59.07 4.74.07s3.5-.01 4.74-.07c1.14-.05 1.76-.24 2.17-.4.55-.21.94-.47 1.35-.88.41-.41.67-.8.88-1.35.16-.41.35-1.03.4-2.17.06-1.24.07-1.59.07-4.74s-.01-3.5-.07-4.74c-.05-1.14-.24-1.76-.4-2.17a3.6 3.6 0 00-.88-1.35 3.6 3.6 0 00-1.35-.88c-.41-.16-1.03-.35-2.17-.4-1.24-.06-1.59-.07-4.74-.07zm0 2.76a5.46 5.46 0 110 10.92 5.46 5.46 0 010-10.92zm0 9a3.54 3.54 0 100-7.08 3.54 3.54 0 000 7.08zm5.68-9.23a1.27 1.27 0 11-2.55 0 1.27 1.27 0 012.55 0z"/></svg>
-        Seguir @duetto.ateliedechocolate
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- =================== S6 · COMO FUNCIONA =================== -->
+<!-- =================== S5 · COMO FUNCIONA =================== -->
 <section class="section s6" id="processo">
   <div class="wrap">
     <div class="s6__head">
       <span class="eyebrow reveal">Como funciona</span>
-      <h2 class="s6__title reveal">Do sonho à mesa, em quatro passos.</h2>
+      <h2 class="s6__title reveal">Do pedido ao grande dia, em quatro passos.</h2>
     </div>
     <div class="steps">
       <div class="step reveal">
         <div class="step__num" data-count="1">1</div>
-        <h3 class="step__title">Conte o seu sonho</h3>
-        <p class="step__text">Fale com a gente pelo WhatsApp. Compartilhe os detalhes da festa, o tema, o que você imaginou. Quanto mais você contar, mais preciso fica o orçamento.</p>
+        <h3 class="step__title">Contem o sonho</h3>
+        <p class="step__text">Chamem a gente no WhatsApp com a data, o local e o estilo do casamento. Fotos de referência são muito bem-vindas.</p>
       </div>
       <div class="step reveal">
         <div class="step__num" data-count="2">2</div>
-        <h3 class="step__title">Receba sua proposta</h3>
-        <p class="step__text">Montamos um kit sob medida para o seu evento — peças, sabores, identidade visual. Tudo pensado para você, do zero.</p>
+        <h3 class="step__title">Recebam a proposta</h3>
+        <p class="step__text">Montamos um projeto sob medida: bolo, doces, quantidades e identidade visual — tudo pensado para vocês, do zero.</p>
       </div>
       <div class="step reveal">
         <div class="step__num" data-count="3">3</div>
         <h3 class="step__title">Produção artesanal</h3>
-        <p class="step__text">Com o pedido confirmado, cada detalhe é produzido com capricho no nosso ateliê em Goiânia. Acompanhamento transparente.</p>
+        <p class="step__text">Com o pedido confirmado, cada peça é produzida à mão no nosso ateliê em Goiânia, com acompanhamento transparente.</p>
       </div>
       <div class="step reveal">
         <div class="step__num" data-count="4">4</div>
-        <h3 class="step__title">Entrega no local</h3>
-        <p class="step__text">Você cuida de aproveitar o momento. A gente cuida de estar lá, pontualmente, com tudo pronto para encantar.</p>
+        <h3 class="step__title">Montagem no local</h3>
+        <p class="step__text">No dia do casamento, entregamos e montamos tudo pontualmente. Vocês cuidam do "sim" — o doce é com a gente.</p>
       </div>
     </div>
     <div class="section-cta reveal">
-      <a href="#cta" class="btn btn--jade" data-wa="começar o pedido do meu evento">
+      <a href="#cta" class="btn btn--jade" data-wa="começar o projeto do meu casamento">
         <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
         Pedir orçamento no WhatsApp
       </a>
@@ -1543,29 +1152,29 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- =================== S7 · FAQ =================== -->
+<!-- =================== S6 · FAQ =================== -->
 <section class="section s7" id="faq">
   <div class="wrap">
     <div class="s7__head">
       <span class="eyebrow on-dark reveal">Dúvidas frequentes</span>
-      <h2 class="s7__title reveal">Tudo o que você precisa saber antes de falar com a gente.</h2>
+      <h2 class="s7__title reveal">Dúvidas de quem está organizando o casamento.</h2>
     </div>
     <div class="faq" id="faq-list">
       <div class="faq__item reveal">
-        <button class="faq__q" aria-expanded="false">Fica igual à foto?<span class="faq__icon" aria-hidden="true"></span></button>
-        <div class="faq__a"><div class="faq__a-inner">Cada doce é personalizado com a identidade visual do seu tema — não replicamos modelos prontos. Fazemos o seu, único. Nosso acervo de 13 anos fala por nós.</div></div>
+        <button class="faq__q" aria-expanded="false">O bolo é desenhado para o nosso casamento?<span class="faq__icon" aria-hidden="true"></span></button>
+        <div class="faq__a"><div class="faq__a-inner">Sim. Não replicamos modelos prontos: o bolo nasce da paleta, das flores e do estilo da cerimônia. Cada casamento recebe um projeto único — nosso acervo de 13 anos fala por nós.</div></div>
       </div>
       <div class="faq__item reveal">
-        <button class="faq__q" aria-expanded="false">Entrega mesmo no dia da festa?<span class="faq__icon" aria-hidden="true"></span></button>
-        <div class="faq__a"><div class="faq__a-inner">Sim. A entrega no local é parte do nosso serviço. Pontualidade é um dos nossos valores inegociáveis.</div></div>
+        <button class="faq__q" aria-expanded="false">Vocês montam a mesa no local da recepção?<span class="faq__icon" aria-hidden="true"></span></button>
+        <div class="faq__a"><div class="faq__a-inner">Sim. A entrega e a montagem no local fazem parte do serviço, com a pontualidade que um casamento exige. Vocês não precisam se preocupar com nada.</div></div>
       </div>
       <div class="faq__item reveal">
-        <button class="faq__q" aria-expanded="false">Qual o prazo mínimo para encomendar?<span class="faq__icon" aria-hidden="true"></span></button>
-        <div class="faq__a"><div class="faq__a-inner">Trabalhamos apenas sob encomenda. Quanto antes você entrar em contato, mais tranquila fica a produção. Fale para verificar disponibilidade.</div></div>
+        <button class="faq__q" aria-expanded="false">Com quanto tempo de antecedência devemos encomendar?<span class="faq__icon" aria-hidden="true"></span></button>
+        <div class="faq__a"><div class="faq__a-inner">Trabalhamos apenas sob encomenda e datas concorridas fecham cedo. Quanto antes vocês falarem com a gente, mais tranquila fica a produção — consulte a disponibilidade da sua data.</div></div>
       </div>
       <div class="faq__item reveal">
-        <button class="faq__q" aria-expanded="false">Quanto custa? Vocês atendem a minha região?<span class="faq__icon" aria-hidden="true"></span></button>
-        <div class="faq__a"><div class="faq__a-inner">Cada festa tem um orçamento sob medida — o valor depende do bolo, da variedade e da quantidade de doces e do tamanho do evento. Não trabalhamos com tabela pronta porque nada aqui é de prateleira: montamos a proposta a partir do que você imaginou. Atendemos Goiânia e região, com entrega no local no dia do evento. Conte os detalhes no WhatsApp e devolvemos uma proposta personalizada.</div></div>
+        <button class="faq__q" aria-expanded="false">Quanto custa o bolo de casamento?<span class="faq__icon" aria-hidden="true"></span></button>
+        <div class="faq__a"><div class="faq__a-inner">Cada casamento tem orçamento sob medida — o valor depende do bolo, da variedade de doces e do tamanho da festa. Contem os detalhes no WhatsApp e devolvemos uma proposta personalizada.</div></div>
       </div>
       <div class="faq__item reveal">
         <button class="faq__q" aria-expanded="false">Vocês parcelam?<span class="faq__icon" aria-hidden="true"></span></button>
@@ -1581,15 +1190,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<!-- =================== S8 · CTA FINAL =================== -->
+<!-- =================== S7 · CTA FINAL =================== -->
 <section class="section s8" id="cta">
-  <img class="s8__bg" src="assets/cta-bg.webp" width="1400" height="2489" loading="lazy" alt="">
+  <img class="s8__bg" src="../assets/cta-bg.webp" width="1400" height="2489" loading="lazy" alt="">
   <div class="s8__overlay"></div>
   <div class="wrap s8__content">
     <span class="eyebrow on-dark reveal">13 anos · Goiânia · Parque Amazonas</span>
-    <h2 class="s8__title reveal" id="s8-title">A sua festa mais especial começa com uma mensagem.</h2>
-    <p class="s8__body reveal">Conte o seu sonho para a gente. Respondemos com uma proposta sob medida para o seu evento — com exclusividade, capricho e a pontualidade que você merece.</p>
-    <a href="#" class="btn btn--jade reveal" data-wa="fechar o orçamento do meu evento">
+    <h2 class="s8__title reveal" id="s8-title">O grande dia começa com uma mensagem.</h2>
+    <p class="s8__body reveal">Contem o sonho para a gente. Respondemos com uma proposta sob medida para o casamento de vocês — com exclusividade, capricho e a pontualidade que a data merece.</p>
+    <a href="#" class="btn btn--jade reveal" data-wa="fechar o orçamento do meu casamento">
       <svg class="btn__wa" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M.06 24l1.68-6.13A11.86 11.86 0 010 11.92C0 5.34 5.35 0 11.93 0a11.83 11.83 0 018.41 3.49 11.81 11.81 0 013.48 8.42c0 6.57-5.35 11.92-11.93 11.92a11.9 11.9 0 01-5.7-1.45L.06 24zM6.6 20.2c1.68 1 3.28 1.6 5.33 1.6 5.45 0 9.9-4.43 9.9-9.88a9.86 9.86 0 00-9.9-9.9c-5.46 0-9.9 4.44-9.9 9.9 0 2.16.64 3.78 1.7 5.46l-.98 3.58 3.85-1.36zm11.32-5.46c-.07-.12-.27-.2-.56-.34-.3-.15-1.76-.87-2.03-.97-.27-.1-.47-.15-.66.15-.2.3-.76.96-.93 1.16-.17.2-.34.22-.63.07-.3-.15-1.26-.46-2.4-1.48-.88-.79-1.48-1.76-1.65-2.06-.17-.3-.02-.46.13-.6.13-.14.3-.34.44-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.08-.15-.66-1.6-.9-2.18-.24-.58-.48-.5-.66-.5l-.56-.01c-.2 0-.52.07-.8.37-.27.3-1.04 1.02-1.04 2.48 0 1.46 1.07 2.88 1.22 3.08.15.2 2.1 3.2 5.08 4.49.71.3 1.26.49 1.7.63.71.22 1.36.2 1.87.12.57-.09 1.76-.72 2-1.41.25-.7.25-1.29.18-1.41z"/></svg>
       Solicitar orçamento pelo WhatsApp
     </a>
@@ -1603,7 +1212,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <footer class="footer">
   <div class="wrap footer__grid">
     <div class="footer__col">
-      <img src="assets/logo-horizontal-light.png" alt="Duetto Ateliê de Chocolate" class="footer__logo">
+      <img src="../assets/logo-horizontal-light.png" alt="Duetto Ateliê de Chocolate" class="footer__logo">
       <p class="footer__slogan">As melhores coisas da vida são doces</p>
     </div>
     <div class="footer__col">
@@ -1613,15 +1222,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <a href="https://instagram.com/duetto.ateliedechocolate" target="_blank" rel="noopener">Instagram · @duetto.ateliedechocolate</a>
     </div>
     <div class="footer__col">
-      <h4>Navegação</h4>
-      <a href="casamento/">Casamento</a>
-      <a href="batizado/">Batizado</a>
-      <a href="cha-revelacao/">Chá Revelação</a>
-      <a href="#kits">Kits</a>
-      <a href="#criacoes">Criações</a>
-      <a href="#galeria">Portfólio</a>
-      <a href="#processo">Como funciona</a>
-      <a href="#faq">Dúvidas frequentes</a>
+      <h4>Serviços</h4>
+      <a href="../casamento/">Casamento</a>
+      <a href="../batizado/">Batizado</a>
+      <a href="../cha-revelacao/">Chá Revelação</a>
+      <a href="../">Página inicial</a>
     </div>
   </div>
   <div class="wrap footer__base">© 2025 Duetto Ateliê de Chocolate · Goiânia · Feito com capricho</div>
@@ -1658,8 +1263,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   function buildWaUrl(ctx){
     const intro = ctx
       ? `Olá! Vim pelo site da Duetto e gostaria de um orçamento de ${ctx}.`
-      : "Olá! Vim pelo site da Duetto e gostaria de solicitar um orçamento para o meu evento.";
-    const msg = `${intro}\n\nPara agilizar, já adianto:\n• Tipo de evento: \n• Data prevista: \n• Cidade: `;
+      : "Olá! Vim pela página de casamentos da Duetto e gostaria de um orçamento para o meu casamento.";
+    const msg = `${intro}\n\nPara agilizar, já adianto:\n• Tipo de evento: Casamento\n• Data prevista: \n• Cidade: `;
     return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
   }
 
@@ -1674,6 +1279,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       window.dataLayer = window.dataLayer || [];
       window.dataLayer.push({
         event: "whatsapp_click",
+        wa_page: "casamento",
         wa_location: ctx || el.id || el.className || "wa-button",
         wa_text: (el.textContent || "").trim().slice(0,60)
       });
