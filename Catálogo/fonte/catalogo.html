@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<title>Catálogo Duetto 2026</title>
+<style>
+@font-face{font-family:'Cormorant Garamond';font-weight:500;font-style:normal;src:url(fonts/cormorant-garamond-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-weight:600;font-style:normal;src:url(fonts/cormorant-garamond-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Cormorant Garamond';font-weight:500;font-style:italic;src:url(fonts/cormorant-garamond-latin-500-italic.woff2) format('woff2')}
+@font-face{font-family:'Jost';font-weight:400;font-style:normal;src:url(fonts/jost-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Jost';font-weight:500;font-style:normal;src:url(fonts/jost-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Jost';font-weight:600;font-style:normal;src:url(fonts/jost-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Pinyon Script';font-weight:400;font-style:normal;src:url(fonts/pinyon-script-latin-400-normal.woff2) format('woff2')}
+:root{
+  /* Tiffany claro */
+  --tiff-25:#F6FBFA;
+  --tiff-50:#ECF7F5;
+  --tiff-100:#D9F0EC;
+  --tiff-200:#B5E3DC;
+  --tiff-300:#6FC9C0;
+  --teal:#1E847B;         /* acento do logo */
+  --teal-ink:#166A62;     /* preços e números: contraste alto */
+  /* cacau e dourado */
+  --ink:#211A16;
+  --cocoa:#4A382D;
+  --muted:#6E6159;
+  --gold:#C6A15B;
+  --gold-soft:#E3CFA0;
+  --line:#DCE9E6;
+  --paper:#FDFCFA;
+
+  --f-display:'Cormorant Garamond',Georgia,serif;
+  --f-body:'Jost',system-ui,sans-serif;
+  --f-script:'Pinyon Script',cursive;
+}
+@page{size:540px 960px;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+body{font-family:var(--f-body);color:var(--ink);font-size:17px;line-height:1.45;font-variant-numeric:lining-nums tabular-nums}
+a{color:inherit;text-decoration:none}
+
+.page{width:540px;height:960px;position:relative;overflow:hidden;page-break-after:always;break-after:page;
+  background:var(--paper);padding:46px 40px 70px;display:flex;flex-direction:column}
+.page:last-child{page-break-after:auto;break-after:auto}
+.page.tint{background:linear-gradient(180deg,var(--tiff-25) 0%,var(--tiff-50) 100%)}
+
+/* aquarela sutil, eco do catálogo antigo */
+.wash{position:absolute;border-radius:50%;filter:blur(38px);opacity:.55;pointer-events:none;z-index:0}
+.page > *:not(.wash):not(.foot){position:relative;z-index:1}
+.foot{z-index:1}
+
+/* cabeçalho de seção */
+.eyebrow{font-family:var(--f-body);font-size:12px;font-weight:500;letter-spacing:.22em;text-transform:uppercase;color:var(--teal)}
+.eyebrow .n{color:var(--gold)}
+h1,h2{font-family:var(--f-display);font-weight:500;letter-spacing:-.01em;line-height:1.02;color:var(--ink)}
+h2{font-size:46px;margin-top:10px}
+h2 em{font-style:italic;color:var(--teal)}
+.lede{font-size:16.5px;color:var(--cocoa);margin-top:12px;max-width:430px}
+.rule{width:44px;height:1px;background:var(--gold);margin:18px 0 0}
+
+/* rodapé */
+.foot{position:absolute;left:40px;right:40px;bottom:26px;display:flex;justify-content:space-between;align-items:center;
+  font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);border-top:1px solid var(--line);padding-top:12px}
+.foot b{font-family:var(--f-display);font-weight:600;font-size:15px;letter-spacing:.08em;color:var(--ink)}
+.foot .pg{font-family:var(--f-display);font-size:16px;letter-spacing:.04em;color:var(--teal-ink);font-weight:600}
+
+/* fotos */
+.photo{border-radius:14px;overflow:hidden;background:var(--tiff-100)}
+.photo img{width:100%;height:100%;object-fit:cover;display:block}
+
+/* listas de preço */
+.list{margin-top:18px}
+.row{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:9px 0;border-bottom:1px solid var(--line)}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fig .photo{height:100%}
+.fig figcaption{font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--teal);margin-top:7px;font-weight:500}
+.gallery{display:grid;grid-template-columns:1fr 1fr;gap:16px 14px;margin-top:20px}
+.gallery .photo{height:208px}
+.tight .row{padding:7px 0}
+.row:first-child{border-top:1px solid var(--line)}
+.row .name{font-size:17.5px;color:var(--ink)}
+.row .name small{display:block;font-size:14px;color:var(--muted);margin-top:1px}
+.price{font-weight:500;color:var(--teal-ink);white-space:nowrap;font-size:17.5px}
+.price .rs{font-size:.78em;font-weight:500;margin-right:3px;color:var(--teal)}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;column-gap:26px}
+.grid2 .cell{padding:11px 0 10px;border-bottom:1px solid var(--line)}
+.grid2 .cell:nth-child(-n+2){border-top:1px solid var(--line)}
+.grid2 .cell .name{font-size:17px;line-height:1.25}
+.grid2 .cell .price{display:block;margin-top:3px}
+
+.note{font-size:14.5px;color:var(--cocoa);line-height:1.45}
+.note strong{font-weight:600;color:var(--ink)}
+
+.card{background:var(--tiff-50);border:1px solid var(--tiff-100);border-radius:14px;padding:18px 20px}
+.card h3{font-family:var(--f-display);font-weight:600;font-size:23px;line-height:1.1;color:var(--ink)}
+.pill{display:inline-flex;align-items:center;gap:8px;border-radius:100px;padding:7px 14px;font-size:13.5px;font-weight:500;
+  background:#fff;border:1px solid var(--tiff-200);color:var(--teal-ink)}
+.pill.solid{background:var(--tiff-100);border-color:var(--tiff-200)}
+
+/* ---------- CAPA ---------- */
+.cover{padding:44px 40px 40px;align-items:center;text-align:center;
+  background:linear-gradient(180deg,#FFFFFF 0%,var(--tiff-25) 38%,var(--tiff-100) 100%)}
+.logo{display:flex;flex-direction:column;align-items:center}
+.logo svg{width:84px;height:84px}
+.logo .word{font-family:var(--f-display);font-weight:600;font-size:44px;letter-spacing:.06em;line-height:.9;color:#14201E;margin-top:12px;padding-left:.06em}
+.logo .sub{font-family:var(--f-body);font-size:10.5px;letter-spacing:.34em;color:var(--teal);margin-top:9px;padding-left:.34em}
+.arch{margin-top:30px;width:340px;height:430px;border-radius:170px 170px 16px 16px;overflow:hidden;position:relative;
+  box-shadow:0 0 0 1px rgba(255,255,255,.9),0 0 0 9px rgba(255,255,255,.55),0 0 0 10px var(--gold-soft)}
+.arch img{width:100%;height:100%;object-fit:cover;object-position:50% 40%}
+.cover .eyebrow{margin-top:34px}
+.cover h1{font-size:34px;margin-top:10px;line-height:1.1}
+.cover .script{font-family:var(--f-script);font-size:30px;color:var(--teal);margin-top:14px;line-height:1.1}
+
+/* ---------- ÍNDICE ---------- */
+.toc{margin-top:26px}
+.toc a{display:grid;grid-template-columns:52px 1fr auto;align-items:center;gap:6px;padding:14px 0;border-bottom:1px solid var(--line)}
+.toc a:first-child{border-top:1px solid var(--line)}
+.toc .num{font-family:var(--f-display);font-size:30px;font-weight:500;color:var(--tiff-300);line-height:1}
+.toc .t{font-family:var(--f-display);font-size:24px;font-weight:600;line-height:1.1}
+.toc .d{display:block;font-family:var(--f-body);font-size:14px;font-weight:400;color:var(--muted);margin-top:3px}
+.toc .p{font-size:13px;letter-spacing:.14em;color:var(--teal);font-weight:500}
+.steps{margin-top:auto;display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.step{background:#fff;border:1px solid var(--tiff-100);border-radius:14px;padding:14px 13px}
+.step .k{font-family:var(--f-display);font-size:26px;color:var(--teal);font-weight:600;line-height:1}
+.step p{font-size:13.5px;line-height:1.35;color:var(--cocoa);margin-top:6px}
+.step p b{color:var(--ink);font-weight:600}
+
+/* ---------- KITS ---------- */
+.kits{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px;flex:1}
+.kit{background:#fff;border:1px solid var(--tiff-100);border-radius:14px;padding:16px 16px 14px;display:flex;flex-direction:column}
+.kit.hl{background:var(--tiff-50);border-color:var(--tiff-200)}
+.kit .top{display:flex;justify-content:space-between;align-items:center}
+.kit .kn{font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:var(--teal);font-weight:500}
+.kit .pcs{font-size:12px;font-weight:600;color:var(--teal-ink);background:var(--tiff-100);border-radius:100px;padding:3px 10px}
+.kit h3{font-family:var(--f-display);font-weight:600;font-size:25px;line-height:1.05;margin-top:6px}
+.kit .ideal{font-size:13px;color:var(--muted);margin-top:3px;min-height:18px}
+.kit ul{list-style:none;margin-top:10px;padding-top:10px;border-top:1px solid var(--line)}
+.kit li{font-size:15px;line-height:1.5;color:var(--cocoa)}
+.kit li b{display:inline-block;min-width:22px;font-weight:600;color:var(--ink)}
+.kit .val{margin-top:auto;padding-top:10px;border-top:1px solid var(--line)}
+.kit .big{font-size:21px;font-weight:600;color:var(--teal-ink);line-height:1.1}
+.kit .big small{font-size:12.5px;font-weight:400;color:var(--muted);margin-left:4px}
+.kit .inst{font-size:13.5px;color:var(--cocoa);margin-top:2px}
+
+/* ---------- BEM-CASADOS ---------- */
+.tiers{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.tier{background:#fff;border:1px solid var(--tiff-100);border-radius:12px;padding:12px 6px 11px;text-align:center}
+.tier .q{font-family:var(--f-display);font-size:30px;font-weight:600;line-height:1;color:var(--ink)}
+.tier .u{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.tier .v{font-size:15.5px;font-weight:600;color:var(--teal-ink);margin-top:7px}
+
+/* ---------- CONTATO ---------- */
+.contact{align-items:center;text-align:center;padding:50px 40px 40px;
+  background:linear-gradient(180deg,var(--tiff-25) 0%,var(--tiff-100) 100%)}
+.cta{display:flex;align-items:center;gap:14px;width:100%;background:#fff;border:1px solid var(--tiff-200);border-radius:100px;padding:12px 22px 12px 12px;text-align:left}
+.cta .ic{width:46px;height:46px;border-radius:50%;background:var(--tiff-100);display:grid;place-items:center;flex:none}
+.cta .ic svg{width:22px;height:22px}
+.cta .l{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--teal)}
+.cta .v{font-size:19px;font-weight:500;color:var(--ink);line-height:1.2}
+.cta.main{background:var(--teal);border-color:var(--teal)}
+.cta.main .ic{background:rgba(255,255,255,.18)}
+.cta.main .l{color:var(--tiff-100)}
+.cta.main .v{color:#fff}
+</style>
+</head>
+<body>
+
+<!-- Emblema Duetto (batedores cruzados em círculo dourado) -->
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <g id="whisk">
+      <path d="M0,70 L0,120" stroke="#C6A15B" stroke-width="7.5" stroke-linecap="round" fill="none"/>
+      <rect x="-5" y="64" width="10" height="11" rx="3" fill="#C6A15B"/>
+      <g stroke="#1E847B" stroke-width="2.4" stroke-linecap="round" fill="none">
+        <path d="M0,6 C -22,16 -22,56 0,68"/><path d="M0,6 C 22,16 22,56 0,68"/>
+        <path d="M0,6 C -10,18 -10,56 0,68"/><path d="M0,6 C 10,18 10,56 0,68"/>
+        <path d="M0,5 L0,68"/><path d="M -5.5,9 C -3,2 3,2 5.5,9"/>
+      </g>
+      <g stroke="#1E847B" stroke-width="1.6" stroke-linecap="round" fill="none">
+        <path d="M -6,28 C 0,24 0,24 6,28"/><path d="M -8,46 C 0,42 0,42 8,46"/>
+      </g>
+    </g>
+    <symbol id="emblem" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="92" stroke="#C6A15B" stroke-width="1.5" fill="none"/>
+      <circle cx="100" cy="100" r="86" stroke="#C6A15B" stroke-width="0.8" opacity="0.45" fill="none"/>
+      <g transform="translate(100,20)">
+        <use href="#whisk" transform="rotate(-18 0 92)"/>
+        <use href="#whisk" transform="rotate(18 0 92)"/>
+      </g>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- 1 · CAPA -->
+<section class="page cover" id="p1">
+  <div class="wash" style="width:420px;height:420px;background:var(--tiff-100);top:-160px;left:-180px;opacity:.5"></div>
+  <div class="wash" style="width:380px;height:380px;background:var(--tiff-200);bottom:-150px;right:-160px;opacity:.35"></div>
+  <div class="logo" style="margin-top:auto">
+    <svg style="width:150px;height:150px"><use href="#emblem"/></svg>
+    <div class="word" style="font-size:68px;margin-top:22px">DUETTO</div>
+    <div class="sub" style="font-size:12.5px;margin-top:14px">ATELIÊ DE CHOCOLATE</div>
+  </div>
+  <div style="width:56px;height:1px;background:var(--gold);margin:52px auto 0"></div>
+  <div class="eyebrow" style="margin-top:30px">Catálogo 2026</div>
+  <h1 style="font-size:36px">Doces finos, bem-casados<br>e kits para sua festa</h1>
+  <div class="script" style="margin-bottom:auto;margin-top:26px">As melhores coisas da vida são doces.</div>
+  <div style="font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)">Goiânia · (62) 99951-0172</div>
+</section>
+
+<!-- 2 · ÍNDICE + COMO PEDIR -->
+<section class="page tint" id="p2">
+  <div class="wash" style="width:320px;height:320px;background:var(--tiff-100);top:-120px;right:-120px"></div>
+  <div class="eyebrow">Nosso cardápio</div>
+  <h2>Tudo o que <em>preparamos</em></h2>
+  <p class="lede">Toque em uma seção para ir direto a ela.</p>
+
+  <nav class="toc">
+    <a href="#p3"><span class="num">01</span><span class="t">Casamento · Doces finos<span class="d">Brigadeiros, trufas, camafeus e copinhos</span></span><span class="p">P. 03</span></a>
+    <a href="#p4"><span class="num">02</span><span class="t">Casamento · Especiais<span class="d">Cestinhas, bombons e formas de pedido</span></span><span class="p">P. 04</span></a>
+    <a href="#p5"><span class="num">03</span><span class="t">Bem-casados<span class="d">Unidade, caixa degustação e para festa</span></span><span class="p">P. 05</span></a>
+    <a href="#p6"><span class="num">04</span><span class="t">Itens individuais<span class="d">Monte sua composição personalizada</span></span><span class="p">P. 06</span></a>
+    <a href="#p7"><span class="num">05</span><span class="t">Kits festa<span class="d">Quatro kits prontos, de 26 a 70 peças</span></span><span class="p">P. 08</span></a>
+    <a href="#p8"><span class="num">06</span><span class="t">Docinhos tradicionais<span class="d">O clássico de toda festa, por cento</span></span><span class="p">P. 09</span></a>
+  </nav>
+
+  <div class="steps">
+    <div class="step"><div class="k">1</div><p><b>Escolha</b> os doces e as quantidades.</p></div>
+    <div class="step"><div class="k">2</div><p><b>Chame no WhatsApp</b> (62) 99951-0172.</p></div>
+    <div class="step"><div class="k">3</div><p><b>Combinamos</b> os detalhes do seu evento.</p></div>
+  </div>
+
+  <div class="foot"><b>DUETTO</b><span class="pg">02</span></div>
+</section>
+
+<!-- 3 · CASAMENTO · DOCES FINOS -->
+<section class="page" id="p3">
+  <div class="wash" style="width:300px;height:300px;background:var(--tiff-50);top:-100px;left:-120px"></div>
+  <div class="eyebrow"><span class="n">01</span> · Casamento 2026</div>
+  <h2>Doces <em>finos</em></h2>
+  <div class="duo" style="margin-top:18px">
+    <figure class="fig"><div class="photo" style="height:170px"><img src="img/casamento.jpg" alt="" style="object-position:50% 62%"></div><figcaption>Copinho de physalis</figcaption></figure>
+    <figure class="fig"><div class="photo" style="height:170px"><img src="img/copinho-doce-leite.jpg" alt="" style="object-position:50% 50%"></div><figcaption>Copinho doce de leite</figcaption></figure>
+  </div>
+
+  <div class="grid2" style="margin-top:16px">
+    <div class="cell"><span class="name">Brigadeiro belga</span><span class="price"><span class="rs">R$</span>4,00</span></div>
+    <div class="cell"><span class="name">Brigadeiro pérolas</span><span class="price"><span class="rs">R$</span>4,00</span></div>
+    <div class="cell"><span class="name">Flor de leite Ninho</span><span class="price"><span class="rs">R$</span>3,00</span></div>
+    <div class="cell"><span class="name">Olho de sogra</span><span class="price"><span class="rs">R$</span>3,00</span></div>
+    <div class="cell"><span class="name">Olho de sogro</span><span class="price"><span class="rs">R$</span>3,50</span></div>
+    <div class="cell"><span class="name">Trufa de maracujá</span><span class="price"><span class="rs">R$</span>6,00</span></div>
+    <div class="cell"><span class="name">Trufa Romeu e Julieta</span><span class="price"><span class="rs">R$</span>6,00</span></div>
+    <div class="cell"><span class="name">Trufa de cereja</span><span class="price"><span class="rs">R$</span>6,00</span></div>
+    <div class="cell"><span class="name">Camafeu de nozes</span><span class="price"><span class="rs">R$</span>5,50</span></div>
+    <div class="cell"><span class="name">Copinho doce de leite</span><span class="price"><span class="rs">R$</span>6,50</span></div>
+    <div class="cell"><span class="name">Copinho de physalis</span><span class="price"><span class="rs">R$</span>6,50</span></div>
+    <div class="cell"><span class="name">Quadrado rústico</span><span class="price"><span class="rs">R$</span>7,00</span></div>
+  </div>
+
+  <p class="note" style="margin-top:14px">Valores por unidade. Veja as <strong>formas de pedido</strong> na próxima página.</p>
+
+  <div class="foot"><b>DUETTO</b><span class="pg">03</span></div>
+</section>
+
+<!-- 4 · CASAMENTO · ESPECIAIS -->
+<section class="page" id="p4">
+  <div class="wash" style="width:300px;height:300px;background:var(--tiff-50);top:-110px;right:-120px"></div>
+  <div class="eyebrow"><span class="n">02</span> · Casamento 2026</div>
+  <h2>Doces <em>especiais</em></h2>
+
+  <div class="card" style="margin-top:20px;background:#fff">
+    <div style="display:flex;justify-content:space-between;align-items:baseline">
+      <h3>Cestinhas</h3><span class="price"><span class="rs">R$</span>12,00 <span style="font-weight:400;color:var(--muted);font-size:14px">cada</span></span>
+    </div>
+    <div class="list" style="margin-top:8px">
+      <div class="row" style="border-top:none"><span class="name">Cookies, Nutella e creme de Ninho</span></div>
+      <div class="row"><span class="name">Redução de morangos e creme branco</span></div>
+      <div class="row" style="border-bottom:none;padding-bottom:0"><span class="name">Trufa de limão e suspiro</span></div>
+    </div>
+  </div>
+
+  <div class="list" style="margin-top:14px">
+    <div class="row"><span class="name">Bombom de morango</span><span class="price"><span class="rs">R$</span>7,50</span></div>
+    <div class="row"><span class="name">Bombom de uva</span><span class="price"><span class="rs">R$</span>5,50</span></div>
+    <div class="row"><span class="name">Bem-casado</span><span class="price"><span class="rs">R$</span>7,00</span></div>
+    <div class="row"><span class="name">Forminhas flores de papel<small>Pacote com 40 unidades</small></span><span class="price"><span class="rs">R$</span>35,00</span></div>
+  </div>
+
+  <div class="duo" style="margin:14px 0 12px">
+    <figure class="fig"><div class="photo" style="height:100px"><img src="img/casamento2.jpg" alt="" style="object-position:50% 45%"></div><figcaption>Cestinha de cookies</figcaption></figure>
+    <figure class="fig"><div class="photo" style="height:100px"><img src="img/cestinha-morango.jpg" alt="" style="object-position:50% 45%"></div><figcaption>Cestinha de morangos</figcaption></figure>
+  </div>
+
+  <div class="card" style="margin-top:auto">
+    <div class="eyebrow">Formas de pedido · Casamento</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:12px">
+      <div>
+        <h3>Atacado</h3>
+        <p class="note" style="margin-top:6px">Acima de <strong>100 unidades</strong>, podendo ser 20 unidades por sabor.</p>
+      </div>
+      <div>
+        <h3>Varejo</h3>
+        <p class="note" style="margin-top:6px">Acréscimo no valor:<br><strong>1 a 50 unid.:</strong> +10%<br><strong>50 a 100 unid.:</strong> +5%</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="foot"><b>DUETTO</b><span class="pg">04</span></div>
+</section>
+
+<!-- 5 · BEM-CASADOS -->
+<section class="page" id="p5">
+  <div class="eyebrow"><span class="n">03</span> · Tradição</div>
+  <h2>Bem-<em>casados</em></h2>
+  <div style="display:grid;grid-template-columns:190px 1fr;gap:18px;margin-top:18px;align-items:stretch">
+    <div class="photo" style="height:220px"><img src="img/bemcasado.jpg" alt=""></div>
+    <div>
+      <p class="note" style="font-size:15.5px">Muito mais do que um doce: um símbolo de tradição e carinho nas celebrações, especialmente em casamentos. Feitos de forma artesanal, com os melhores ingredientes.</p>
+      <div style="margin-top:12px;display:flex;flex-direction:column;gap:7px">
+        <span class="pill solid">Doce de leite · o tradicional</span>
+        <span class="pill">Brigadeiro branco</span>
+      </div>
+    </div>
+  </div>
+  <p class="note" style="margin-top:10px;font-size:13.5px;color:var(--muted)">O de brigadeiro branco é muito pedido para saídas de maternidade.</p>
+
+  <div class="list" style="margin-top:16px">
+    <div class="row"><span class="name">Unidade</span><span class="price"><span class="rs">R$</span>9,00</span></div>
+    <div class="row"><span class="name">Caixa degustação<small>4 unidades</small></span><span class="price"><span class="rs">R$</span>45,00</span></div>
+  </div>
+
+  <div class="eyebrow" style="margin-top:22px">Para festa</div>
+  <div class="tiers">
+    <div class="tier"><div class="q">50</div><div class="u">unidades</div><div class="v">R$ 400</div></div>
+    <div class="tier"><div class="q">100</div><div class="u">unidades</div><div class="v">R$ 700</div></div>
+    <div class="tier"><div class="q">200</div><div class="u">unidades</div><div class="v">R$ 1.300</div></div>
+    <div class="tier"><div class="q">500</div><div class="u">unidades</div><div class="v">R$ 3.000</div></div>
+  </div>
+
+  <p style="margin-top:auto;text-align:center;font-family:var(--f-display);font-style:italic;font-size:24px;color:var(--cocoa)">Presenteie seus convidados e os surpreenda.</p>
+
+  <div class="foot"><b>DUETTO</b><span class="pg">05</span></div>
+</section>
+
+<!-- 6 · ITENS INDIVIDUAIS -->
+<section class="page" id="p6">
+  <div class="wash" style="width:280px;height:280px;background:var(--tiff-50);top:-90px;right:-100px"></div>
+  <div style="display:flex;justify-content:space-between;gap:16px;align-items:flex-start">
+    <div>
+      <div class="eyebrow"><span class="n">04</span> · Monte o seu</div>
+      <h2>Itens <em>individuais</em></h2>
+      <p class="lede" style="font-size:15.5px">Escolha seus preferidos e monte uma composição doce, linda e personalizada.</p>
+    </div>
+    <div class="photo" style="width:112px;height:112px;border-radius:50%;flex:none;box-shadow:0 0 0 5px #fff,0 0 0 6px var(--gold-soft)"><img src="img/individuais.jpg" alt=""></div>
+  </div>
+
+  <div class="list tight">
+    <div class="row"><span class="name">Bombom</span><span class="price"><span class="rs">R$</span>8,00</span></div>
+    <div class="row"><span class="name">Pirulito</span><span class="price"><span class="rs">R$</span>18,90</span></div>
+    <div class="row"><span class="name">Pop cake</span><span class="price"><span class="rs">R$</span>18,90</span></div>
+    <div class="row"><span class="name">Porta-retrato comestível</span><span class="price"><span class="rs">R$</span>25,00</span></div>
+    <div class="row"><span class="name">Bolacha amanteigada decorada</span><span class="price"><span class="rs">R$</span>25,90</span></div>
+    <div class="row"><span class="name">Cupcake</span><span class="price"><span class="rs">R$</span>30,90</span></div>
+    <div class="row"><span class="name">Palha italiana</span><span class="price"><span class="rs">R$</span>35,90</span></div>
+    <div class="row"><span class="name">Pão de mel</span><span class="price"><span class="rs">R$</span>40,00</span></div>
+    <div class="row"><span class="name">Cone recheado decorado</span><span class="price"><span class="rs">R$</span>40,00</span></div>
+    <div class="row"><span class="name">Casinha temática</span><span class="price"><span class="rs">R$</span>65,00</span></div>
+    <div class="row"><span class="name">Meio círculo G</span><span class="price"><span class="rs">R$</span>90,00</span></div>
+    <div class="row"><span class="name">Cilindro decorativo</span><span class="price"><span class="rs">R$</span>95,00</span></div>
+  </div>
+
+  <div class="card" style="margin-top:auto;padding:14px 18px">
+    <div class="eyebrow">Sabores</div>
+    <p class="note" style="margin-top:6px"><strong>Bombom:</strong> ao leite com brigadeiro ao leite, ou branco com brigadeiro branco.</p>
+    <p class="note" style="margin-top:4px"><strong>Cupcake:</strong> massa baunilha, chocolate ou cenoura. Recheio brigadeiro ao leite, Ninho, doce de leite ou brigadeiro branco.</p>
+  </div>
+  <p class="note" style="margin-top:10px;text-align:center"><strong>Encomenda mínima de 6 unidades por item.</strong></p>
+
+  <div class="foot"><b>DUETTO</b><span class="pg">06</span></div>
+</section>
+
+<!-- 6b · GALERIA ITENS INDIVIDUAIS -->
+<section class="page" id="p6b">
+  <div class="wash" style="width:300px;height:300px;background:var(--tiff-50);top:-110px;left:-120px"></div>
+  <div class="eyebrow"><span class="n">04</span> · Itens individuais</div>
+  <h2>Feitos <em>à mão</em>, um a um</h2>
+  <p class="lede" style="font-size:15.5px">Inspirações de festas reais. Cada peça é personalizada com o tema e o nome da sua comemoração.</p>
+  <div class="gallery">
+    <figure class="fig"><div class="photo"><img src="img/g-pirulito.jpg" alt=""></div></figure>
+    <figure class="fig"><div class="photo"><img src="img/g-cupcake.jpg" alt=""></div></figure>
+    <figure class="fig"><div class="photo"><img src="img/g-bolacha.jpg" alt=""></div></figure>
+    <figure class="fig"><div class="photo"><img src="img/g-popcake.jpg" alt=""></div></figure>
+    <figure class="fig"><div class="photo"><img src="img/g-casinha.jpg" alt=""></div></figure>
+    <figure class="fig"><div class="photo"><img src="img/g-meiocirculo.jpg" alt=""></div></figure>
+  </div>
+  <div class="foot"><b>DUETTO</b><span class="pg">07</span></div>
+</section>
+
+<!-- 7 · KITS FESTA -->
+<section class="page tint" id="p7">
+  <div class="eyebrow"><span class="n">05</span> · Prontos para celebrar</div>
+  <h2>Kits <em>festa</em></h2>
+  <p class="lede" style="font-size:15.5px;margin-top:8px">Com nossos kits prontos, sua festa ganha um toque único de encanto e delícia.</p>
+
+  <div class="kits">
+    <div class="kit">
+      <div class="top"><span class="kn">Kit 1</span><span class="pcs">26 peças</span></div>
+      <h3>Mini Festa</h3>
+      <div class="ideal">&nbsp;</div>
+      <ul>
+        <li><b>6</b> pirulitos</li><li><b>6</b> cupcakes</li><li><b>14</b> bombons</li>
+      </ul>
+      <div class="val"><div class="big">R$ 410,00<small>à vista</small></div><div class="inst">ou 3x de R$ 125,00 no cartão</div></div>
+    </div>
+    <div class="kit">
+      <div class="top"><span class="kn">Kit 2</span><span class="pcs">36 peças</span></div>
+      <h3>Celebração</h3>
+      <div class="ideal">Ideal para até 30 pessoas</div>
+      <ul>
+        <li><b>6</b> pirulitos</li><li><b>6</b> cupcakes</li><li><b>4</b> palhas italianas</li><li><b>20</b> bombons</li>
+      </ul>
+      <div class="val"><div class="big">R$ 602,00<small>à vista</small></div><div class="inst">ou 3x de R$ 202,00 no cartão</div></div>
+    </div>
+    <div class="kit">
+      <div class="top"><span class="kn">Kit 3</span><span class="pcs">46 peças</span></div>
+      <h3>Festa Completa</h3>
+      <div class="ideal">Ideal para até 40 pessoas</div>
+      <ul>
+        <li><b>8</b> pirulitos</li><li><b>8</b> cupcakes</li><li><b>8</b> pop cakes</li><li><b>6</b> pães de mel</li><li><b>6</b> bolachas</li><li><b>10</b> bombons</li>
+      </ul>
+      <div class="val"><div class="big">R$ 1.025,00<small>à vista</small></div><div class="inst">ou 4x de R$ 260,00 no cartão</div></div>
+    </div>
+    <div class="kit hl">
+      <div class="top"><span class="kn">Kit 4</span><span class="pcs">70 peças</span></div>
+      <h3>Super Festa</h3>
+      <div class="ideal">Ideal para até 50 pessoas</div>
+      <ul>
+        <li><b>10</b> pirulitos</li><li><b>8</b> cupcakes</li><li><b>8</b> pães de mel</li><li><b>8</b> pop cakes</li><li><b>8</b> bolachas</li><li><b>8</b> palhas italianas</li><li><b>20</b> bombons</li>
+      </ul>
+      <div class="val"><div class="big">R$ 1.416,00<small>à vista</small></div><div class="inst">ou 5x de R$ 295,00 no cartão</div></div>
+    </div>
+  </div>
+
+  <div class="foot"><b>DUETTO</b><span class="pg">08</span></div>
+</section>
+
+<!-- 8 · DOCINHOS TRADICIONAIS -->
+<section class="page" id="p8">
+  <div class="eyebrow"><span class="n">06</span> · O clássico de toda festa</div>
+  <h2>Docinhos <em>tradicionais</em></h2>
+  <p class="lede" style="font-size:15.5px">Os docinhos que não podem faltar, em forminha caixeta branca de 18 g.</p>
+
+  <div class="card" style="margin-top:24px;text-align:center;padding:30px 20px 26px;background:linear-gradient(180deg,#fff 0%,var(--tiff-50) 100%)">
+    <div class="eyebrow" style="color:var(--muted)">O cento</div>
+    <div style="font-family:var(--f-display);font-weight:600;font-size:64px;line-height:1;color:var(--teal-ink);margin-top:10px">R$ 190,00</div>
+    <div style="width:44px;height:1px;background:var(--gold);margin:16px auto 0"></div>
+    <p class="note" style="margin-top:14px">Forminha caixeta (18 g) na cor branca</p>
+  </div>
+
+  <div class="eyebrow" style="margin-top:28px">Sabores</div>
+  <div class="list" style="margin-top:10px">
+    <div class="row"><span class="name">Brigadeiro ao leite</span></div>
+    <div class="row"><span class="name">Leite Ninho</span></div>
+    <div class="row"><span class="name">Beijinho</span></div>
+    <div class="row"><span class="name">Cajuzinho</span></div>
+    <div class="row"><span class="name">Olho de sogra</span></div>
+  </div>
+
+  <div class="card" style="margin-top:auto;text-align:center;padding:16px">
+    <p class="note" style="font-size:16px"><strong>Encomenda mínima de 30 unidades de cada sabor.</strong></p>
+  </div>
+
+  <div class="foot"><b>DUETTO</b><span class="pg">09</span></div>
+</section>
+
+<!-- 9 · CONTATO -->
+<section class="page contact" id="p9">
+  <div class="logo">
+    <svg style="width:70px;height:70px"><use href="#emblem"/></svg>
+  </div>
+  <div class="eyebrow" style="margin-top:20px">Faça seu pedido</div>
+  <h2 style="font-size:44px">Vamos adoçar<br>o seu <em>evento</em>?</h2>
+  <p class="lede" style="margin:12px auto 0;max-width:380px">Aproveite um mundo de sabores únicos e encantadores. Fale com a gente e monte o seu pedido.</p>
+
+  <div class="arch" style="width:240px;height:280px;border-radius:120px 120px 14px 14px;margin-top:26px"><img src="img/contato.jpg" alt="" style="object-position:50% 70%"></div>
+
+  <div style="width:100%;display:flex;flex-direction:column;gap:12px;margin-top:30px">
+    <a class="cta main" href="https://wa.me/5562999510172">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M20 11.6a8.2 8.2 0 0 1-12.1 7.2L4 20l1.3-3.8A8.2 8.2 0 1 1 20 11.6Z"/><path d="M9.2 8.6c.2-.4.5-.4.8-.4h.4c.2 0 .4.1.5.4l.6 1.4c.1.2 0 .5-.1.6l-.5.6c.5 1 1.3 1.8 2.3 2.3l.6-.5c.2-.1.4-.2.6-.1l1.4.6c.3.1.4.3.4.5v.4c0 .3-.1.6-.4.8-.6.4-1.4.5-2.1.2a8 8 0 0 1-4.2-4.2c-.3-.7-.2-1.5.2-2.2Z"/></svg></span>
+      <span><span class="l">WhatsApp · toque para conversar</span><br><span class="v">(62) 99951-0172</span></span>
+    </a>
+    <a class="cta" href="https://instagram.com/duetto.ateliedechocolate">
+      <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="#1E847B" stroke-width="1.7"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1" fill="#1E847B" stroke="none"/></svg></span>
+      <span><span class="l">Instagram</span><br><span class="v">@duetto.ateliedechocolate</span></span>
+    </a>
+  </div>
+
+  <div style="margin-top:auto;font-family:var(--f-display);font-weight:600;font-size:26px;letter-spacing:.06em;color:#14201E">DUETTO</div>
+  <div style="font-size:10.5px;letter-spacing:.34em;color:var(--teal);margin-top:4px">ATELIÊ DE CHOCOLATE</div>
+</section>
+
+</body>
+</html>
